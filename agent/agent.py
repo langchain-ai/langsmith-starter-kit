@@ -12,7 +12,7 @@ from langgraph.graph import StateGraph, START, END, MessagesState
 from langgraph.types import Command
 from dotenv import load_dotenv
 
-load_dotenv(".env")
+load_dotenv("../.env")
 
 # Get tools
 tools = get_tools()

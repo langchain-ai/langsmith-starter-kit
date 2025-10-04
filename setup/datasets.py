@@ -1,8 +1,4 @@
-from langsmith import Client
-from dotenv import load_dotenv
-
-load_dotenv(".env")
-client = Client()
+from setup.config import client
 
 # Dataset examples
 email_input_1 = {
@@ -754,15 +750,18 @@ def load_next_action_datasets():
     return dataset_name
 
 def load_datasets():
-    print("Loading Triage Datasets...")
+    print("Loading Datasets...")
+    print("   - Triage Datasets...")
     load_triage_datasets()
-    print("Loading Response Datasets...")
+
+    print("   - Response Datasets...")
     load_response_datasets()
-    print("Loading Trajectory Datasets...")
+    
+    print("   - Trajectory Datasets...")
     load_trajectory_datasets()
-    print("Loading Next Action Datasets...")
+    
+    print("   - Next Action Datasets...")
     load_next_action_datasets()
-    print("Datasets loaded successfully")
 
 if __name__ == "__main__":
     load_datasets()
