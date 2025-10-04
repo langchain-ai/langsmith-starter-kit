@@ -44,10 +44,9 @@ def automation_exists(name: str, project_id = None) -> bool:
         raise RuntimeError(f"Failed to search for evaluator '{name}': {existing.status_code} {existing.text}")
     
     existing = existing.json()
-    for evaluator in existing:
-        if evaluator.get("display_name") == name and (evaluator.get("evaluators") or evaluator.get("code_evaluators")):
-            if evaluator.get("session_id") == project_id:
-                return True
+    for automation in existing:
+        if automation.get("display_name") == name:  
+            return True
     return False
 
 def get_queue_id(name: str) -> str:
