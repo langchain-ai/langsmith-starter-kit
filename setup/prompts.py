@@ -26,7 +26,7 @@ def delete_existing_prompt(name: str):
         print(f"    ...deleted existing prompt: {name}")
     except Exception as e:
         # Non-fatal; proceed with pushing
-        print(f"    Warning: could not find or delete prompt '{name}': {e}")
+        pass
 
 def build_schema(model: BaseModel, name: str):
     schema = model.model_json_schema()
@@ -210,7 +210,8 @@ Please grade the following example according to the above instructions:
         ("human", correctness_eval_human),],
         schema_=correctness_schema,
     )
-    url = load_prompt("email-agent-next-action-eval", correctness_eval_prompt)
+    correctness_eval_obj = correctness_eval_prompt | model
+    url = load_prompt("email-agent-next-action-eval", correctness_eval_obj)
     return url
 
 
@@ -249,7 +250,8 @@ Please grade the following example according to the above instructions:
         ("human", completeness_eval_human),],
         schema_=completeness_schema,
     )
-    url = load_prompt("email-agent-final-response-eval", completeness_eval_prompt)
+    completeness_eval_obj = completeness_eval_prompt | model
+    url = load_prompt("email-agent-final-response-eval", completeness_eval_obj)
     return url
 
 
@@ -287,7 +289,8 @@ Please grade the following example according to the above instructions:
         ("human", professionalism_eval_human),],
         schema_=professionalism_schema,
     )
-    url = load_prompt("email-agent-professionalism-eval", professionalism_eval_prompt)
+    professionalism_eval_obj = professionalism_eval_prompt | model
+    url = load_prompt("email-agent-professionalism-eval", professionalism_eval_obj)
     return url
 
 # ------------------------------------------------------------------------------------------------------------------------
