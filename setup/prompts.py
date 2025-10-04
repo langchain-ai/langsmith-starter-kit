@@ -277,10 +277,6 @@ Please grade the following example according to the above instructions:
 <output>
 {output}
 </output>
-
-<reference_outputs>
-{reference}
-</reference_outputs>
 </example>
 """
     professionalism_schema = build_schema(Professionalism, "professionalism")
