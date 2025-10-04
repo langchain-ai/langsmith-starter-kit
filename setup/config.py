@@ -2,7 +2,7 @@ import os
 import requests
 from typing import Dict
 from dotenv import load_dotenv
-from langsmith import Client
+from langsmith import Client, traceable
 
 load_dotenv(".env")
 
@@ -38,3 +38,10 @@ def setup_secrets() -> None:
     if resp.status_code >= 300:
         raise RuntimeError(f"Failed to upsert workspace secret OPENAI_API_KEY: {resp.status_code} {resp.text}")
     print(f"    - OPENAI_API_KEY upserted to LangSmith workspace.")
+
+def setup_project() -> None:
+    first_run("Welcome to LangSmith!")
+
+@traceable
+def first_run(question: str) -> str:
+    return "Hello, world!"

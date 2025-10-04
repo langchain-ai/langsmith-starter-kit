@@ -29,5 +29,4 @@ python main.py
 
 
 ## (Optional) Self-Guided Notebooks
-
 TODO

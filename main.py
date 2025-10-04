@@ -1,5 +1,5 @@
 import time
-from setup.config import setup_secrets
+from setup.config import setup_secrets, setup_project
 from setup.prompts import load_all_prompts
 from setup.traces import create_traces
 from setup.datasets import load_datasets
@@ -9,6 +9,7 @@ from setup.annotations import load_automations_and_queues
 
 
 def main():
+    setup_project()
     print()
     setup_secrets()
     print()
