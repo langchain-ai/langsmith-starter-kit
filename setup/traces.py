@@ -19,7 +19,7 @@ def create_traces(num_examples: int = 16):
             config={
                 "run_name": f"email_assistant:{name}",
                 "tags": ["email-assistant", "trace", name],
-                "metadata": {"dataset": "email_inputs", "example_name": name, "example_index": idx},
+                # "metadata": {"dataset": "email_inputs", "example_name": name, "example_index": idx},
             },
         )
         decision = result.get("classification_decision", "unknown")
