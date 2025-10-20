@@ -1,7 +1,7 @@
 {
     "dependencies": ["."],
     "graphs": {
-      "starter-agent": "./agent/agent.py:email_assistant"
+      "email-agent": "./agent/agent.py:email_assistant"
     },
     "env": "./.env"
   }
