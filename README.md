@@ -29,4 +29,12 @@ python main.py
 
 
 ## (Optional) Self-Guided Notebooks
-TODO
+
+In the root directory, run
+```bash
+jupyter notebook
+```
+
+This will open a web browser page. The self guided notebooks will be located in the ```notebooks``` directory.
+
+Open a notebook and follow along the cells to execute!
