@@ -1,4 +1,5 @@
 import time
+import argparse
 from setup.config import setup_secrets, setup_project
 from setup.prompts import load_all_prompts
 from setup.traces import create_traces
@@ -9,20 +10,26 @@ from setup.annotations import load_automations_and_queues
 
 
 def main():
+    parser = argparse.ArgumentParser(description="LangSmith Starter Kit")
+    parser.add_argument("--api-only", action="store_true", help="Use LangSmith REST API instead of SDK where supported.")
+    args = parser.parse_args()
+
+    use_api = args.api_only
+
     setup_project()
     print()
     setup_secrets()
     print()
-    load_all_prompts()
+    load_all_prompts(use_api=use_api)
     print()
-    load_datasets()
+    load_datasets(use_api=use_api)
     print()
-    load_evaluators()
+    load_evaluators(use_api=use_api)
 
     time.sleep(3)
 
     print()
-    load_experiments()
+    load_experiments(use_api=use_api)
     print()
     load_automations_and_queues()
     print()

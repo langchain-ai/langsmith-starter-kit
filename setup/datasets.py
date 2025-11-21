@@ -1,4 +1,6 @@
-from setup.config import client
+from setup.config import client, auth_headers, LANGSMITH_API_URL
+import requests
+from typing import List, Dict, Optional, Any
 
 # Dataset examples
 email_input_1 = {
@@ -705,63 +707,161 @@ next_action_output_2 = {
 next_action_input_list = [next_action_input_1, next_action_input_2]
 next_action_output_list = [next_action_output_1, next_action_output_2]
 
-def load_triage_datasets():
+def api_get_dataset_id(dataset_name: str) -> Optional[str]:
+    url = f"{LANGSMITH_API_URL}/api/v1/datasets"
+    resp = requests.get(url, headers=auth_headers(), params={"name": dataset_name}, timeout=30)
+    if resp.status_code >= 300:
+        return None
+    datasets = resp.json()
+    if datasets and isinstance(datasets, list):
+        first = datasets[0]
+        if isinstance(first, dict) and "id" in first:
+            return first["id"]
+    return None
+
+def api_create_dataset(dataset_name: str, description: str = "") -> str:
+    url = f"{LANGSMITH_API_URL}/api/v1/datasets"
+    body = {"name": dataset_name, "description": description}
+    resp = requests.post(url, headers=auth_headers(), json=body, timeout=30)
+    if resp.status_code == 409:
+        raise RuntimeError(f"Dataset '{dataset_name}' already exists")
+    if resp.status_code >= 300:
+        raise RuntimeError(f"Failed to create dataset '{dataset_name}': {resp.status_code} {resp.text}")
+    data = resp.json()
+    if not isinstance(data, dict) or not data.get("id"):
+        raise RuntimeError(f"Dataset created but no ID returned: {data}")
+    return data["id"]
+
+
+def api_create_examples(dataset_id: str, inputs: List[Dict], outputs: List[Dict]) -> None:
+    if len(inputs) != len(outputs):
+        raise ValueError("Inputs and outputs must have the same length.")
+    # Use the documented bulk endpoint to create in one request: POST /api/v1/examples/bulk
+    url = f"{LANGSMITH_API_URL}/api/v1/examples/bulk"
+    examples = []
+    for in_obj, out_obj in zip(inputs, outputs):
+        examples.append({
+            "dataset_id": dataset_id,
+            "inputs": in_obj,
+            "outputs": out_obj,
+        })
+    # API expects a top-level array body
+    resp = requests.post(url, headers=auth_headers(), json=examples, timeout=60)
+    if resp.status_code >= 300:
+        raise RuntimeError(f"Failed to create examples in bulk: {resp.status_code} {resp.text}")
+
+
+def api_list_examples(dataset_id: str) -> List[Dict[str, Any]]:
+    """Public helper to list examples for a dataset via API."""
+    url = f"{LANGSMITH_API_URL}/api/v1/examples"
+    resp = requests.get(url, headers=auth_headers(), params={"dataset": dataset_id}, timeout=30)
+    if resp.status_code >= 300:
+        raise RuntimeError(f"Failed to list examples for dataset '{dataset_id}': {resp.status_code} {resp.text}")
+    items = resp.json()
+    return items if isinstance(items, list) else []
+
+
+def load_triage_datasets(use_api: bool = False):
     dataset_name = "Email Agent: Triage"
-    if not client.has_dataset(dataset_name=dataset_name):
-        dataset = client.create_dataset(dataset_name=dataset_name)
-        client.create_examples(
+    if use_api:
+        existing_id = api_get_dataset_id(dataset_name)
+        if existing_id:
+            return dataset_name
+        dataset_id = api_create_dataset(dataset_name)
+        api_create_examples(
+            dataset_id=dataset_id,
             inputs=[{"email_input": email} for email in email_inputs],
             outputs=[{"classification": classification} for classification in triage_outputs_list],
-            dataset_id=dataset.id,
         )
+    else:
+        if not client.has_dataset(dataset_name=dataset_name):
+            dataset = client.create_dataset(dataset_name=dataset_name)
+            client.create_examples(
+                inputs=[{"email_input": email} for email in email_inputs],
+                outputs=[{"classification": classification} for classification in triage_outputs_list],
+                dataset_id=dataset.id,
+            )
     return dataset_name
 
-def load_response_datasets():
+def load_response_datasets(use_api: bool = False):
     dataset_name = "Email Agent: Final Response"
-    if not client.has_dataset(dataset_name=dataset_name):
-        dataset = client.create_dataset(dataset_name=dataset_name)
-        client.create_examples(
+    if use_api:
+        existing_id = api_get_dataset_id(dataset_name)
+        if existing_id:
+            return dataset_name
+        dataset_id = api_create_dataset(dataset_name)
+        api_create_examples(
+            dataset_id=dataset_id,
             inputs=[{"email_input": email} for email in email_inputs],
             outputs=[{"response_criteria": response} for response in response_criteria_list],
-            dataset_id=dataset.id,
         )
+    else:
+        if not client.has_dataset(dataset_name=dataset_name):
+            dataset = client.create_dataset(dataset_name=dataset_name)
+            client.create_examples(
+                inputs=[{"email_input": email} for email in email_inputs],
+                outputs=[{"response_criteria": response} for response in response_criteria_list],
+                dataset_id=dataset.id,
+            )
     return dataset_name
 
-def load_trajectory_datasets():
+def load_trajectory_datasets(use_api: bool = False):
     dataset_name = "Email Agent: Trajectory"
-    if not client.has_dataset(dataset_name=dataset_name):
-        dataset = client.create_dataset(dataset_name=dataset_name)
-        client.create_examples(
+    if use_api:
+        existing_id = api_get_dataset_id(dataset_name)
+        if existing_id:
+            return dataset_name
+        dataset_id = api_create_dataset(dataset_name)
+        api_create_examples(
+            dataset_id=dataset_id,
             inputs=[{"email_input": email} for email in email_inputs],
             outputs=[{"trajectory": trajectory} for trajectory in expected_tool_calls],
-            dataset_id=dataset.id,
         )
+    else:
+        if not client.has_dataset(dataset_name=dataset_name):
+            dataset = client.create_dataset(dataset_name=dataset_name)
+            client.create_examples(
+                inputs=[{"email_input": email} for email in email_inputs],
+                outputs=[{"trajectory": trajectory} for trajectory in expected_tool_calls],
+                dataset_id=dataset.id,
+            )
     return dataset_name
 
-def load_next_action_datasets():
+def load_next_action_datasets(use_api: bool = False):
     dataset_name = "Email Agent: Next Action"
-    if not client.has_dataset(dataset_name=dataset_name):
-        dataset = client.create_dataset(dataset_name=dataset_name)
-        client.create_examples(
+    if use_api:
+        existing_id = api_get_dataset_id(dataset_name)
+        if existing_id:
+            return dataset_name
+        dataset_id = api_create_dataset(dataset_name)
+        api_create_examples(
+            dataset_id=dataset_id,
             inputs=next_action_input_list,
             outputs=next_action_output_list,
-            dataset_id=dataset.id,
         )
+    else:
+        if not client.has_dataset(dataset_name=dataset_name):
+            dataset = client.create_dataset(dataset_name=dataset_name)
+            client.create_examples(
+                inputs=next_action_input_list,
+                outputs=next_action_output_list,
+                dataset_id=dataset.id,
+            )
     return dataset_name
 
-def load_datasets():
+def load_datasets(use_api: bool = False):
     print("Loading Datasets...")
     print("   - Triage Datasets...")
-    load_triage_datasets()
+    load_triage_datasets(use_api=use_api)
 
     print("   - Response Datasets...")
-    load_response_datasets()
+    load_response_datasets(use_api=use_api)
     
     print("   - Trajectory Datasets...")
-    load_trajectory_datasets()
+    load_trajectory_datasets(use_api=use_api)
     
     print("   - Next Action Datasets...")
-    load_next_action_datasets()
+    load_next_action_datasets(use_api=use_api)
 
 if __name__ == "__main__":
     load_datasets()

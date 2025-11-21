@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from typing import Dict, Optional, List, Callable, Any, Literal, Union
 
 from setup.config import auth_headers, LANGSMITH_API_URL, client
+from setup.prompts import prompt_exists
 
 
 
@@ -136,7 +137,7 @@ def _resolve_target_id(target_name: str, target_type: Literal["dataset", "projec
 
 
 ## Evaluator Creation 
-def create_judge_payload(name: str, prompt_or_ref: Union[str, List[List[str]]], sample_rate: float, score_type: Literal["boolean", "number", "string"], target_name: str, target_type: Literal["dataset", "project"] = "dataset") -> None:
+def create_judge_payload(name: str, prompt_or_ref: Union[str, List[List[str]]], sample_rate: float, score_type: Literal["boolean", "number", "string"], target_name: str, target_type: Literal["dataset", "project"] = "dataset", use_api: bool = False, owner: Optional[str] = None) -> None:
     target = _resolve_target_id(target_name, target_type)
     if not target:
         return None
@@ -148,11 +149,16 @@ def create_judge_payload(name: str, prompt_or_ref: Union[str, List[List[str]]], 
     if isinstance(prompt_or_ref, list):
         pass
     else:
-        try:
-            client.pull_prompt(prompt_or_ref)
-        except Exception as e:
-            print(f'    - Could not find {prompt_or_ref}. Skipping evaluator...')
-            return None
+        if use_api:
+            if not prompt_exists(str(prompt_or_ref), owner):
+                print(f"    - Could not find {prompt_or_ref} via API. Skipping evaluator...")
+                return None
+        else:
+            try:
+                client.pull_prompt(prompt_or_ref)
+            except Exception:
+                print(f'    - Could not find {prompt_or_ref}. Skipping evaluator...')
+                return None
           
     judge = _format_judge_evaluator(
         name=name,
@@ -218,7 +224,7 @@ def create_evaluator(payload: EvaluatorPayload) -> Optional[Dict]:
     return resp.json()
 
 
-def load_evaluators() -> None:
+def load_evaluators(use_api: bool = False, owner: Optional[str] = None) -> None:
     """Create some example rules and attach them to our example datasets.
 
     Targets datasets created in setup/datasets.py via load_*_datasets functions.
@@ -239,6 +245,8 @@ def load_evaluators() -> None:
         score_type="boolean",
         target_name=next_action_dataset,
         target_type="dataset",
+        use_api=use_api,
+        owner=owner,
     )
 
 
@@ -251,6 +259,8 @@ def load_evaluators() -> None:
         score_type="boolean",
         target_name=final_response_dataset,
         target_type="dataset",
+        use_api=use_api,
+        owner=owner,
     )
     
     professionalism_project = os.getenv("LANGSMITH_PROJECT")
@@ -262,6 +272,8 @@ def load_evaluators() -> None:
         score_type="boolean",
         target_name=professionalism_project,
         target_type="project",
+        use_api=use_api,
+        owner=owner,
     )
 
     triage_dataset = "Email Agent: Triage"
