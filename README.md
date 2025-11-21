@@ -27,6 +27,12 @@ pip install -r requirements.txt
 python main.py
 ```
 
+If you want the scripts to use API mode over the LangSmith SDK, you can run
+```bash
+python main.py --api-only
+```
+
+Notably, the two should be functionally identical in how they set up your LangSmith assets - the modes are intended to illustrate different implementation usages of our SDK + API.
 
 ## (Optional) Self-Guided Notebooks
 
