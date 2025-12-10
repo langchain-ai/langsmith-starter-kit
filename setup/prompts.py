@@ -33,10 +33,6 @@ def get_owner(owner: Optional[str] = None) -> str:
 def prompt_exists(prompt_or_ref: str, owner: Optional[str] = None) -> bool:
     """
     Check if a prompt ref exists using commits API.
-    Accepts:
-      - repo
-      - repo:latest
-      - repo:<commit_hash_or_tag>
     """
     resolved_owner = get_owner(owner)
     if ":" in prompt_or_ref:
