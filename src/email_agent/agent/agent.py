@@ -2,24 +2,20 @@ from typing import Literal, TypedDict
 from pydantic import BaseModel, Field
 from datetime import datetime
 
-from langchain_openai import ChatOpenAI
-
-from agent.tools import get_tools, get_tools_by_name
-from setup.prompts import get_triage_instructions, get_action_instructions
-from agent.utils import parse_email, format_email_markdown
+from src.model import model
+from src.email_agent.agent.tools import get_tools, get_tools_by_name
+from src.email_agent.setup.prompts import get_triage_instructions, get_action_instructions
+from src.email_agent.agent.utils import parse_email, format_email_markdown
 
 from langgraph.graph import StateGraph, START, END, MessagesState
 from langgraph.types import Command
 from dotenv import load_dotenv
 
-load_dotenv("../.env")
+load_dotenv(".env")
 
 # Get tools
 tools = get_tools()
 tools_by_name = get_tools_by_name(tools)
-
-# Initialize the LLM for use with router / structured output
-llm = ChatOpenAI(model="gpt-4.1", temperature=0.0)
 
 class RouterSchema(BaseModel):
     """Analyze the unread email and route it according to its content."""
@@ -33,11 +29,8 @@ class RouterSchema(BaseModel):
         "'respond' for emails that need a reply",
     )
 
-llm_router = llm.with_structured_output(RouterSchema) 
-
-# Initialize the LLM, enforcing tool use (of any available tools) for agent
-llm = ChatOpenAI(model="gpt-4.1", temperature=0.0)
-llm_with_tools = llm.bind_tools(tools, tool_choice="any", parallel_tool_calls=False)
+llm_router = model.with_structured_output(RouterSchema)
+llm_with_tools = model.bind_tools(tools, tool_choice="any", parallel_tool_calls=False)
 
 
 # State definitions
@@ -79,7 +72,7 @@ def should_continue(state: State) -> Literal["Action", "__end__"]:
     messages = state["messages"]
     last_message = messages[-1]
     if last_message.tool_calls:
-        for tool_call in last_message.tool_calls: 
+        for tool_call in last_message.tool_calls:
             if tool_call["name"] == "Done":
                 return END
             else:
@@ -126,7 +119,7 @@ Subject: {subject}
         author=author, to=to, subject=subject, email_thread=email_thread
     )
 
-    # Create email markdown for Agent Inbox in case of notification  
+    # Create email markdown for Agent Inbox in case of notification
     email_markdown = format_email_markdown(subject, author, to, email_thread)
 
     # Run the router LLM

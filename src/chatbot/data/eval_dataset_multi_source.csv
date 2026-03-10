@@ -1,0 +1,201 @@
+question,retrieved_chunks,answer,cited_chunks,mode
+"""How long does it take for my payment to show up if I pay by mail?""","[Source: payment processing]
+Payment Methods Available
+Online: Through chase.com or mobile app - processes within 1 business day
+Phone: Call automated system or speak with representative - processes within 1 business day
+Mail: Send check or money order to payment address on statement - allow 5-7 days
+Branch: Visit any Chase branch location - posts same business day
+Wire Transfer: For large payments or expedited processing - contact customer service
+Important Notes:
+Do not send cash through mail
+Include account number on check memo line
+Keep confirmation number for all electronic payments
+Payments made after due date may incur late fees even if in transit","Payments can be made through online banking, mobile app, phone, mail, or branch locations and must be received by 5:00 PM ET on the due date to be considered on-time. Customers can set up automatic payments for full balance, minimum payment, or fixed amount. Payment processing times vary: online and phone payments post within 1 business day, mail payments take 5-7 days, and branch payments post same business day. Automatic payments require maintaining sufficient funds in the linked account to avoid returned payment fees.","[Source: payment processing]
+[""Payment Methods Available\nOnline: Through chase.com or mobile app - processes within 1 business day\nPhone: Call automated system or speak with representative - processes within 1 business day\nMail: Send check or money order to payment address on statement - allow 5-7 days\nBranch: Visit any Chase branch location - posts same business day\nWire Transfer: For large payments or expedited processing - contact customer service\nImportant Notes:\nDo not send cash through mail\nInclude account number on check memo line\nKeep confirmation number for all electronic payments\nPayments made after due date may incur late fees even if in transit""]",multi_source
+"""What steps do I need to take to dispute a charge on my credit card?""","[Source: disputes chargebacks]
+Dispute Process: Filing a Dispute
+Customer has 60 days from statement date to dispute a charge
+Disputes can be filed online, by phone, or in writing
+Provisional credit may be issued within 10 business days depending on dispute type
+Required information for dispute:
+- Transaction date and amount
+- Merchant name
+- Reason for dispute
+- Any supporting documentation
+Types of disputes:
+- Unauthorized transactions: Charges customer didn't make or authorize
+- Billing errors: Charged wrong amount or duplicate charges
+- Service disputes: Goods/services not received or not as described
+Tell customer: Disputed amount will be temporarily credited while investigation is in progress
+Investigation typically takes 30-90 days depending on complexity","Customers have 60 days from the statement date to dispute a charge and can file disputes online, by phone, or in writing. Provisional credit may be issued within 10 business days depending on the dispute type. Disputes can be for unauthorized transactions, billing errors, or service issues. The investigation typically takes 30-90 days, and during this time the disputed amount cannot be reported as delinquent to credit bureaus. Under the Fair Credit Billing Act, customers have specific protections for billing errors and the bank must resolve disputes within 90 days or two billing cycles.","[Source: disputes chargebacks]
+[""Dispute Process: Filing a Dispute\nCustomer has 60 days from statement date to dispute a charge\nDisputes can be filed online, by phone, or in writing\nProvisional credit may be issued within 10 business days depending on dispute type\nRequired information for dispute:\n- Transaction date and amount\n- Merchant name\n- Reason for dispute\n- Any supporting documentation\nTypes of disputes:\n- Unauthorized transactions: Charges customer didn't make or authorize\n- Billing errors: Charged wrong amount or duplicate charges\n- Service disputes: Goods/services not received or not as described\nTell customer: Disputed amount will be temporarily credited while investigation is in progress\nInvestigation typically takes 30-90 days depending on complexity""]",multi_source
+"""How long does it take for my rewards points to show up after I make a purchase?""","[Source: rewards programs]
+Rewards Program Overview
+Customers earn points on eligible purchases based on their card type
+Standard earning rates:
+- 1 point per $1 on all purchases (base cards)
+- 2 points per $1 on dining and travel (preferred cards)
+- 3 points per $1 on select categories (premium cards)
+- 5 points per $1 on bonus category purchases
+Points post to account within 1-2 billing cycles after purchase
+Bonus points from sign-up offers typically post after meeting spending requirement
+Points never expire as long as account remains open and in good standing
+Tell customer: Points can be redeemed for cash back, travel, gift cards, or merchandise
+Minimum redemption amount is 2,500 points ($25 value)
+Check account summary or rewards portal for current points balance","Rewards points are earned on eligible purchases based on card type, with rates ranging from 1 to 5 points per dollar spent. Points can be redeemed for cash back (as statement credit, direct deposit, or check), travel bookings, gift cards, or merchandise. Points never expire as long as the account remains open and in good standing, with a minimum redemption amount of 2,500 points. Points can be combined between eligible cards on the same account and transferred instantly once confirmed, though points cannot be transferred between different customers or after account closure.","[Source: rewards programs]
+[""Rewards Program Overview\nCustomers earn points on eligible purchases based on their card type\nStandard earning rates:\n- 1 point per $1 on all purchases (base cards)\n- 2 points per $1 on dining and travel (preferred cards)\n- 3 points per $1 on select categories (premium cards)\n- 5 points per $1 on bonus category purchases\nPoints post to account within 1-2 billing cycles after purchase\nBonus points from sign-up offers typically post after meeting spending requirement\nPoints never expire as long as account remains open and in good standing\nTell customer: Points can be redeemed for cash back, travel, gift cards, or merchandise\nMinimum redemption amount is 2,500 points ($25 value)\nCheck account summary or rewards portal for current points balance""]",multi_source
+"""Why can't I activate my card online or through the app?""","[Source: card activation]
+Troubleshooting Activation Issues
+Common activation problems and solutions:
+Card won't activate online or via app:
+- Clear browser cache and cookies
+- Try different browser or device
+- Verify using correct login credentials
+- Check for system maintenance notifications
+Automated phone activation fails:
+- Ensure speaking clearly for voice recognition
+- Try entering information using keypad instead
+- Call during business hours to speak with representative
+Error message about card already being activated:
+- May have been activated by mistake
+- Try making small purchase to verify status
+- Check online banking for account activity
+Security hold preventing activation:
+- Recent fraud alert on account
+- Address verification needed
+- Must contact customer service to resolve
+Important: Never activate card if received unexpectedly - contact fraud department immediately","New cards must be activated before use and can be activated through the mobile app, online banking, phone, or ATM. Cards should be activated within 30 days of receipt and will be automatically deactivated after 45 days if not activated. Activation is instant after successful verification and the old card will be automatically deactivated when a new card is activated. Common activation issues include incorrect card information entry, browser cache problems, or security holds that may require contacting customer service.","[Source: card activation]
+[""Troubleshooting Activation Issues\nCommon activation problems and solutions:\nCard won't activate online or via app:\n- Clear browser cache and cookies\n- Try different browser or device\n- Verify using correct login credentials\n- Check for system maintenance notifications\nAutomated phone activation fails:\n- Ensure speaking clearly for voice recognition\n- Try entering information using keypad instead\n- Call during business hours to speak with representative\nError message about card already being activated:\n- May have been activated by mistake\n- Try making small purchase to verify status\n- Check online banking for account activity\nSecurity hold preventing activation:\n- Recent fraud alert on account\n- Address verification needed\n- Must contact customer service to resolve\nImportant: Never activate card if received unexpectedly - contact fraud department immediately""]",multi_source
+"""What should I do if I see a charge I didn't make on my account?""","[Source: fraud protection]
+Zero Liability Protection
+Customers are not responsible for unauthorized transactions
+Protection applies to:
+- Card-present transactions with chip or signature
+- Card-not-present transactions (online, phone, mail-order)
+- Contactless tap-to-pay transactions
+Coverage requirements:
+- Customer must report unauthorized charges promptly
+- Must have taken reasonable care of card
+- Must not have shared PIN or account access
+Important exceptions to zero liability:
+- Authorized user transactions
+- Transactions after failing to report lost/stolen card
+- Business accounts (different coverage terms apply)
+- PIN-based transactions if PIN was compromised
+To maintain protection:
+- Review statements regularly
+- Report discrepancies within 60 days
+- Keep card secure and never share details
+- Report lost/stolen cards immediately
+Provisional credit issued within 10 business days while investigating fraud claim","Accounts are monitored 24/7 for suspicious activity with automated systems analyzing purchase patterns, locations, amounts, and high-risk merchants. Customers receive alerts via text, email, mobile app, or phone call for high-risk transactions. Under zero liability protection, customers are not responsible for unauthorized transactions if they report unauthorized charges promptly and have taken reasonable care of their card. Lost or stolen cards should be reported immediately through the mobile app, online banking, phone, or branch to prevent fraud, and provisional credit is issued within 10 business days.","[Source: fraud protection]
+[""Zero Liability Protection\nCustomers are not responsible for unauthorized transactions\nProtection applies to:\n- Card-present transactions with chip or signature\n- Card-not-present transactions (online, phone, mail-order)\n- Contactless tap-to-pay transactions\nCoverage requirements:\n- Customer must report unauthorized charges promptly\n- Must have taken reasonable care of card\n- Must not have shared PIN or account access\nImportant exceptions to zero liability:\n- Authorized user transactions\n- Transactions after failing to report lost/stolen card\n- Business accounts (different coverage terms apply)\n- PIN-based transactions if PIN was compromised\nTo maintain protection:\n- Review statements regularly\n- Report discrepancies within 60 days\n- Keep card secure and never share details\n- Report lost/stolen cards immediately\nProvisional credit issued within 10 business days while investigating fraud claim""]",multi_source
+"""Can I transfer my balance from multiple credit cards to my Chase account?""","[Source: balance transfers]
+Balance Transfer: Overview
+Balance transfers allow moving debt from other credit cards to Chase account
+Benefits of balance transfers:
+- Consolidate multiple card balances
+- Take advantage of promotional APR offers
+- Simplify monthly payments
+- Potentially save on interest charges
+Balance transfer fee: Typically 3% or 5% of transfer amount (minimum $5)
+Promotional APR: Check current offers (usually 0% for 12-18 months)
+Standard APR applies after promotional period ends
+Available credit limit: Transfer amount plus fee cannot exceed available credit
+Processing time: 7-14 business days for transfer to complete
+Remember: Cannot transfer balances between Chase accounts
+Only transfer balances from other financial institutions","Balance transfers allow moving debt from other credit cards to take advantage of promotional APR offers and consolidate multiple card balances. There is typically a 3% or 5% balance transfer fee (minimum $5) and the transfer amount plus fee cannot exceed available credit. Balance transfers take 7-14 business days to complete and can be requested online, by phone, or through the mobile app. Promotional APR applies from the date of transfer posting and making minimum payments on time is required to keep the promotional rate.","[Source: balance transfers]
+[""Balance Transfer: Overview\nBalance transfers allow moving debt from other credit cards to Chase account\nBenefits of balance transfers:\n- Consolidate multiple card balances\n- Take advantage of promotional APR offers\n- Simplify monthly payments\n- Potentially save on interest charges\nBalance transfer fee: Typically 3% or 5% of transfer amount (minimum $5)\nPromotional APR: Check current offers (usually 0% for 12-18 months)\nStandard APR applies after promotional period ends\nAvailable credit limit: Transfer amount plus fee cannot exceed available credit\nProcessing time: 7-14 business days for transfer to complete\nRemember: Cannot transfer balances between Chase accounts\nOnly transfer balances from other financial institutions""]",multi_source
+"""How can I request a credit limit increase for my account?""","[Source: credit limit increase]
+Credit Limit Increase: Requesting an Increase
+Customers can request credit limit increase through:
+- Online banking: Navigate to Account Services > Credit Limit Increase
+- Mobile app: Select account and choose Request Credit Increase
+- Phone: Call customer service for immediate review
+- Automatic: May receive pre-approved increase offers
+Eligibility requirements:
+- Account open for at least 6 months
+- Account in good standing (no late payments)
+- No recent credit limit increase (within 6 months)
+- Current income information required
+Factors considered for approval:
+- Payment history on this and other accounts
+- Current credit utilization ratio
+- Debt-to-income ratio
+- Recent credit inquiries
+- Overall creditworthiness
+Tell customer: Hard credit inquiry may be required for request
+Decision typically provided immediately for online requests
+Some requests may require additional review (2-7 business days)","Credit limit increases can be requested through online banking, mobile app, or phone after the account has been open for at least 6 months with no late payments. Factors considered include payment history, credit utilization ratio, debt-to-income ratio, and overall creditworthiness. The bank may also automatically increase limits periodically for accounts in good standing without requiring a hard credit inquiry. Credit limits can also be decreased based on payment delinquency, decreased credit score, or account inactivity, with customers receiving notification before the decrease takes effect.","[Source: credit limit increase]
+[""Credit Limit Increase: Requesting an Increase\nCustomers can request credit limit increase through:\n- Online banking: Navigate to Account Services > Credit Limit Increase\n- Mobile app: Select account and choose Request Credit Increase\n- Phone: Call customer service for immediate review\n- Automatic: May receive pre-approved increase offers\nEligibility requirements:\n- Account open for at least 6 months\n- Account in good standing (no late payments)\n- No recent credit limit increase (within 6 months)\n- Current income information required\nFactors considered for approval:\n- Payment history on this and other accounts\n- Current credit utilization ratio\n- Debt-to-income ratio\n- Recent credit inquiries\n- Overall creditworthiness\nTell customer: Hard credit inquiry may be required for request\nDecision typically provided immediately for online requests\nSome requests may require additional review (2-7 business days)""]",multi_source
+"""How can I download my bank statements from the mobile app?""","[Source: statement inquiries]
+Accessing Account Statements
+Statements available through multiple channels:
+Online Banking:
+- Log in to chase.com
+- Navigate to Account > Statements
+- View up to 7 years of statements
+- Download PDF format for records
+Mobile App:
+- Open app and select account
+- Tap Statements & Activity
+- View or download current and past statements
+Paper Statements:
+- Delivered by mail within 3-5 business days after cycle closes
+- Can request paper statements in Account Preferences
+- May incur monthly fee depending on account type
+Tell customer:
+Electronic statements available 24 hours after cycle closes
+Paper statements mailed 2-3 days after cycle closes
+Keep statements for at least 3 years for tax purposes
+Download and save statements before account closure","Statements are available through online banking (up to 7 years), mobile app, or delivered by mail within 3-5 business days after the cycle closes. Electronic statements are available 24 hours after the cycle closes and can be downloaded in PDF format. The statement cycle typically covers 28-31 days and the payment due date is 21-25 days after the statement date. Customers can switch between paper and electronic statements in account preferences and can request a due date change once per year.","[Source: statement inquiries]
+[""Accessing Account Statements\nStatements available through multiple channels:\nOnline Banking:\n- Log in to chase.com\n- Navigate to Account > Statements\n- View up to 7 years of statements\n- Download PDF format for records\nMobile App:\n- Open app and select account\n- Tap Statements & Activity\n- View or download current and past statements\nPaper Statements:\n- Delivered by mail within 3-5 business days after cycle closes\n- Can request paper statements in Account Preferences\n- May incur monthly fee depending on account type\nTell customer:\nElectronic statements available 24 hours after cycle closes\nPaper statements mailed 2-3 days after cycle closes\nKeep statements for at least 3 years for tax purposes\nDownload and save statements before account closure""]",multi_source
+"""What will happen to my account if I pay my bill late?""","[Source: interest fees]
+Common Fees and Fee Waivers
+Standard credit card fees:
+Late payment fee:
+- $29 for first late payment
+- $40 for subsequent late payments within 6 months
+- Charged when minimum payment not received by due date
+- Can negatively impact credit score
+Returned payment fee:
+- $29 if payment returned due to insufficient funds
+- May also incur late payment fee
+- Check with bank before making payment if concerned about funds
+Over-limit fee:
+- Most cards no longer charge over-limit fees
+- Transactions may be declined if over limit
+- Must opt-in to allow over-limit transactions
+Foreign transaction fee:
+- 3% of transaction amount for purchases made outside US
+- Applies to online purchases from foreign merchants
+- Some cards have no foreign transaction fee
+Requesting fee waiver:
+- Can request one-time courtesy waiver for late/returned payment fee
+- More likely granted if:
+  * First time occurrence
+  * Long history of on-time payments
+  * Account in good standing
+- Call customer service to request
+- Not guaranteed but often approved for good customers
+Balance transfer and cash advance fees typically cannot be waived","APR (Annual Percentage Rate) represents the yearly cost of borrowing and includes purchase APR, balance transfer APR, cash advance APR, and penalty APR. Interest is calculated using the average daily balance method, where daily balances are added throughout the billing cycle, divided by the number of days, and multiplied by the daily periodic rate. Common fees include late payment fees ($29-$40), returned payment fees ($29), and foreign transaction fees (3%). Customers can request one-time courtesy fee waivers for late or returned payment fees, especially if it's a first occurrence and the account has a history of on-time payments.","[Source: interest fees]
+[""Common Fees and Fee Waivers\nStandard credit card fees:\nLate payment fee:\n- $29 for first late payment\n- $40 for subsequent late payments within 6 months\n- Charged when minimum payment not received by due date\n- Can negatively impact credit score\nReturned payment fee:\n- $29 if payment returned due to insufficient funds\n- May also incur late payment fee\n- Check with bank before making payment if concerned about funds\nOver-limit fee:\n- Most cards no longer charge over-limit fees\n- Transactions may be declined if over limit\n- Must opt-in to allow over-limit transactions\nForeign transaction fee:\n- 3% of transaction amount for purchases made outside US\n- Applies to online purchases from foreign merchants\n- Some cards have no foreign transaction fee\nRequesting fee waiver:\n- Can request one-time courtesy waiver for late/returned payment fee\n- More likely granted if:\n  * First time occurrence\n  * Long history of on-time payments\n  * Account in good standing\n- Call customer service to request\n- Not guaranteed but often approved for good customers\nBalance transfer and cash advance fees typically cannot be waived""]",multi_source
+"""What should I do if I think my card was stolen while traveling?""","[Source: lost stolen cards]
+Reporting Lost or Stolen Cards Immediately
+Time is critical when card is lost or stolen
+Report immediately to prevent unauthorized charges:
+Online: Log in to online banking and report card lost/stolen
+Mobile app: Select card and choose Lock/Report Lost
+Phone: Call number on back of card (available 24/7)
+- If no card access, call main customer service line
+- Have account information ready for verification
+What happens when you report:
+- Card is immediately deactivated
+- Cannot be used for any transactions
+- Automatic fraud monitoring activated
+- New card ordered and shipped
+- Account reviewed for suspicious activity
+Tell customer: You are not liable for fraudulent charges after reporting
+Report as soon as you notice card is missing
+Don't wait to see if fraudulent charges occur
+Quick reporting minimizes potential fraud and hassle","Lost or stolen cards should be reported immediately through online banking, mobile app, or phone (available 24/7) to prevent unauthorized charges. A temporary card lock can be used when a card is misplaced but might be found, while permanent deactivation is used when the card is truly lost or stolen. When a card is permanently deactivated, a new card is issued automatically with expedited shipping available (2-3 business days), and virtual card numbers can be generated instantly through the mobile app. Customers are not liable for fraudulent charges after reporting and emergency cash advances are available at any branch location.","[Source: lost stolen cards]
+[""Reporting Lost or Stolen Cards Immediately\nTime is critical when card is lost or stolen\nReport immediately to prevent unauthorized charges:\nOnline: Log in to online banking and report card lost/stolen\nMobile app: Select card and choose Lock/Report Lost\nPhone: Call number on back of card (available 24/7)\n- If no card access, call main customer service line\n- Have account information ready for verification\nWhat happens when you report:\n- Card is immediately deactivated\n- Cannot be used for any transactions\n- Automatic fraud monitoring activated\n- New card ordered and shipped\n- Account reviewed for suspicious activity\nTell customer: You are not liable for fraudulent charges after reporting\nReport as soon as you notice card is missing\nDon't wait to see if fraudulent charges occur\nQuick reporting minimizes potential fraud and hassle""]",multi_source

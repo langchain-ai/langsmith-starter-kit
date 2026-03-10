@@ -1,0 +1,169 @@
+name,author,to,subject,email_thread,triage_output,response_criteria,expected_tool_calls
+email_1,"Alice Smith <alice.smith@company.com>","Robert Xu <Robert@company.com>","Quick question about API documentation","Hi Robert,
+
+I was reviewing the API documentation for the new authentication service and noticed a few endpoints seem to be missing from the specs. Could you help clarify if this was intentional or if we should update the docs?
+
+Specifically, I'm looking at:
+- /auth/refresh
+- /auth/validate
+
+Thanks!
+Alice",respond,"• Send email with write_email tool call to acknowledge the question and confirm it will be investigated",write_email|done
+email_2,"Marketing Team <marketing@company.com>","Robert Xu <Robert@company.com>","New Company Newsletter Available","Hello Robert,
+
+The latest edition of our company newsletter is now available on the intranet. This month features articles on our Q2 results, upcoming team building activities, and employee spotlights.
+
+Check it out when you have a chance!
+
+Best regards,
+Marketing Team",ignore,"• No response needed
+• Ensure this is ignored",
+email_3,"System Admin <sysadmin@company.com>","Robert Xu <Robert@company.com>","Scheduled maintenance - database downtime","Hi Robert,
+
+This is a reminder that we'll be performing scheduled maintenance on the production database tonight from 2AM to 4AM EST. During this time, all database services will be unavailable.
+
+Please plan your work accordingly and ensure no critical deployments are scheduled during this window.
+
+Thanks,
+System Admin Team",notify,"• No response needed
+• Ensure the user is notified",
+email_4,"Project Manager <pm@client.com>","Robert Xu <Robert@company.com>","Tax season let's schedule call","Robert,
+
+It's tax season again, and I wanted to schedule a call to discuss your tax planning strategies for this year. I have some suggestions that could potentially save you money.
+
+Are you available sometime next week? Tuesday or Thursday afternoon would work best for me, for about 45 minutes.
+
+Regards,
+Project Manager",respond,"• Check calendar availability for Tuesday or Thursday afternoon next week with check_calendar_availability tool call
+• Confirm availability for a 45-minute meeting
+• Send calendar invite with schedule_meeting tool call
+• Send email with write_email tool call to acknowledge tax planning request and notifying that a meeting has been scheduled",check_calendar_availability|schedule_meeting|write_email|done
+email_5,"HR Department <hr@company.com>","Robert Xu <Robert@company.com>","Reminder: Submit your expense reports","Hello Robert,
+
+This is a friendly reminder that all expense reports for the previous month need to be submitted by this Friday. Please make sure to include all receipts and proper documentation.
+
+If you have any questions about the submission process, feel free to reach out to the HR team.
+
+Best regards,
+HR Department",notify,"• No response needed
+• Ensure the user is notified",
+email_6,"Conference Organizer <events@techconf.com>","Robert Xu <Robert@company.com>","Do you want to attend this conference?","Hi Robert,
+
+We're reaching out to invite you to TechConf 2025, happening May 15-17 in San Francisco.
+
+The conference features keynote speakers from major tech companies, workshops on AI and ML, and great networking opportunities. Early bird registration is available until April 30th.
+
+Would you be interested in attending? We can also arrange for group discounts if other team members want to join.
+
+Best regards,
+Conference Organizers",respond,"• Express interest in attending TechConf 2025
+• Ask specific questions about AI/ML workshops
+• Inquire about group discount details
+• Send email with write_email tool call to express interest in attending TechConf 2025, ask specific questions about AI/ML workshops, and inquire about group discount details",write_email|done
+email_7,"Sarah Johnson <sarah.j@partner.com>","Robert Xu <Robert@company.com>","Can you review these docs before submission?","Robert,
+
+I've attached the final version of our proposal for the Henderson project. Could you please review the technical specifications section (pages 15-20) before we submit it to the client on Friday?
+
+Your expertise would really help ensure we've covered all the necessary details.
+
+Thanks in advance,
+Sarah",respond,"• Explicitly agree to review the technical specifications
+• Acknowledge Friday deadline
+• Send email with write_email tool call to explicitly agree to review the technical specifications and acknowledge Friday deadline",write_email|done
+email_8,"Community Pool <info@cityrecreation.org>","Robert Xu <Robert@company.com>","Sign up daughter for swimming class","Dear Robert,
+
+Summer swimming registration is now open! Based on your daughter's participation last year, we wanted to let you know that intermediate level classes are available on Mondays and Wednesdays at 4PM or Tuesdays and Thursdays at 5PM.
+
+Classes begin June 1st and run for 8 weeks. Space is limited, so early registration is recommended.
+
+Please let us know if you'd like to reserve a spot.
+
+Regards,
+City Recreation Department",respond,"• Send email with write_email tool call to express interest in registering daughter for swimming class",write_email|done
+email_9,"GitHub <notifications@github.com>","Robert Xu <Robert@company.com>","PR #42: Comment from alex-dev","Hey there!
+
+alex-dev commented on your pull request #42 in langchain-ai/project:
+
+> I've reviewed the changes and everything looks good. Just one small suggestion for the error handling in auth_controller.py. Maybe we should add a timeout parameter to prevent hanging requests?
+
+View the comment: https://github.com/langchain-ai/project/pull/42#comment-12345
+
+---
+You're receiving this because you authored the thread.
+Reply to this email directly, or view it on GitHub",notify,"• No response needed
+• Ensure the user is notified",
+email_10,"Team Lead <teamlead@company.com>","Robert Xu <Robert@company.com>","Quarterly planning meeting","Hi Robert,
+
+It's time for our quarterly planning session. I'd like to schedule a 90-minute meeting next week to discuss our roadmap for Q3.
+
+Could you let me know your availability for Monday or Wednesday? Ideally sometime between 10AM and 3PM.
+
+Looking forward to your input on the new feature priorities.
+
+Best,
+Team Lead",respond,"• Check calendar for 90-minute meeting availability for Monday or Wednesday with check_calendar_availability tool call
+• Send email acknowledging the request and providing availability with write_email tool call",check_calendar_availability|write_email|done
+email_11,"AWS Monitoring <no-reply@aws.amazon.com>","Robert Xu <Robert@company.com>","System admin alert: Instance CPU utilization exceeds threshold","ALERT: High CPU Utilization
+
+The following EC2 instance has exceeded the CPU utilization threshold of 90% for more than 15 minutes:
+
+Instance ID: i-0b2d3e4f5a6b7c8d9
+Region: us-west-2
+Current utilization: 95.3%
+
+This message is automatically generated. Please do not reply.",notify,"• No response needed
+• Ensure the user is notified",
+email_12,"Client Success <success@vendor.com>","Robert Xu <Robert@company.com>","Your subscription will renew automatically","Hello Robert,
+
+This is a friendly reminder that your annual subscription to our Developer Pro plan will automatically renew on 04/15/2025.
+
+Your payment method ending in **** 4567 will be charged $1,499.00.
+
+If you would like to make any changes to your subscription, please visit your account settings or contact our support team before the renewal date.
+
+Thank you for your continued business!
+
+Client Success Team",notify,"• No response needed
+• Ensure the user is notified",
+email_13,"Dr. Roberts <droberts@medical.org>","Robert Xu <Robert@company.com>","Annual checkup reminder","Hello Robert,
+
+This is a reminder that it's time for your annual checkup. Our records show that your last visit was approximately one year ago.
+
+Please call our office at (555) 123-4567 to schedule an appointment at your earliest convenience.
+
+Best regards,
+Dr. Roberts' Office",respond,"• Acknowledge annual checkup reminder
+• Send email with write_email tool call to acknowledge annual checkup reminder",write_email|done
+email_14,"Social Media Platform <notifications@social.com>","Robert Xu <Robert@company.com>","5 people liked your post","Hi Robert,
+
+5 people liked your recent post about ""Machine Learning Techniques for NLP""
+
+See who liked your post and continue the conversation!
+
+[View activity]
+
+To unsubscribe from these notifications, adjust your settings here.",ignore,"• No response needed
+• Ensure this is ignored",
+email_15,"Project Team <project@company.com>","Robert Xu <Robert@company.com>","Joint presentation next month","Hi Robert,
+
+The leadership team has asked us to prepare a joint presentation on our recent project successes for the all-hands meeting next month.
+
+I've started putting together some slides and would appreciate your input on the technical architecture section. Could we schedule about 60 minutes sometime in the next week to collaborate on this?
+
+I'm generally free on Tuesdays and Thursdays.
+
+Thanks,
+Project Team",respond,"• Check calendar for 60-minute meeting availability for Tuesday or Thursday with check_calendar_availability tool call
+• Send calendar invite with schedule_meeting tool call
+• Send email agreeing to collaborate on the joint presentation and notifying that a meeting has been scheduled with write_email tool call",check_calendar_availability|schedule_meeting|write_email|done
+email_16,"Marketing Team <marketing@openai.com>","Robert Xu <Robert@company.com>","Newsletter: New Model from OpenAI","Hi Robert,
+
+We're excited to announce that we've released a new model from OpenAI!
+
+It's called ""GPT-5"" and it's a successor to GPT-4.
+
+It's available now and you can find more information [here](https://openai.com/gpt-5).
+
+Thanks,
+Marketing Team",notify,"• No response needed
+• Ensure the user is notified",

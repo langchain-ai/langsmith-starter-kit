@@ -1,0 +1,201 @@
+id,question,in_scope,relevance,category,source,original_question
+q_0001,I want to close my credit card account — how do I go about doing that?,yes,in_scope,in_scope,ground_truth,closure
+q_0002,Is it possible to view my account balance at an ATM?,no,irrelevant_match,atm_services,generated,Can I check my balance at an ATM?
+q_0003,What's the best way to report a lost debit card to the bank?,no,irrelevant_match,debit_cards,generated,How do I report a lost debit card?
+q_0004,Can I receive email notifications when deposits are made to my account?,no,irrelevant_match,account_alerts,generated,Can I get email alerts for deposits?
+q_0005,What services can I access at this branch?,no,irrelevant_match,branch_services,generated,What services are available at the branch?
+q_0006,Can you tell me which branch is nearest to my location?,no,irrelevant_match,branch_services,generated,Where's the closest branch to me?
+q_0007,"I'm shopping for a new credit card and trying to compare perks. Can you explain how your rewards program works—how I earn points or cash back, where I can redeem them, and whether there are limits or expiration dates?",yes,in_scope,in_scope,synthetic,rewards programs
+q_0008,Do you provide tax advisory services specifically for high-net-worth individuals?,no,out_of_scope,tax_services,generated,Do you offer tax advisory services for high net worth individuals?
+q_0009,I've decided to close my credit card—can you walk me through the steps to formally shut down the account and tell me what I should do before it’s closed?,yes,in_scope,in_scope,ground_truth,closure
+q_0010,What's the process for resetting my mobile banking password?,no,irrelevant_match,mobile_app,generated,How do I reset my mobile banking password?
+q_0011,Do you provide trust services to assist with estate planning?,no,out_of_scope,estate_planning,generated,Do you offer trust services for estate planning?
+q_0012,How much are the closing costs on an FHA refinance?,no,out_of_scope,mortgage_loans,generated,What are the closing costs for an FHA refinance?
+q_0013,"I noticed interest charges on my recent statement—can you explain what those interest fees mean, how they're calculated, and when they're applied?",yes,in_scope,in_scope,synthetic,interest fees
+q_0014,I'm planning to close my account with you — what steps do I need to take to cancel it and finalize the closure?,yes,in_scope,in_scope,ground_truth,account closure
+q_0015,I'm thinking about closing my account—can you explain the steps I need to take to shut it down and whether there are any fees or conditions I should be aware of beforehand?,yes,in_scope,in_scope,ground_truth,account closure
+q_0016,I'm reviewing my billing statement and need some clarification — how do I submit a statement inquiry or get help with questions about my account statement?,yes,in_scope,in_scope,synthetic,statement inquiries
+q_0017,Do you know where the closest ATM is located?,no,irrelevant_match,atm_services,generated,Where's the nearest ATM location?
+q_0018,Do you provide reverse mortgage loans for senior homeowners?,no,out_of_scope,mortgage_loans,generated,Do you offer reverse mortgages for seniors?
+q_0019,How do I go about closing my credit card account?,yes,in_scope,in_scope,ground_truth,closure
+q_0020,How can I avoid paying fees when I use an ATM?,no,irrelevant_match,atm_services,generated,How do I avoid ATM fees?
+q_0021,"What fraud protection features do you provide to protect my card and account, and how do I activate them or report suspected unauthorized activity?",yes,in_scope,in_scope,synthetic,fraud protection
+q_0022,What interest rate would I be charged for a $500K SBA loan?,no,out_of_scope,business_banking,generated,What's the interest rate on a $500K SBA loan?
+q_0023,How much are the premiums for disability income insurance?,no,out_of_scope,insurance_products,generated,What are the premium rates for disability income insurance?
+q_0024,I've been hearing about card skimming and identity theft lately — what safeguards do you offer to protect my card/account from fraud and unauthorized charges?,yes,in_scope,in_scope,synthetic,fraud protection
+q_0025,Can you process SEPA transfers for payments within Europe?,no,out_of_scope,international_banking,generated,Do you support SEPA transfers for European payments?
+q_0026,How do I go about closing my credit card account?,yes,in_scope,in_scope,ground_truth,closure
+q_0027,I'm looking to close my account — what steps do I need to follow to complete the closure?,yes,in_scope,in_scope,ground_truth,account closure
+q_0028,What does a business need to qualify for a line of credit greater than $1 million?,no,out_of_scope,business_banking,generated,What are the requirements for a business line of credit over $1M?
+q_0029,I'm planning to close my credit card account—what's the process to cancel it and what steps do I need to take to ensure it's properly closed?,yes,in_scope,in_scope,ground_truth,closure
+q_0030,I want to terminate my credit card account—what’s the process for closing it?,yes,in_scope,in_scope,ground_truth,closure
+q_0031,Is pre-approval available for a construction loan?,no,out_of_scope,mortgage_loans,generated,Can I get pre-approved for a construction loan?
+q_0032,"How do balance transfers work, and what steps do I need to take to move a balance from another card?",yes,in_scope,in_scope,synthetic,balance transfers
+q_0033,I'm ready to cancel my credit card—what steps do I need to take to close the account?,yes,in_scope,in_scope,ground_truth,closure
+q_0034,Can I stop a wire transfer once it’s already been sent?,no,irrelevant_match,wire_transfers,generated,Can I cancel a wire transfer after it's sent?
+q_0035,I'm consolidating my finances and want to close this account—what steps do I need to take to shut it down?,yes,in_scope,in_scope,ground_truth,account closure
+q_0036,"I'm planning to close my credit card account—what's the process, and are there any fees or outstanding-balance rules I should be aware of?",yes,in_scope,in_scope,ground_truth,closure
+q_0037,I'm comparing cards and rewards are a big factor for me. Can you explain the loyalty and rewards programs you offer?,yes,in_scope,in_scope,synthetic,rewards programs
+q_0038,Would my e-commerce business qualify for a merchant account?,no,out_of_scope,business_banking,generated,Can I get a merchant account for my e-commerce business?
+q_0039,What should I do to report a lost or stolen card and protect my account?,yes,in_scope,in_scope,synthetic,lost stolen cards
+q_0040,I'm thinking of shutting down my credit card—how do I go about closing the account and are there any steps I should take first?,yes,in_scope,in_scope,ground_truth,closure
+q_0041,"What's the process for closing my account, and are there any fees or specific steps I need to follow?",yes,in_scope,in_scope,ground_truth,account closure
+q_0042,Does the mobile app let me pay my bills?,no,irrelevant_match,mobile_app,generated,Can I pay bills through the mobile app?
+q_0043,Can I link my business checking account to QuickBooks?,no,out_of_scope,business_banking,generated,Can I integrate QuickBooks with my business checking account?
+q_0044,Do you provide trust services to assist with estate planning?,no,out_of_scope,estate_planning,generated,Do you offer trust services for estate planning?
+q_0045,I’m looking to close my account—what’s the process to deactivate it and what steps do I need to take to complete the closure?,yes,in_scope,in_scope,ground_truth,account closure
+q_0046,I'm wrapping up my accounts and want to close my credit card—what steps do I need to take to finalize the closure?,yes,in_scope,in_scope,ground_truth,closure
+q_0047,Could I add an umbrella liability policy on top of my current coverage?,no,out_of_scope,insurance_products,generated,Can I add an umbrella liability policy to my existing coverage?
+q_0048,I've been using my card responsibly and would like a higher available limit—how do I request a credit limit increase?,yes,in_scope,in_scope,synthetic,credit limit increase
+q_0049,I'd like to close my credit card account—what steps do I need to take?,yes,in_scope,in_scope,ground_truth,closure
+q_0050,"What documents are required to send more than $10,000 in an international remittance?",no,out_of_scope,international_banking,generated,What documentation is needed for cross-border remittances over $10K?
+q_0051,I need to close my credit card account — how do I go about initiating and completing the closure?,yes,in_scope,in_scope,ground_truth,closure
+q_0052,Reworded question: How can I update my notification settings?,no,irrelevant_match,account_alerts,generated,How do I change my alert preferences?
+q_0053,How do I go about closing my credit card account?,yes,in_scope,in_scope,ground_truth,closure
+q_0054,Can I view my account balance at an ATM?,no,irrelevant_match,atm_services,generated,Can I check my balance at an ATM?
+q_0055,Is there an Android version of the mobile app?,no,irrelevant_match,mobile_app,generated,Is the mobile app available for Android?
+q_0056,Am I able to secure pre-approval for a construction loan?,no,out_of_scope,mortgage_loans,generated,Can I get pre-approved for a construction loan?
+q_0057,Which income-driven repayment plans are available?,no,out_of_scope,student_loans,generated,What's the income-driven repayment plan options?
+q_0058,I'm consolidating my banking and want to close this account—what's the process to do that?,yes,in_scope,in_scope,ground_truth,account closure
+q_0059,Is it possible to open an account at any branch?,no,irrelevant_match,branch_services,generated,Can I open an account at any branch?
+q_0060,How can I reset the password for my mobile banking app?,no,irrelevant_match,mobile_app,generated,How do I reset my mobile banking password?
+q_0061,What’s the process for creating a living trust with your wealth management team?,no,out_of_scope,estate_planning,generated,How do I set up a living trust with your wealth management team?
+q_0062,How should I report for tax purposes the cryptocurrency transactions made using my card?,no,out_of_scope,cryptocurrency,generated,What are the tax reporting requirements for crypto transactions on my card?
+q_0063,Can you walk me through how payment processing works?,yes,in_scope,in_scope,synthetic,payment processing
+q_0064,What are the expense ratios for the index funds you offer?,no,out_of_scope,investment_products,generated,What's the expense ratio on your index fund options?
+q_0065,What's the maximum I can withdraw from my debit card each day?,no,irrelevant_match,debit_cards,generated,What's the daily withdrawal limit on my debit card?
+q_0066,Will my debit card work when I travel abroad?,no,irrelevant_match,debit_cards,generated,Can I use my debit card internationally?
+q_0067,How can I steer clear of ATM fees?,no,irrelevant_match,atm_services,generated,How do I avoid ATM fees?
+q_0068,Do all ATMs accept cash deposits?,no,irrelevant_match,atm_services,generated,Can I deposit cash at any ATM?
+q_0069,I'm planning to close my credit card account and want to make sure I do it correctly — what steps do I need to follow to shut it down?,yes,in_scope,in_scope,ground_truth,account closure
+q_0070,Am I eligible for preapproval on a car loan?,no,out_of_scope,auto_loans,generated,Can I get pre-approved for an auto loan?
+q_0071,How much are the SWIFT fees for sending money to Asia-Pacific countries?,no,out_of_scope,international_banking,generated,What are the SWIFT transfer fees to Asia-Pacific countries?
+q_0072,Do you provide long-term care insurance to your policyholders?,no,out_of_scope,insurance_products,generated,Do you offer long-term care insurance for policyholders?
+q_0073,"I want to close my credit card account — what steps do I need to take, and will there be any fees, penalties, or outstanding-balance conditions to satisfy before it can be closed?",yes,in_scope,in_scope,ground_truth,closure
+q_0074,How much can I expect to pay in closing costs for an FHA refinance?,no,out_of_scope,mortgage_loans,generated,What are the closing costs for an FHA refinance?
+q_0075,How can I update my alert preferences?,no,irrelevant_match,account_alerts,generated,How do I change my alert preferences?
+q_0076,Can you walk me through how payments are processed?,yes,in_scope,in_scope,synthetic,payment processing
+q_0077,There's a chargeback on my account from a recent purchase that I believe is incorrect — how do I go about disputing it?,yes,in_scope,in_scope,synthetic,disputes chargebacks
+q_0078,Can I request new checks using my online banking account?,no,irrelevant_match,checks_deposits,generated,Can I order new checks through online banking?
+q_0079,Do you provide long-term care coverage to policyholders?,no,out_of_scope,insurance_products,generated,Do you offer long-term care insurance for policyholders?
+q_0080,What are the expense ratios for your index fund options?,no,out_of_scope,investment_products,generated,What's the expense ratio on your index fund options?
+q_0081,What steps can I take to avoid being charged ATM fees?,no,irrelevant_match,atm_services,generated,How do I avoid ATM fees?
+q_0082,Is it possible to secure pre-approval for a loan to finance a construction project?,no,out_of_scope,mortgage_loans,generated,Can I get pre-approved for a construction loan?
+q_0083,I'm consolidating my finances and plan to close this account. Could you walk me through the steps to terminate it?,yes,in_scope,in_scope,ground_truth,account closure
+q_0084,I misplaced my card and suspect it was stolen—what should I do to report it and protect my account?,yes,in_scope,in_scope,synthetic,lost stolen cards
+q_0085,Can I combine my homeowners and auto insurance with your bank?,no,out_of_scope,insurance_products,generated,Can I bundle homeowners and auto insurance through your bank?
+q_0086,How much does it cost to use an ATM with my debit card?,no,irrelevant_match,debit_cards,generated,What are the ATM fees for my debit card?
+q_0087,"I want to close my credit card account—what steps do I need to take to have it closed, and are there any fees or outstanding obligations I should settle first?",yes,in_scope,in_scope,ground_truth,closure
+q_0088,What does a business need to qualify for a line of credit over $1 million?,no,out_of_scope,business_banking,generated,What are the requirements for a business line of credit over $1M?
+q_0089,Can you tell me where the closest ATM is?,no,irrelevant_match,atm_services,generated,Where's the nearest ATM location?
+q_0090,How do I close my credit card account?,yes,in_scope,in_scope,ground_truth,closure
+q_0091,Can you tell me where the closest ATM is?,no,irrelevant_match,atm_services,generated,Where's the nearest ATM location?
+q_0092,How can I request forbearance on my student loans?,no,out_of_scope,student_loans,generated,How do I apply for student loan forbearance?
+q_0093,I want to close my account — what’s the process to cancel it?,yes,in_scope,in_scope,ground_truth,account closure
+q_0094,Can I connect a Web3 wallet to my account?,no,out_of_scope,cryptocurrency,generated,Do you support Web3 wallet integration with my account?
+q_0095,What margin rates apply to options trading at your brokerage?,no,out_of_scope,investment_products,generated,What are the margin rates for options trading on your brokerage?
+q_0096,I'm looking to move the debt from one credit card to another—how do balance transfers work and what do I need to do to initiate one?,yes,in_scope,in_scope,synthetic,balance transfers
+q_0097,I’m looking to close my credit card account—what steps do I need to take to cancel it?,yes,in_scope,in_scope,ground_truth,closure
+q_0098,I'm consolidating my finances and want to close this account. How do I go about shutting it down?,yes,in_scope,in_scope,ground_truth,account closure
+q_0099,"My new card just arrived—what's the process to activate it, and can I do that via the mobile app, by phone, or on your website?",yes,in_scope,in_scope,synthetic,card activation
+q_0100,I'm looking to cancel my credit card—what steps do I need to take to close the account?,yes,in_scope,in_scope,ground_truth,closure
+q_0101,Can I exchange foreign currency at your offshore branches?,no,out_of_scope,international_banking,generated,Can I get foreign currency exchange at your offshore branches?
+q_0102,What steps do I need to take to obtain a tax transcript for my business?,no,out_of_scope,tax_services,generated,How do I get a tax transcript for my business?
+q_0103,How much interest does my savings account earn?,no,irrelevant_match,savings_accounts,generated,What's the interest rate on my savings account?
+q_0104,Can I view my account balance at an ATM?,no,irrelevant_match,atm_services,generated,Can I check my balance at an ATM?
+q_0105,How do I close my credit card account?,yes,in_scope,in_scope,ground_truth,closure
+q_0106,Which branch is nearest to my current location?,no,irrelevant_match,branch_services,generated,Where's the closest branch to me?
+q_0107,How much interest does my savings account earn?,no,irrelevant_match,savings_accounts,generated,What's the interest rate on my savings account?
+q_0108,Is there an Android version of the mobile app?,no,irrelevant_match,mobile_app,generated,Is the mobile app available for Android?
+q_0109,Are Parent PLUS loans available through your bank?,no,out_of_scope,student_loans,generated,Do you offer parent PLUS loans?
+q_0110,Reworded question: Can I move money from my savings account into my checking account?,no,irrelevant_match,savings_accounts,generated,Can I transfer money from savings to checking?
+q_0111,Is it possible to add an umbrella liability policy to my current coverage?,no,out_of_scope,insurance_products,generated,Can I add an umbrella liability policy to my existing coverage?
+q_0112,I want to close my credit card account—what's the process for doing that?,yes,in_scope,in_scope,ground_truth,closure
+q_0113,What's the process for closing or canceling my account?,yes,in_scope,in_scope,ground_truth,account closure
+q_0114,I'm consolidating my finances and need to close my credit card—what's the process to cancel the account?,yes,in_scope,in_scope,ground_truth,closure
+q_0115,How can I reset the password for my mobile banking app?,no,irrelevant_match,mobile_app,generated,How do I reset my mobile banking password?
+q_0116,I just received my new card in the mail—how do I activate it so I can start using it?,yes,in_scope,in_scope,synthetic,card activation
+q_0117,Can you walk me through how you handle payment transactions?,yes,in_scope,in_scope,synthetic,payment processing
+q_0118,I'm looking to close my credit card account since I no longer need it—how do I go about closing it and what steps are required to finalize the account closure?,yes,in_scope,in_scope,ground_truth,account closure
+q_0119,How can I enable biometric sign-in for the app?,no,irrelevant_match,mobile_app,generated,How do I enable biometric login on the app?
+q_0120,I'm looking to close my account; can you explain the process I need to follow to do that?,yes,in_scope,in_scope,ground_truth,account closure
+q_0121,Do I need to schedule an appointment before visiting a branch?,no,irrelevant_match,branch_services,generated,Do I need an appointment to visit a branch?
+q_0122,Reworded question: What services can I access at this branch?,no,irrelevant_match,branch_services,generated,What services are available at the branch?
+q_0123,Reworded question: How much do premiums for disability income insurance typically run?,no,out_of_scope,insurance_products,generated,What are the premium rates for disability income insurance?
+q_0124,Can I open a Roth IRA and set up recurring automatic contributions?,no,out_of_scope,investment_products,generated,Can I set up a Roth IRA with automatic contributions?
+q_0125,I noticed interest fees on my credit card statement this month after making only a partial payment. Can you explain how those finance charges are calculated and under what conditions they get applied?,yes,in_scope,in_scope,synthetic,interest fees
+q_0126,What services can I access at this branch?,no,irrelevant_match,branch_services,generated,What services are available at the branch?
+q_0127,What do companies need to qualify for a business line of credit over $1 million?,no,out_of_scope,business_banking,generated,What are the requirements for a business line of credit over $1M?
+q_0128,Is it possible to stop a wire transfer after it’s already been sent?,no,irrelevant_match,wire_transfers,generated,Can I cancel a wire transfer after it's sent?
+q_0129,"Do I need to report cryptocurrency transactions charged to my card for tax purposes, and if so, how should I do that?",no,out_of_scope,cryptocurrency,generated,What are the tax reporting requirements for crypto transactions on my card?
+q_0130,I'm consolidating my finances and want to shut this account down—what's the procedure to close it?,yes,in_scope,in_scope,ground_truth,account closure
+q_0131,"What documents will I need to send or receive a cross-border remittance over $10,000?",no,out_of_scope,international_banking,generated,What documentation is needed for cross-border remittances over $10K?
+q_0132,I'm planning to switch banks and need to close this account. What steps do I need to follow to finalize the closure?,yes,in_scope,in_scope,ground_truth,account closure
+q_0133,How much can I withdraw from my debit card in a single day?,no,irrelevant_match,debit_cards,generated,What's the daily withdrawal limit on my debit card?
+q_0134,What does the bank charge for sending domestic wire transfers?,no,irrelevant_match,wire_transfers,generated,What are the fees for domestic wire transfers?
+q_0135,What's the minimum amount required to keep in a savings account?,no,irrelevant_match,savings_accounts,generated,What's the minimum balance for a savings account?
+q_0136,What types of rewards or loyalty programs do you offer to cardholders?,yes,in_scope,in_scope,synthetic,rewards programs
+q_0137,"I've been using my card responsibly and need more available credit for upcoming expenses. How do I request a credit limit increase, and what do you consider when approving one?",yes,in_scope,in_scope,synthetic,credit limit increase
+q_0138,Can I use my credit card to stake Ethereum?,no,out_of_scope,cryptocurrency,generated,Can I stake Ethereum using funds from my credit card?
+q_0139,What steps should I take to set up a high-yield savings account?,no,irrelevant_match,savings_accounts,generated,How do I open a high-yield savings account?
+q_0140,I need to close my account — what steps do I need to take?,yes,in_scope,in_scope,ground_truth,account closure
+q_0141,I just received my new card — how do I go about activating it so it’s ready to use?,yes,in_scope,in_scope,synthetic,card activation
+q_0142,Can I connect a Web3 wallet to my account?,no,out_of_scope,cryptocurrency,generated,Do you support Web3 wallet integration with my account?
+q_0143,Can you help me navigate the probate administration process?,no,out_of_scope,estate_planning,generated,Can you help with probate administration?
+q_0144,I'm relocating abroad and won't need this card anymore — how do I go about closing my account?,yes,in_scope,in_scope,ground_truth,closure
+q_0145,"I've been hearing about card skimming and identity theft—what protections do you offer to prevent fraudulent charges on my account, and what happens if suspicious activity is detected?",yes,in_scope,in_scope,synthetic,fraud protection
+q_0146,I'm consolidating my finances and want to close this account—what steps do I need to take to complete the closure?,yes,in_scope,in_scope,ground_truth,account closure
+q_0147,I'm planning to close my account and want to make sure I do it correctly. What steps do I need to follow to have the account closed and are there any requirements or paperwork I should be aware of?,yes,in_scope,in_scope,ground_truth,account closure
+q_0148,How much death benefit do your whole life insurance policies provide?,no,out_of_scope,insurance_products,generated,What's the death benefit on your whole life insurance policies?
+q_0149,Is there an Android version of the mobile app?,no,irrelevant_match,mobile_app,generated,Is the mobile app available for Android?
+q_0150,I'm carrying a balance on another credit card and thinking about moving it to this account to simplify payments—how do balance transfers work and what do I need to do to start one?,yes,in_scope,in_scope,synthetic,balance transfers
+q_0151,Can I exchange foreign currency at your offshore branches?,no,out_of_scope,international_banking,generated,Can I get foreign currency exchange at your offshore branches?
+q_0152,How does your bank handle holds on large checks?,no,irrelevant_match,checks_deposits,generated,What's the hold policy for large checks?
+q_0153,Can I make cash deposits at any ATM?,no,irrelevant_match,atm_services,generated,Can I deposit cash at any ATM?
+q_0154,Can I arrange automatic deposits into a Roth IRA?,no,out_of_scope,investment_products,generated,Can I set up a Roth IRA with automatic contributions?
+q_0155,How much does a SWIFT transfer to countries in the Asia–Pacific region cost?,no,out_of_scope,international_banking,generated,What are the SWIFT transfer fees to Asia-Pacific countries?
+q_0156,What do you charge to administer an estate?,no,out_of_scope,estate_planning,generated,What are the fees for estate administration services?
+q_0157,I'm consolidating my finances and want to close this account — how do I go about shutting it down and what steps or documents will I need?,yes,in_scope,in_scope,ground_truth,account closure
+q_0158,When is your branch open?,no,irrelevant_match,branch_services,generated,What are your branch hours?
+q_0159,"I noticed an ""interest fee"" on my latest statement — can you explain what that charge means and how it's calculated?",yes,in_scope,in_scope,synthetic,interest fees
+q_0160,Can I stop a wire transfer after I’ve already sent it?,no,irrelevant_match,wire_transfers,generated,Can I cancel a wire transfer after it's sent?
+q_0161,I'm consolidating my finances and want to close this account—can you walk me through the steps to shut it down and let me know about any fees or outstanding balance requirements?,yes,in_scope,in_scope,ground_truth,account closure
+q_0162,"I want to close my credit card account—what’s the process to cancel or terminate it, and what steps do I need to take to ensure it’s fully closed?",yes,in_scope,in_scope,ground_truth,closure
+q_0163,How can I reset the password for my mobile banking app?,no,irrelevant_match,mobile_app,generated,How do I reset my mobile banking password?
+q_0164,I'd like to raise the spending limit on my credit card—what's the process to request an increase and what information will you require?,yes,in_scope,in_scope,synthetic,credit limit increase
+q_0165,I'm consolidating my finances and want to shut down this account—what steps do I need to take to close it?,yes,in_scope,in_scope,ground_truth,account closure
+q_0166,I’d like to close my credit card account — what steps do I need to take to complete the closure?,yes,in_scope,in_scope,ground_truth,closure
+q_0167,I'm planning to close my credit card account—what steps do I need to take?,yes,in_scope,in_scope,ground_truth,closure
+q_0168,What kinds of alerts can I set up for my account?,no,irrelevant_match,account_alerts,generated,What types of account alerts are available?
+q_0169,"What interest rate would I be charged on a $500,000 SBA loan?",no,out_of_scope,business_banking,generated,What's the interest rate on a $500K SBA loan?
+q_0170,What steps do I need to follow to close my account?,yes,in_scope,in_scope,ground_truth,account closure
+q_0171,Could you help me with administering a probate estate?,no,out_of_scope,estate_planning,generated,Can you help with probate administration?
+q_0172,Can I use my account to trade commodities futures?,no,out_of_scope,investment_products,generated,Can I invest in commodities futures through my account?
+q_0173,I see a charge on my statement I don't recognize — how do I contest the transaction and start a chargeback to get it reversed?,yes,in_scope,in_scope,synthetic,disputes chargebacks
+q_0174,How can I update my alert settings?,no,irrelevant_match,account_alerts,generated,How do I change my alert preferences?
+q_0175,What steps do I need to take to close my credit card account?,yes,in_scope,in_scope,ground_truth,closure
+q_0176,How much do you charge to handle estate administration?,no,out_of_scope,estate_planning,generated,What are the fees for estate administration services?
+q_0177,What’s the process for refinancing a car loan I already have?,no,out_of_scope,auto_loans,generated,How do I refinance my existing car loan?
+q_0178,How much do you charge for estate administration services?,no,out_of_scope,estate_planning,generated,What are the fees for estate administration services?
+q_0179,What interest rates are charged on federal student loans?,no,out_of_scope,student_loans,generated,What are the interest rates on federal student loans?
+q_0180,I'm consolidating my finances and want to close this account. How do I go about closing it?,yes,in_scope,in_scope,ground_truth,account closure
+q_0181,Is it possible to connect a Web3 wallet to my account?,no,out_of_scope,cryptocurrency,generated,Do you support Web3 wallet integration with my account?
+q_0182,Are Parent PLUS loans available through your institution?,no,out_of_scope,student_loans,generated,Do you offer parent PLUS loans?
+q_0183,How long does it usually take for a wire transfer to go through?,no,irrelevant_match,wire_transfers,generated,How long does a wire transfer take?
+q_0184,How long does it typically take for a deposited check to clear and the funds become available?,no,irrelevant_match,checks_deposits,generated,How long does it take for a check to clear?
+q_0185,I'm planning to move my banking elsewhere and need to close this account—what's the process to shut it down and finalize the closure?,yes,in_scope,in_scope,ground_truth,account closure
+q_0186,How can I enable notifications for when my account balance gets low?,no,irrelevant_match,account_alerts,generated,How do I set up low balance alerts?
+q_0187,How do I let the bank know my debit card is lost?,no,irrelevant_match,debit_cards,generated,How do I report a lost debit card?
+q_0188,I'm consolidating my finances and want to close this account. What steps do I need to follow to shut it down and is there anything I should watch out for during the process?,yes,in_scope,in_scope,ground_truth,account closure
+q_0189,Am I able to order new checks using my online banking?,no,irrelevant_match,checks_deposits,generated,Can I order new checks through online banking?
+q_0190,Can I request new checks through my bank’s online portal?,no,irrelevant_match,checks_deposits,generated,Can I order new checks through online banking?
+q_0191,How much do premiums for disability income insurance typically run?,no,out_of_scope,insurance_products,generated,What are the premium rates for disability income insurance?
+q_0192,How can I let the bank know I've lost my debit card?,no,irrelevant_match,debit_cards,generated,How do I report a lost debit card?
+q_0193,There's a charge on my card I don't recognize — how do I go about disputing the transaction and initiating a chargeback?,yes,in_scope,in_scope,synthetic,disputes chargebacks
+q_0194,What kinds of alerts can I set up for my account?,no,irrelevant_match,account_alerts,generated,What types of account alerts are available?
+q_0195,Could you help me file my taxes using your tax preparation service?,no,out_of_scope,tax_services,generated,Can you help me file my taxes through your tax preparation service?
+q_0196,What hours is your branch open?,no,irrelevant_match,branch_services,generated,What are your branch hours?
+q_0197,I just received my monthly statement and have a few things I need clarified—what's the best way to make inquiries about my statement and get help?,yes,in_scope,in_scope,synthetic,statement inquiries
+q_0198,Reworded question: Are foreign currency exchange services available at your offshore branches?,no,out_of_scope,international_banking,generated,Can I get foreign currency exchange at your offshore branches?
+q_0199,How can I report that I've lost my debit card?,no,irrelevant_match,debit_cards,generated,How do I report a lost debit card?
+q_0200,Is it possible to open an account at any branch?,no,irrelevant_match,branch_services,generated,Can I open an account at any branch?
