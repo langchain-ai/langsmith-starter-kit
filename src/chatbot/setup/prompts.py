@@ -8,17 +8,17 @@ from utils.prompts import load_prompt, build_schema
 
 class Helpfulness(BaseModel):
     helpfulness: bool = Field(description="Is the response helpful and accurately addresses the customer's question?")
-    explanation: str = Field(description="Reasoning for the helpfulness score")
+    comment: str = Field(description="Reasoning for the helpfulness score")
 
 
 class RagCitationQuality(BaseModel):
     rag_citation_quality: float = Field(description="Citation quality score from 0.0 to 1.0")
-    explanation: str = Field(description="Reasoning for the citation quality score")
+    comment: str = Field(description="Reasoning for the citation quality score")
 
 
 class AnswerCorrectness(BaseModel):
     answer_correctness: float = Field(description="Answer correctness score from 0.0 to 1.0")
-    explanation: str = Field(description="Reasoning for the answer correctness score")
+    comment: str = Field(description="Reasoning for the answer correctness score")
 
 
 def load_helpfulness_prompt():

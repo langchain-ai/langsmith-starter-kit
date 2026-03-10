@@ -28,21 +28,56 @@ def _run_email_assistant(inputs: dict) -> dict:
     return {"trajectory": _extract_tool_calls(result["messages"])}
 
 
-def _run_email_final_response(inputs: dict) -> dict:
-    """Run the assistant and return only the final text response.
-
-    The completeness and professionalism LLM judges receive this output.
-    Returning plain text (not the full messages list) avoids tool_call
-    content blocks that newer OpenAI API versions reject in LLM judge calls.
-    """
-    result = email_assistant.invoke(inputs, config={"thread_id": uuid.uuid4()})
-    for msg in reversed(result["messages"]):
+def _serialize_messages(messages: list) -> list:
+    """Convert LangGraph messages to a JSON-serializable list of dicts."""
+    result = []
+    for msg in messages:
+        msg_type = msg.get("type") if isinstance(msg, dict) else getattr(msg, "type", "")
         content = msg.get("content") if isinstance(msg, dict) else getattr(msg, "content", "")
         tool_calls = msg.get("tool_calls") if isinstance(msg, dict) else getattr(msg, "tool_calls", [])
-        msg_type = msg.get("type") if isinstance(msg, dict) else getattr(msg, "type", "")
-        if msg_type == "ai" and content and not tool_calls:
-            return {"output": content}
-    return {"output": ""}
+        entry = {"role": msg_type}
+        if content:
+            entry["content"] = content
+        if tool_calls:
+            entry["tool_calls"] = [
+                {
+                    "name": c.get("name") if isinstance(c, dict) else getattr(c, "name", ""),
+                    "args": c.get("args") if isinstance(c, dict) else getattr(c, "args", {}),
+                }
+                for c in tool_calls
+            ]
+        result.append(entry)
+    return result
+
+
+def _run_email_final_response(inputs: dict) -> dict:
+    """Run the assistant and return the full LangGraph state as output.
+
+    The LLM judges (completeness, professionalism) receive the full tool call
+    history via variable_mapping, so they can evaluate both the classification
+    decision and the quality of the written email. The email text is also
+    surfaced as a separate 'email' key for convenience.
+    """
+    result = email_assistant.invoke(inputs, config={"thread_id": uuid.uuid4()})
+    classification = result.get("classification_decision", "")
+    messages = result.get("messages", [])
+
+    email = ""
+    for msg in messages:
+        tool_calls = msg.get("tool_calls") if isinstance(msg, dict) else getattr(msg, "tool_calls", [])
+        for call in (tool_calls or []):
+            name = call.get("name") if isinstance(call, dict) else getattr(call, "name", "")
+            if name == "write_email":
+                args = call.get("args") if isinstance(call, dict) else getattr(call, "args", {})
+                email = f"Subject: {args.get('subject', '')}\n\n{args.get('content', '')}"
+
+    return {
+        "output": {
+            "classification": classification,
+            "messages": _serialize_messages(messages),
+        },
+        "email": email,
+    }
 
 
 def _evaluate_extra_steps(outputs: dict, reference_outputs: dict) -> dict:

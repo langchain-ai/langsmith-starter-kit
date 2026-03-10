@@ -145,9 +145,9 @@ def _push_eval_prompt(prompt_name: str, messages: List, eval_name: str, score_ty
         "type": "object",
         "properties": {
             eval_name: {"type": score_type, "description": f"Evaluator score for {eval_name}"},
-            "explanation": {"type": "string", "description": "Reasoning for the score"},
+            "comment": {"type": "string", "description": "Reasoning for the score"},
         },
-        "required": [eval_name, "explanation"],
+        "required": [eval_name, "comment"],
     }
     prompt = StructuredPrompt(messages=[tuple(m) for m in messages], schema_=schema)
     load_prompt(prompt_name, prompt, model=eval_model)
@@ -193,9 +193,11 @@ def _build_judge_body(
             "lc": 1, "type": "constructor",
             "id": ["langchain", "chat_models", "openai", "ChatOpenAI"],
             "kwargs": {
-                "temperature": 1, "top_p": 1,
+                "temperature": 1,
                 "presence_penalty": None, "frequency_penalty": None,
                 "model": "gpt-5-mini", "extra_headers": {},
+                "service_tier": "auto",
+                "use_responses_api": True,
                 "openai_api_key": {"id": ["OPENAI_API_KEY"], "lc": 1, "type": "secret"},
             },
         },
@@ -205,10 +207,12 @@ def _build_judge_body(
             "type": "object",
             "properties": {
                 name: {"type": score_type, "description": f"Evaluator score for {name}"},
-                "explanation": {"type": "string", "description": "Reasoning for the score"},
+                "comment": {"type": "string", "description": "Reasoning for the score"},
             },
-            "required": [name, "explanation"],
+            "required": [name, "comment"],
+            "strict": True,
         },
+        "template_format": "mustache",
         "variable_mapping": {"input": "input", "output": "output", "reference": "referenceOutput"},
     }
     if isinstance(prompt_or_ref, list):
@@ -219,6 +223,7 @@ def _build_judge_body(
     filter_key = "dataset_id" if target_type == "dataset" else "session_id"
     return {
         "display_name": name,
+        "evaluator_version": 3,
         filter_key: target_id,
         "sampling_rate": sample_rate,
         "is_enabled": True,

@@ -14,4 +14,4 @@ model = init_chat_model("openai:gpt-4.1-mini", temperature=0)
 # Override with a ChatOpenAI-compatible instance to use a custom or internal endpoint.
 # Example: eval_model = ChatOpenAI(base_url="https://my-proxy/v1", model="gpt-4.1-mini")
 from langchain_openai import ChatOpenAI as _ChatOpenAI
-eval_model = _ChatOpenAI(model="gpt-5-mini", temperature=0)
+eval_model = _ChatOpenAI(model="gpt-5-mini", temperature=0, use_responses_api=True)
