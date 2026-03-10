@@ -186,7 +186,7 @@ Please grade the following example according to the above instructions:
         messages=[("system", system), ("human", human)],
         schema_=build_schema(Correctness, "correctness"),
     )
-    return load_prompt("email-agent-next-action-eval", prompt | model)
+    return load_prompt("email-agent-next-action-eval", prompt)
 
 
 class Completeness(BaseModel):
@@ -223,7 +223,7 @@ Please grade the following example according to the above instructions:
         messages=[("system", system), ("human", human)],
         schema_=build_schema(Completeness, "completeness"),
     )
-    return load_prompt("email-agent-final-response-eval", prompt | model)
+    return load_prompt("email-agent-final-response-eval", prompt)
 
 
 class Professionalism(BaseModel):
@@ -256,7 +256,7 @@ Please grade the following example according to the above instructions:
         messages=[("system", system), ("human", human)],
         schema_=build_schema(Professionalism, "professionalism"),
     )
-    return load_prompt("email-agent-professionalism-eval", prompt | model)
+    return load_prompt("email-agent-professionalism-eval", prompt)
 
 
 # ---------------------------------------------------------------------------

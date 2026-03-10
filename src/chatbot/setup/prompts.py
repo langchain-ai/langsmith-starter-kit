@@ -2,7 +2,6 @@
 from pydantic import BaseModel, Field
 from langchain_core.prompts.structured import StructuredPrompt
 
-from src.model import model
 from utils.prompts import load_prompt, build_schema
 
 
@@ -48,7 +47,7 @@ Score True if the response is genuinely helpful and fully addresses the customer
         messages=[("system", system), ("human", human)],
         schema_=build_schema(Helpfulness, "helpfulness"),
     )
-    return load_prompt("finance-qa-helpfulness-eval", prompt | model)
+    return load_prompt("finance-qa-helpfulness-eval", prompt)
 
 
 def load_rag_citation_prompt():
@@ -80,7 +79,7 @@ Provide a rag_citation_quality score from 0.0 to 1.0."""
         messages=[("system", system), ("human", human)],
         schema_=build_schema(RagCitationQuality, "rag_citation_quality"),
     )
-    return load_prompt("finance-qa-rag-citation-eval", prompt | model)
+    return load_prompt("finance-qa-rag-citation-eval", prompt)
 
 
 def load_answer_correctness_prompt():
@@ -107,7 +106,7 @@ Provide an answer_correctness score from 0.0 to 1.0."""
         messages=[("system", system), ("human", human)],
         schema_=build_schema(AnswerCorrectness, "answer_correctness"),
     )
-    return load_prompt("finance-qa-answer-correctness-eval", prompt | model)
+    return load_prompt("finance-qa-answer-correctness-eval", prompt)
 
 
 def load_all_prompts() -> dict:
