@@ -2,7 +2,7 @@ from langgraph.prebuilt import create_react_agent
 from dotenv import load_dotenv
 
 from src.model import model
-from src.chatbot.agent.tools import search_kb_tool, get_topic_details, list_topics
+from src.finance_qa.agent.tools import search_kb_tool, get_topic_details, list_topics
 
 load_dotenv(".env")
 

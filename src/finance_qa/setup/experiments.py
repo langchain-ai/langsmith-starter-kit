@@ -1,6 +1,7 @@
 """Finance QA experiments — runs the chatbot on evaluation datasets and scores results."""
+from langchain_core.messages import HumanMessage
 from utils.config import client
-from src.chatbot.agent.agent import chatbot
+from src.finance_qa.agent.agent import chatbot
 
 
 def _run_chatbot_final_response(inputs: dict) -> dict:
@@ -10,13 +11,10 @@ def _run_chatbot_final_response(inputs: dict) -> dict:
     Returning plain text avoids tool_call content blocks that OpenAI rejects.
     """
     question = inputs.get("question", "")
-    result = chatbot.invoke({"messages": [{"role": "user", "content": question}]})
+    result = chatbot.invoke({"messages": [HumanMessage(content=question)]})
     for msg in reversed(result.get("messages", [])):
-        content = msg.get("content") if isinstance(msg, dict) else getattr(msg, "content", "")
-        tool_calls = msg.get("tool_calls") if isinstance(msg, dict) else getattr(msg, "tool_calls", [])
-        msg_type = msg.get("type") if isinstance(msg, dict) else getattr(msg, "type", "")
-        if msg_type == "ai" and content and not tool_calls:
-            return {"output": content}
+        if msg.type == "ai" and msg.content and not msg.tool_calls:
+            return {"output": msg.content}
     return {"output": ""}
 
 
@@ -27,15 +25,12 @@ def _run_chatbot(inputs: dict) -> dict:
     instead of tool_call content blocks, which OpenAI Chat Completions rejects.
     """
     question = inputs.get("question", "")
-    result = chatbot.invoke({"messages": [{"role": "user", "content": question}]})
+    result = chatbot.invoke({"messages": [HumanMessage(content=question)]})
     messages = result.get("messages", [])
     final_text = ""
     for msg in reversed(messages):
-        content = msg.get("content") if isinstance(msg, dict) else getattr(msg, "content", "")
-        tool_calls = msg.get("tool_calls") if isinstance(msg, dict) else getattr(msg, "tool_calls", [])
-        msg_type = msg.get("type") if isinstance(msg, dict) else getattr(msg, "type", "")
-        if msg_type == "ai" and content and not tool_calls:
-            final_text = content
+        if msg.type == "ai" and msg.content and not msg.tool_calls:
+            final_text = msg.content
             break
     return {"messages": messages, "output": final_text}
 
@@ -43,10 +38,7 @@ def _run_chatbot(inputs: dict) -> dict:
 def _evaluate_has_response(outputs: dict, reference_outputs: dict) -> dict:
     """Check that the chatbot produced a non-empty final AI response."""
     for msg in reversed(outputs.get("messages", [])):
-        content = msg.get("content") if isinstance(msg, dict) else getattr(msg, "content", "")
-        tool_calls = msg.get("tool_calls") if isinstance(msg, dict) else getattr(msg, "tool_calls", [])
-        msg_type = msg.get("type") if isinstance(msg, dict) else getattr(msg, "type", "")
-        if msg_type == "ai" and content and not tool_calls:
+        if msg.type == "ai" and msg.content and not msg.tool_calls:
             return {"key": "has_response", "score": 1}
     return {"key": "has_response", "score": 0}
 

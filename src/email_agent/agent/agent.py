@@ -2,6 +2,7 @@ from typing import Literal, TypedDict
 from pydantic import BaseModel, Field
 from datetime import datetime
 
+from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
 from src.model import model
 from src.email_agent.agent.tools import get_tools, get_tools_by_name
 from src.email_agent.setup.prompts import get_triage_instructions, get_action_instructions
@@ -51,7 +52,7 @@ def llm_call(state: State):
     return {
         "messages": [
             llm_with_tools.invoke([
-                {"role": "system", "content": agent_system_prompt.format(today=datetime.now().strftime("%Y-%m-%d"))}
+                SystemMessage(content=agent_system_prompt.format(today=datetime.now().strftime("%Y-%m-%d")))
             ] + state["messages"])
         ]
     }
@@ -63,7 +64,7 @@ def tool_node(state: State):
     for tool_call in state["messages"][-1].tool_calls:
         tool = tools_by_name[tool_call["name"]]
         observation = tool.invoke(tool_call["args"])
-        result.append({"role": "tool", "content" : observation, "tool_call_id": tool_call["id"]})
+        result.append(ToolMessage(content=observation, tool_call_id=tool_call["id"]))
     return {"messages": result}
 
 # Conditional edge function
@@ -125,8 +126,8 @@ Subject: {subject}
     # Run the router LLM
     result = llm_router.invoke(
         [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
+            SystemMessage(content=system_prompt),
+            HumanMessage(content=user_prompt),
         ]
     )
 
@@ -138,9 +139,7 @@ Subject: {subject}
         # Add the email to the messages
         update = {
             "classification_decision": result.classification,
-            "messages": [{"role": "user",
-                            "content": f"Respond to the email: {email_markdown}"
-                        }],
+            "messages": [HumanMessage(content=f"Respond to the email: {email_markdown}")],
         }
     elif result.classification == "ignore":
         update =  { "classification_decision": result.classification}

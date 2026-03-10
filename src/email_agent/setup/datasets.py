@@ -15,7 +15,7 @@ _DATA_DIR = Path(__file__).parent.parent / "data"
 
 def _load_emails() -> List[Dict]:
     rows = []
-    with open(_DATA_DIR / "emails.csv", encoding="utf-8") as f:
+    with open(_DATA_DIR / "traces" / "ground_truth_emails.csv", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             row["expected_tool_calls"] = (
                 row["expected_tool_calls"].split("|") if row["expected_tool_calls"] else []
@@ -26,7 +26,7 @@ def _load_emails() -> List[Dict]:
 
 def _load_next_action() -> Tuple[List[Dict], List[Dict]]:
     inputs, outputs = [], []
-    with open(_DATA_DIR / "next_action.jsonl", encoding="utf-8") as f:
+    with open(_DATA_DIR / "eval" / "ground_truth_next_action.jsonl", encoding="utf-8") as f:
         for line in f:
             obj = json.loads(line)
             inputs.append(obj["input"])

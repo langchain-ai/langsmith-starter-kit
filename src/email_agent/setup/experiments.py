@@ -14,12 +14,8 @@ def _extract_tool_calls(messages: List[Any]) -> List[str]:
     """Return the ordered list of tool names called in a message sequence."""
     names = []
     for msg in messages:
-        calls = (
-            msg.get("tool_calls") if isinstance(msg, dict)
-            else getattr(msg, "tool_calls", None)
-        )
-        if calls:
-            names.extend(call["name"].lower() for call in calls)
+        if getattr(msg, "tool_calls", None):
+            names.extend(call["name"].lower() for call in getattr(msg, "tool_calls", None))
     return names
 
 
@@ -32,19 +28,13 @@ def _serialize_messages(messages: list) -> list:
     """Convert LangGraph messages to a JSON-serializable list of dicts."""
     result = []
     for msg in messages:
-        msg_type = msg.get("type") if isinstance(msg, dict) else getattr(msg, "type", "")
-        content = msg.get("content") if isinstance(msg, dict) else getattr(msg, "content", "")
-        tool_calls = msg.get("tool_calls") if isinstance(msg, dict) else getattr(msg, "tool_calls", [])
-        entry = {"role": msg_type}
-        if content:
-            entry["content"] = content
-        if tool_calls:
+        entry = {"role": msg.type}
+        if msg.content:
+            entry["content"] = msg.content
+        if getattr(msg, "tool_calls", None):
             entry["tool_calls"] = [
-                {
-                    "name": c.get("name") if isinstance(c, dict) else getattr(c, "name", ""),
-                    "args": c.get("args") if isinstance(c, dict) else getattr(c, "args", {}),
-                }
-                for c in tool_calls
+                {"name": c["name"], "args": c["args"]}
+                for c in getattr(msg, "tool_calls", None)
             ]
         result.append(entry)
     return result
@@ -64,11 +54,9 @@ def _run_email_final_response(inputs: dict) -> dict:
 
     email = ""
     for msg in messages:
-        tool_calls = msg.get("tool_calls") if isinstance(msg, dict) else getattr(msg, "tool_calls", [])
-        for call in (tool_calls or []):
-            name = call.get("name") if isinstance(call, dict) else getattr(call, "name", "")
-            if name == "write_email":
-                args = call.get("args") if isinstance(call, dict) else getattr(call, "args", {})
+        for call in (getattr(msg, "tool_calls", None) or []):
+            if call["name"] == "write_email":
+                args = call["args"]
                 email = f"Subject: {args.get('subject', '')}\n\n{args.get('content', '')}"
 
     return {

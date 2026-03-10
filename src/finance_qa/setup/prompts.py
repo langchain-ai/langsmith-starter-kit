@@ -110,10 +110,38 @@ Provide an answer_correctness score from 0.0 to 1.0."""
     return load_prompt("finance-qa-answer-correctness-eval", prompt, model=eval_model)
 
 
+def load_helpfulness_online_prompt():
+    """Helpfulness prompt for project-level evaluator (no reference output available)."""
+    system = """You are an expert evaluator assessing the helpfulness of customer service chatbot responses.
+
+A helpful response:
+- Directly and completely addresses the customer's question
+- Is clear, concise, and actionable
+- Provides accurate and relevant information
+
+Score True if the response is genuinely helpful and fully addresses the customer's need; False if it is incomplete, vague, or unhelpful."""
+
+    human = """Please evaluate the following response:
+
+<question>
+{input}
+</question>
+
+<response>
+{output}
+</response>"""
+    prompt = StructuredPrompt(
+        messages=[("system", system), ("human", human)],
+        schema_=build_schema(Helpfulness, "helpfulness"),
+    )
+    return load_prompt("finance-qa-helpfulness-online-eval", prompt, model=eval_model)
+
+
 def load_all_prompts() -> dict:
     print("Loading all prompts...")
     results = {
         "helpfulness_eval": load_helpfulness_prompt(),
+        "helpfulness_online_eval": load_helpfulness_online_prompt(),
         "rag_citation_eval": load_rag_citation_prompt(),
         "answer_correctness_eval": load_answer_correctness_prompt(),
     }

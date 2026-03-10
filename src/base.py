@@ -4,6 +4,7 @@ from abc import ABC, abstractmethod
 from typing import Optional
 
 from utils.config import setup_project, setup_secrets, tag_all_resources
+from utils.teardown import teardown_use_case
 
 
 class UseCase(ABC):
@@ -36,7 +37,6 @@ class UseCase(ABC):
         pass  # Override if needed
 
     def teardown(self) -> None:
-        from utils.teardown import teardown_use_case
         teardown_use_case(
             project_name=self.project_name,
             dataset_names=self.dataset_names,
