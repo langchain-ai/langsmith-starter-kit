@@ -1,8 +1,8 @@
 {
   "dependencies": ["."],
   "graphs": {
-    "email-agent": "./use_cases/email_agent/agent/agent.py:email_assistant",
-    "chatbot": "./use_cases/chatbot/agent/agent.py:chatbot"
+    "email-agent": "./src/email_agent/agent/agent.py:email_assistant",
+    "chatbot": "./src/chatbot/agent/agent.py:chatbot"
   },
   "env": "./.env"
 }

@@ -1,8 +1,9 @@
 import os
 import time
 from abc import ABC, abstractmethod
+from typing import Optional
 
-from setup.config import setup_project, setup_secrets
+from utils.config import setup_project, setup_secrets
 
 
 class UseCase(ABC):
@@ -27,12 +28,12 @@ class UseCase(ABC):
     def setup_experiments(self) -> None: ...
 
     @abstractmethod
-    def create_traces(self) -> None: ...
+    def create_traces(self, num_traces: Optional[int] = None) -> None: ...
 
     def setup_annotations(self) -> None:
         pass  # Override if needed
 
-    def run(self, admin: bool = False) -> None:
+    def run(self, admin: bool = False, num_traces: Optional[int] = None) -> None:
         setup_project(self.project_name, self.tags)
         print()
         if admin:
@@ -52,5 +53,5 @@ class UseCase(ABC):
         self.setup_annotations()
         print()
         time.sleep(3)
-        self.create_traces()
+        self.create_traces(num_traces=num_traces)
         print()

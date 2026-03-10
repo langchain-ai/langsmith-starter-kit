@@ -2,7 +2,7 @@ from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
 from dotenv import load_dotenv
 
-from use_cases.chatbot.agent.tools import search_kb_tool, get_topic_details, list_topics
+from src.chatbot.agent.tools import search_kb_tool, get_topic_details, list_topics
 
 load_dotenv(".env")
 

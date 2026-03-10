@@ -69,6 +69,12 @@ def _apply_project_tags(project_name: str, tags: List[str]) -> None:
         pass  # Tags are best-effort
 
 
+def get_project_id(name: str) -> Optional[str]:
+    """Return the LangSmith project ID for the given project name."""
+    first = next(client.list_projects(name=name), None)
+    return str(first.id) if first else None
+
+
 @traceable
 def first_run(question: str) -> str:
     return "Hello, world!"

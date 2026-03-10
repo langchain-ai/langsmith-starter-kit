@@ -4,9 +4,9 @@ from datetime import datetime
 
 from langchain_openai import ChatOpenAI
 
-from use_cases.email_agent.agent.tools import get_tools, get_tools_by_name
-from use_cases.email_agent.setup.prompts import get_triage_instructions, get_action_instructions
-from use_cases.email_agent.agent.utils import parse_email, format_email_markdown
+from src.email_agent.agent.tools import get_tools, get_tools_by_name
+from src.email_agent.setup.prompts import get_triage_instructions, get_action_instructions
+from src.email_agent.agent.utils import parse_email, format_email_markdown
 
 from langgraph.graph import StateGraph, START, END, MessagesState
 from langgraph.types import Command

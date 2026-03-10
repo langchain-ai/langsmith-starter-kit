@@ -1,8 +1,10 @@
-from use_cases.base import UseCase
-from use_cases.chatbot.setup.datasets import load_datasets
-from use_cases.chatbot.setup.evaluators import load_evaluators
-from use_cases.chatbot.setup.experiments import load_experiments
-from use_cases.chatbot.setup.traces import create_traces as _create_traces
+from typing import Optional
+
+from src.base import UseCase
+from src.chatbot.setup.datasets import load_datasets
+from src.chatbot.setup.evaluators import load_evaluators
+from src.chatbot.setup.experiments import load_experiments
+from src.chatbot.setup.traces import create_traces as _create_traces
 
 
 class ChatbotUseCase(UseCase):
@@ -22,5 +24,5 @@ class ChatbotUseCase(UseCase):
     def setup_experiments(self):
         load_experiments(self.use_api)
 
-    def create_traces(self):
-        _create_traces()
+    def create_traces(self, num_traces: Optional[int] = None):
+        _create_traces(num_traces=num_traces)
