@@ -10,7 +10,7 @@ _DATA_DIR = Path(__file__).parent.parent / "data"
 
 
 def _load_emails() -> list:
-    with open(_DATA_DIR / "emails.csv", encoding="utf-8") as f:
+    with open(_DATA_DIR / "traces" / "ground_truth_emails.csv", encoding="utf-8") as f:
         return list(csv.DictReader(f))
 
 

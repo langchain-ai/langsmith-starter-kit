@@ -22,29 +22,10 @@ def _load_kb_data() -> List[Dict]:
     """Load knowledge base data from CSV (cached)."""
     global _KB_DATA
     if _KB_DATA is None:
-        base_path = Path(__file__).parent.parent / "data"
-        _KB_DATA = []
-
-        # Load ground truth dataset if present
-        ground_truth_path = base_path / "dataset.csv"
-        if ground_truth_path.exists():
-            with open(ground_truth_path, 'r', encoding='utf-8') as f:
-                reader = csv.DictReader(f)
-                for row in reader:
-                    row['source'] = 'ground_truth'
-                    _KB_DATA.append(row)
-
-        # Load synthetic dataset
-        synthetic_path = base_path / "synthetic_dataset.csv"
-        if synthetic_path.exists():
-            with open(synthetic_path, 'r', encoding='utf-8') as f:
-                reader = csv.DictReader(f)
-                for row in reader:
-                    row['source'] = 'synthetic'
-                    _KB_DATA.append(row)
-
-        print(f"Loaded {len(_KB_DATA)} total KB entries")
-
+        kb_path = Path(__file__).parent.parent / "data" / "traces" / "ground_truth_kb.csv"
+        with open(kb_path, encoding="utf-8") as f:
+            _KB_DATA = list(csv.DictReader(f))
+        print(f"Loaded {len(_KB_DATA)} KB entries")
     return _KB_DATA
 
 

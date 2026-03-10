@@ -1,11 +1,11 @@
 import argparse
 
 from src.email_agent.use_case import EmailAgentUseCase
-from src.chatbot.use_case import ChatbotUseCase
+from src.finance_qa.use_case import FinanceQAUseCase
 
 USE_CASES = {
     "email-agent": EmailAgentUseCase,
-    "finance-qa": ChatbotUseCase,
+    "finance-qa": FinanceQAUseCase,
 }
 
 

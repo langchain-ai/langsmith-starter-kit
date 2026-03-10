@@ -8,6 +8,8 @@ def load_evaluators() -> None:
     print("Creating evaluators...")
 
     # --- Code evaluators on RAG Citation dataset ---
+    # NOTE: These functions are serialized and executed server-side in a sandboxed
+    # Pyodide environment, so all imports must be inside the function body.
     def perform_eval(run, example):
         import re
         messages = run.get("outputs", {}).get("messages", [])
@@ -78,11 +80,11 @@ def load_evaluators() -> None:
         prompt_or_ref="finance-qa-answer-correctness-eval:latest", score_type="number",
     )
 
-    # --- Project-level helpfulness evaluator ---
+    # --- Project-level helpfulness evaluator (no reference available) ---
     create_evaluator(
         "helpfulness", os.getenv("LANGSMITH_PROJECT"),
         target_type="project",
-        prompt_or_ref="finance-qa-helpfulness-eval:latest", score_type="boolean",
+        prompt_or_ref="finance-qa-helpfulness-online-eval:latest", score_type="boolean",
     )
 
     print("Evaluators created.")

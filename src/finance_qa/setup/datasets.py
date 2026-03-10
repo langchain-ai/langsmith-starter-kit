@@ -3,6 +3,11 @@ import csv
 from pathlib import Path
 from typing import Dict, List
 
+from langchain_core.messages import HumanMessage, SystemMessage
+from langsmith import tracing_context
+
+from src.finance_qa.agent.tools import search_knowledge_base
+from src.model import model
 from utils.datasets import create_langsmith_dataset
 
 _DATA_DIR = Path(__file__).parent.parent / "data"
@@ -15,23 +20,21 @@ def _load_csv(filename: str) -> List[Dict]:
 
 def _generate_reference_answer(question: str) -> str:
     """Generate a specific per-question reference answer using the KB and LLM."""
-    from src.chatbot.agent.tools import search_knowledge_base
-    from src.model import model
-
     results = search_knowledge_base(question, top_k=3, min_similarity=0.05)
     context = "\n\n".join(
         f"Topic: {r['question']}\nAnswer: {r['answer']}\nDetails: {r['retrieved_chunks'][:600]}"
         for r in results
     ) if results else "No relevant context found."
 
-    response = model.invoke([
-        {"role": "system", "content": (
-            "You are a financial customer service expert. "
-            "Answer the customer's question in 2-4 specific sentences based only on the provided knowledge base context. "
-            "Be direct, specific, and accurate. Do not include generic preamble."
-        )},
-        {"role": "user", "content": f"Knowledge Base Context:\n{context}\n\nCustomer Question: {question}"},
-    ])
+    with tracing_context(project_name="starter-finance-qa-data"):
+        response = model.invoke([
+            SystemMessage(content=(
+                "You are a financial customer service expert. "
+                "Answer the customer's question in 2-4 specific sentences based only on the provided knowledge base context. "
+                "Be direct, specific, and accurate. Do not include generic preamble."
+            )),
+            HumanMessage(content=f"Knowledge Base Context:\n{context}\n\nCustomer Question: {question}"),
+        ])
     return response.content
 
 
@@ -39,7 +42,7 @@ def load_datasets() -> None:
     print("Loading Datasets...")
 
     print("   - Finance QA: Final Response...")
-    rows = _load_csv("eval_dataset_ground_truth.csv")
+    rows = _load_csv("eval/ground_truth_final_response.csv")
     questions = [r["question"] for r in rows]
     print(f"     Generating {len(questions)} reference answers...")
     answers = [_generate_reference_answer(q) for q in questions]
@@ -50,7 +53,7 @@ def load_datasets() -> None:
     )
 
     print("   - Finance QA: RAG Citation...")
-    rows = _load_csv("eval_dataset_multi_source.csv")
+    rows = _load_csv("eval/ground_truth_rag_citation.csv")
     create_langsmith_dataset(
         "Finance QA: RAG Citation",
         inputs=[{"question": r["question"]} for r in rows],
