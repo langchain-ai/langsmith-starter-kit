@@ -1,6 +1,8 @@
 .env
 .venv
 
+.claude
+
 .DS_Store
 __pycache__
 .langgraph_api

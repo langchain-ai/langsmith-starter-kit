@@ -9,15 +9,11 @@ A multi-use-case starter kit that provisions LangSmith projects with datasets, e
 ## Setup
 
 ```bash
-# 1. Create and activate a virtual environment
-python -m venv .venv
-source .venv/bin/activate
+# 1. Install dependencies
+uv sync
 
 # 2. Copy and fill in your credentials
 cp .env.example .env
-
-# 3. Install dependencies
-pip install -r requirements.txt
 ```
 
 ---
@@ -33,9 +29,6 @@ python main.py --use-case chatbot
 
 # Control how many traces to generate
 python main.py --use-case chatbot --num-traces 5
-
-# Use the LangSmith REST API instead of the SDK (functionally identical)
-python main.py --api-only
 
 # Upload workspace secrets to LangSmith (requires admin access)
 python main.py --admin
@@ -87,12 +80,11 @@ Each file follows the same pattern: write your logic, call a helper from `utils/
 ```python
 from utils.datasets import create_langsmith_dataset
 
-def load_datasets(use_api: bool = False) -> None:
+def load_datasets() -> None:
     create_langsmith_dataset(
         "My Dataset",
         inputs=[{"question": "What is X?"}, ...],
         outputs=[{"answer": "X is ..."}, ...],
-        use_api=use_api,
     )
 ```
 
@@ -105,7 +97,7 @@ def load_datasets(use_api: bool = False) -> None:
 ```python
 from utils.evaluators import create_evaluator
 
-def load_evaluators(use_api: bool = False) -> None:
+def load_evaluators() -> None:
     def perform_eval(run, example):
         # run["outputs"] contains the agent's output
         # example["outputs"] contains the reference output
@@ -117,21 +109,25 @@ def load_evaluators(use_api: bool = False) -> None:
 
 > **Important:** The function must be named `perform_eval`. All imports used inside it must be inside the function body (it is serialized and executed remotely by LangSmith).
 
-**LLM judge evaluator** — pass a hub ref or inline prompt:
+**LLM judge evaluator** — inline prompt pushed to hub (recommended):
 
 ```python
-# Hub ref (must be pushed to LangSmith first)
-create_evaluator("quality", "My Dataset",
-    prompt_or_ref="my-eval-prompt:latest", score_type="boolean")
-
-# Inline prompt (no hub push needed)
+# Pushes the prompt to LangSmith Hub as a named asset, then references it
 create_evaluator("quality", "My Dataset",
     prompt_or_ref=[
         ["system", "You are an expert evaluator. Score the answer 0 or 1."],
         ["human", "Question: {input}\n\nAnswer: {output}\n\nReference: {reference}"],
     ],
     score_type="boolean",
+    push_prompt_as="my-quality-eval",
 )
+```
+
+Or reference an existing hub prompt directly:
+
+```python
+create_evaluator("quality", "My Dataset",
+    prompt_or_ref="my-eval-prompt:latest", score_type="boolean")
 ```
 
 #### `setup/experiments.py`
@@ -144,7 +140,7 @@ def _run_agent(inputs: dict) -> dict:
     result = my_graph.invoke(inputs)
     return {"output": result["output"]}
 
-def load_experiments(use_api: bool = False) -> None:
+def load_experiments() -> None:
     client.evaluate(
         _run_agent,
         data="My Dataset",
@@ -183,9 +179,9 @@ class MyUseCase(UseCase):
     tags = ["starter-kit", "use-case:my-use-case"]
 
     def setup_prompts(self): pass         # omit if no hub prompts
-    def setup_datasets(self): load_datasets(self.use_api)
-    def setup_evaluators(self): load_evaluators(self.use_api)
-    def setup_experiments(self): load_experiments(self.use_api)
+    def setup_datasets(self): load_datasets()
+    def setup_evaluators(self): load_evaluators()
+    def setup_experiments(self): load_experiments()
     def create_traces(self, num_traces=None): _create_traces(num_traces=num_traces)
 ```
 
@@ -215,11 +211,11 @@ python main.py --use-case my-use-case
 
 | Helper | What it does |
 |--------|-------------|
-| `utils.datasets.create_langsmith_dataset(name, inputs, outputs, use_api)` | Create a dataset if it doesn't exist |
+| `utils.datasets.create_langsmith_dataset(name, inputs, outputs)` | Create a dataset if it doesn't exist |
 | `utils.evaluators.create_evaluator(name, target, func=...)` | Attach a code evaluator to a dataset or project |
 | `utils.evaluators.create_evaluator(name, target, prompt_or_ref=..., score_type=...)` | Attach an LLM judge evaluator |
-| `utils.prompts.load_prompt(name, chain, use_api)` | Push a LangChain chain as a prompt to LangSmith Hub |
-| `utils.prompts.delete_existing_prompt(name, use_api)` | Delete a prompt (used before re-pushing with new commits) |
+| `utils.prompts.load_prompt(name, chain)` | Push a LangChain chain as a prompt to LangSmith Hub |
+| `utils.prompts.delete_existing_prompt(name)` | Delete a prompt (used before re-pushing with new commits) |
 | `utils.prompts.build_schema(PydanticModel, field_name)` | Build a JSON schema for `StructuredPrompt` evaluators |
 | `utils.annotations.create_queue(name, ...)` | Create an annotation queue |
 | `utils.annotations.create_automation(name, project_id, queue_id, filter)` | Route traces matching a filter into a queue |
@@ -254,5 +250,5 @@ starter-kit/
 │   └── annotations.py            # create_queue, create_automation
 ├── main.py                        # CLI entry point
 ├── langgraph.json                 # Graph registry for LangGraph Studio
-└── requirements.txt
+└── pyproject.toml
 ```

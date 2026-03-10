@@ -2,8 +2,7 @@ from typing import Literal, TypedDict
 from pydantic import BaseModel, Field
 from datetime import datetime
 
-from langchain_openai import ChatOpenAI
-
+from src.model import model
 from src.email_agent.agent.tools import get_tools, get_tools_by_name
 from src.email_agent.setup.prompts import get_triage_instructions, get_action_instructions
 from src.email_agent.agent.utils import parse_email, format_email_markdown
@@ -18,9 +17,6 @@ load_dotenv(".env")
 tools = get_tools()
 tools_by_name = get_tools_by_name(tools)
 
-# Initialize the LLM for use with router / structured output
-llm = ChatOpenAI(model="gpt-4.1", temperature=0.0)
-
 class RouterSchema(BaseModel):
     """Analyze the unread email and route it according to its content."""
 
@@ -33,11 +29,8 @@ class RouterSchema(BaseModel):
         "'respond' for emails that need a reply",
     )
 
-llm_router = llm.with_structured_output(RouterSchema)
-
-# Initialize the LLM, enforcing tool use (of any available tools) for agent
-llm = ChatOpenAI(model="gpt-4.1", temperature=0.0)
-llm_with_tools = llm.bind_tools(tools, tool_choice="any", parallel_tool_calls=False)
+llm_router = model.with_structured_output(RouterSchema)
+llm_with_tools = model.bind_tools(tools, tool_choice="any", parallel_tool_calls=False)
 
 
 # State definitions

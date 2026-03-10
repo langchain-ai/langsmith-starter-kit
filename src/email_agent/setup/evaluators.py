@@ -1,29 +1,28 @@
 """Email agent evaluators — attaches scoring rules to email agent datasets."""
 import os
-from typing import Optional
 
 from utils.evaluators import create_evaluator
 
 
-def load_evaluators(use_api: bool = False, owner: Optional[str] = None) -> None:
+def load_evaluators() -> None:
     print("Creating evaluators...")
 
     # --- LLM judge evaluators (hub prompts) ---
     create_evaluator(
         "correctness", "Email Agent: Next Action",
         prompt_or_ref="email-agent-next-action-eval:latest",
-        score_type="boolean", use_api=use_api, owner=owner,
+        score_type="boolean",
     )
     create_evaluator(
         "completeness", "Email Agent: Final Response",
         prompt_or_ref="email-agent-final-response-eval:latest",
-        score_type="boolean", use_api=use_api, owner=owner,
+        score_type="boolean",
     )
     create_evaluator(
         "professionalism", os.getenv("LANGSMITH_PROJECT"),
         target_type="project",
         prompt_or_ref="email-agent-professionalism-eval:latest",
-        score_type="boolean", use_api=use_api, owner=owner,
+        score_type="boolean",
     )
 
     # --- Code evaluators ---

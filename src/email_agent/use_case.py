@@ -11,20 +11,35 @@ from src.email_agent.setup.traces import create_traces as _create_traces
 
 class EmailAgentUseCase(UseCase):
     name = "email-agent"
-    project_name = "starter-kit-email-agent"
-    tags = ["starter-kit", "use-case:email-agent"]
+    project_name = "starter-email-agent"
+    tags = ["starter-kit", "starter:email-agent"]
+    dataset_names = [
+        "Email Agent: Triage",
+        "Email Agent: Final Response",
+        "Email Agent: Trajectory",
+        "Email Agent: Next Action",
+    ]
+    prompt_names = [
+        "email-agent-action",
+        "email-agent-triage",
+        "email-agent-next-action-eval",
+        "email-agent-final-response-eval",
+        "email-agent-professionalism-eval",
+        "guardrail-example",
+    ]
+    queue_names = ["Professionalism Annotation Queue"]
 
     def setup_prompts(self):
-        load_all_prompts(self.use_api)
+        load_all_prompts()
 
     def setup_datasets(self):
-        load_datasets(self.use_api)
+        load_datasets()
 
     def setup_evaluators(self):
-        load_evaluators(self.use_api)
+        load_evaluators()
 
     def setup_experiments(self):
-        load_experiments(self.use_api)
+        load_experiments()
 
     def setup_annotations(self):
         load_automations_and_queues()

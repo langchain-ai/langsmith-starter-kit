@@ -1,6 +1,10 @@
-"""Shared dataset helpers for LangSmith (SDK + REST API)."""
+"""Shared dataset helpers for LangSmith.
+
+The API helpers (api_get_dataset_id, api_list_examples) are kept here because
+they are used by utils/experiments.py for the API-only experiment path.
+"""
 import requests
-from typing import Dict, List, Optional, Any
+from typing import Any, Dict, List, Optional
 
 from utils.config import client, auth_headers, LANGSMITH_API_URL
 
@@ -9,21 +13,17 @@ def create_langsmith_dataset(
     name: str,
     inputs: List[Dict],
     outputs: List[Dict],
-    use_api: bool = False,
     description: str = "",
 ) -> None:
     """Create a LangSmith dataset with examples if it doesn't already exist."""
-    if use_api:
-        existing_id = api_get_dataset_id(name)
-        if existing_id:
-            return
-        dataset_id = _api_create_dataset(name, description)
-        _api_create_examples(dataset_id, inputs, outputs)
-    else:
-        if not client.has_dataset(dataset_name=name):
-            dataset = client.create_dataset(dataset_name=name, description=description)
-            client.create_examples(inputs=inputs, outputs=outputs, dataset_id=dataset.id)
+    if not client.has_dataset(dataset_name=name):
+        dataset = client.create_dataset(dataset_name=name, description=description)
+        client.create_examples(inputs=inputs, outputs=outputs, dataset_id=dataset.id)
 
+
+# ---------------------------------------------------------------------------
+# REST API helpers — used by utils/experiments.py for API-only experiments
+# ---------------------------------------------------------------------------
 
 def api_get_dataset_id(dataset_name: str) -> Optional[str]:
     url = f"{LANGSMITH_API_URL}/api/v1/datasets"
@@ -55,8 +55,7 @@ def _api_create_dataset(dataset_name: str, description: str = "") -> str:
         raise RuntimeError(f"Dataset '{dataset_name}' already exists")
     if resp.status_code >= 300:
         raise RuntimeError(f"Failed to create dataset '{dataset_name}': {resp.status_code} {resp.text}")
-    data = resp.json()
-    return data["id"]
+    return resp.json()["id"]
 
 
 def _api_create_examples(dataset_id: str, inputs: List[Dict], outputs: List[Dict]) -> None:

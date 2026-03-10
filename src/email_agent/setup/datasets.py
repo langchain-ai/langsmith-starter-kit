@@ -38,7 +38,7 @@ def _load_next_action() -> Tuple[List[Dict], List[Dict]]:
 # Dataset loaders — each is idempotent (skips if dataset already exists)
 # ---------------------------------------------------------------------------
 
-def load_datasets(use_api: bool = False) -> None:
+def load_datasets() -> None:
     print("Loading Datasets...")
     rows = _load_emails()
 
@@ -52,7 +52,6 @@ def load_datasets(use_api: bool = False) -> None:
         "Email Agent: Triage",
         inputs=[{"email_input": e} for e in email_inputs],
         outputs=[{"classification": r["triage_output"]} for r in rows],
-        use_api=use_api,
     )
 
     print("   - Email Agent: Final Response...")
@@ -60,7 +59,6 @@ def load_datasets(use_api: bool = False) -> None:
         "Email Agent: Final Response",
         inputs=[{"email_input": e} for e in email_inputs],
         outputs=[{"response_criteria": r["response_criteria"]} for r in rows],
-        use_api=use_api,
     )
 
     print("   - Email Agent: Trajectory...")
@@ -68,7 +66,6 @@ def load_datasets(use_api: bool = False) -> None:
         "Email Agent: Trajectory",
         inputs=[{"email_input": e} for e in email_inputs],
         outputs=[{"trajectory": r["expected_tool_calls"]} for r in rows],
-        use_api=use_api,
     )
 
     print("   - Email Agent: Next Action...")
@@ -77,7 +74,6 @@ def load_datasets(use_api: bool = False) -> None:
         "Email Agent: Next Action",
         inputs=next_action_inputs,
         outputs=next_action_outputs,
-        use_api=use_api,
     )
 
 

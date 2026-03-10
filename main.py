@@ -5,7 +5,7 @@ from src.chatbot.use_case import ChatbotUseCase
 
 USE_CASES = {
     "email-agent": EmailAgentUseCase,
-    "chatbot": ChatbotUseCase,
+    "finance-qa": ChatbotUseCase,
 }
 
 
@@ -18,11 +18,6 @@ def main():
         help="Which use case to run (default: email-agent)",
     )
     parser.add_argument(
-        "--api-only",
-        action="store_true",
-        help="Use LangSmith REST API instead of SDK where supported.",
-    )
-    parser.add_argument(
         "--admin",
         action="store_true",
         help="Run with admin privileges (setup workspace secrets).",
@@ -33,10 +28,18 @@ def main():
         default=None,
         help="Number of traces to generate (default: all for email-agent, 20 for chatbot).",
     )
+    parser.add_argument(
+        "--teardown",
+        action="store_true",
+        help="Delete all LangSmith resources for the use case and exit.",
+    )
     args = parser.parse_args()
 
-    use_case = USE_CASES[args.use_case](use_api=args.api_only)
-    use_case.run(admin=args.admin, num_traces=args.num_traces)
+    use_case = USE_CASES[args.use_case]()
+    if args.teardown:
+        use_case.teardown()
+    else:
+        use_case.run(admin=args.admin, num_traces=args.num_traces)
 
 
 if __name__ == "__main__":

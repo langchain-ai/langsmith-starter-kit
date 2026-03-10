@@ -1,7 +1,7 @@
-from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
 from dotenv import load_dotenv
 
+from src.model import model
 from src.chatbot.agent.tools import search_kb_tool, get_topic_details, list_topics
 
 load_dotenv(".env")
@@ -47,10 +47,8 @@ Relevant docs:
 If the KB doesn't have relevant information, still include "Relevant docs:" with an empty list and explain what you searched for.
 """
 
-llm = ChatOpenAI(model="gpt-4.1", temperature=0)
-
 chatbot = create_react_agent(
-    llm,
+    model,
     tools=[search_kb_tool, get_topic_details, list_topics],
     prompt=system_prompt,
 )

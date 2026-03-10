@@ -1,36 +1,13 @@
-"""Chatbot evaluators — citation and correctness scoring rules."""
-from typing import Optional
+"""Finance QA evaluators — citation, helpfulness, and correctness scoring rules."""
+import os
 
 from utils.evaluators import create_evaluator
 
 
-_CITATION_ACCURACY_PROMPT = [
-    ["system",
-     "You are an expert evaluator assessing citation accuracy in customer service responses. "
-     "Given a question, an agent's response (which may include tool search results and a final answer), "
-     "and a reference answer, rate how accurately the agent's citations support the claims made. "
-     "Score 1.0 if all claims are accurately cited and consistent with the reference; 0.0 if no citations or completely wrong."],
-    ["human",
-     "Question: {input}\n\nAgent Response: {output}\n\nReference Answer: {reference}\n\n"
-     "Provide a citation_accuracy score from 0.0 to 1.0."],
-]
-
-_ANSWER_CORRECTNESS_PROMPT = [
-    ["system",
-     "You are an expert evaluator assessing the correctness of customer service responses. "
-     "Given a question, an agent's response, and a reference answer, rate how correct and complete "
-     "the agent's answer is. Score 1.0 if the answer is fully correct and consistent with the reference; "
-     "0.0 if it is completely wrong or missing the key information."],
-    ["human",
-     "Question: {input}\n\nAgent Response: {output}\n\nReference Answer: {reference}\n\n"
-     "Provide an answer_correctness score from 0.0 to 1.0."],
-]
-
-
-def load_evaluators(use_api: bool = False, owner: Optional[str] = None) -> None:
+def load_evaluators() -> None:
     print("Creating evaluators...")
 
-    # Code evaluators on the Multi-Source dataset
+    # --- Code evaluators on RAG Citation dataset ---
     def perform_eval(run, example):
         import re
         messages = run.get("outputs", {}).get("messages", [])
@@ -50,7 +27,7 @@ def load_evaluators(use_api: bool = False, owner: Optional[str] = None) -> None:
         sources = [l.strip() for l in match.group(1).split('\n') if l.strip().startswith('-')]
         return {"citation_presence": len(sources) > 0}
 
-    create_evaluator("citation_presence", "Chatbot: Multi-Source", func=perform_eval)
+    create_evaluator("citation_presence", "Finance QA: RAG Citation", func=perform_eval)
 
     def perform_eval(run, example):
         import re
@@ -83,16 +60,29 @@ def load_evaluators(use_api: bool = False, owner: Optional[str] = None) -> None:
         grounded = sum(1 for s in sources if s in gt_chunks)
         return {"citation_grounding": grounded / len(sources)}
 
-    create_evaluator("citation_grounding", "Chatbot: Multi-Source", func=perform_eval)
+    create_evaluator("citation_grounding", "Finance QA: RAG Citation", func=perform_eval)
 
-    # LLM judge evaluators on the Ground Truth dataset
+    # --- LLM judge evaluators on RAG Citation dataset ---
     create_evaluator(
-        "citation_accuracy", "Chatbot: Ground Truth",
-        prompt_or_ref=_CITATION_ACCURACY_PROMPT, score_type="number",
+        "rag_citation_quality", "Finance QA: RAG Citation",
+        prompt_or_ref="finance-qa-rag-citation-eval:latest", score_type="number",
+    )
+
+    # --- LLM judge evaluators on Final Response dataset ---
+    create_evaluator(
+        "helpfulness", "Finance QA: Final Response",
+        prompt_or_ref="finance-qa-helpfulness-eval:latest", score_type="boolean",
     )
     create_evaluator(
-        "answer_correctness", "Chatbot: Ground Truth",
-        prompt_or_ref=_ANSWER_CORRECTNESS_PROMPT, score_type="number",
+        "answer_correctness", "Finance QA: Final Response",
+        prompt_or_ref="finance-qa-answer-correctness-eval:latest", score_type="number",
+    )
+
+    # --- Project-level helpfulness evaluator ---
+    create_evaluator(
+        "helpfulness", os.getenv("LANGSMITH_PROJECT"),
+        target_type="project",
+        prompt_or_ref="finance-qa-helpfulness-eval:latest", score_type="boolean",
     )
 
     print("Evaluators created.")

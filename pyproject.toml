@@ -1,0 +1,18 @@
+[project]
+name = "langsmith-starter-kit"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain",
+    "langchain-core",
+    "langchain-openai",
+    "langgraph",
+    "langgraph-cli[inmem]",
+    "langsmith",
+    "pydantic",
+    "python-dotenv",
+    "requests",
+    "scikit-learn",
+    "numpy",
+    "jupyterlab",
+]
