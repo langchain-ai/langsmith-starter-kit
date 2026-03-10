@@ -30,7 +30,6 @@ import textwrap
 import requests
 from typing import Callable, List, Literal, Optional, Union
 
-from langchain_openai import ChatOpenAI
 from langchain_core.prompts.structured import StructuredPrompt
 
 from utils.config import auth_headers, LANGSMITH_API_URL, client
@@ -139,6 +138,7 @@ def _evaluator_exists(name: str, target_type: str, target_id: str) -> bool:
 
 def _push_eval_prompt(prompt_name: str, messages: List, eval_name: str, score_type: str) -> None:
     """Push an inline eval prompt to LangSmith Hub as a named StructuredPrompt asset."""
+    from src.model import eval_model
     schema = {
         "title": "extract",
         "description": "Extract information from the user's response.",
@@ -147,11 +147,10 @@ def _push_eval_prompt(prompt_name: str, messages: List, eval_name: str, score_ty
             eval_name: {"type": score_type, "description": f"Evaluator score for {eval_name}"},
             "comment": {"type": "string", "description": "Reasoning for the score"},
         },
-        "required": [eval_name],
+        "required": [eval_name, "comment"],
     }
-    model = ChatOpenAI(model="gpt-4.1-mini")
     prompt = StructuredPrompt(messages=[tuple(m) for m in messages], schema_=schema)
-    load_prompt(prompt_name, prompt | model)
+    load_prompt(prompt_name, prompt, model=eval_model)
 
 
 def _get_eval_source(func: Callable) -> str:

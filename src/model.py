@@ -8,3 +8,11 @@ Swap the model string below to use a different provider or model:
 from langchain.chat_models import init_chat_model
 
 model = init_chat_model("openai:gpt-4.1-mini", temperature=0)
+
+# Eval model — embedded in hub prompts for LLM-judge evaluators.
+# Defaults to None, which lets LangSmith use its built-in gpt-5-mini config
+# (recommended). Set this only if your workspace needs a custom or internal
+# OpenAI-compatible endpoint for evaluations.
+# Example: from langchain_openai import ChatOpenAI
+#          eval_model = ChatOpenAI(base_url="https://my-proxy/v1", model="gpt-4.1-mini")
+eval_model = None

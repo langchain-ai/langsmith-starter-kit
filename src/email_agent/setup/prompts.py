@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.prompts.structured import StructuredPrompt
 
-from src.model import model
+from src.model import model, eval_model
 from src.email_agent.agent.tools import schedule_meeting, check_calendar_availability, write_email, Done
 from utils.prompts import load_prompt, delete_existing_prompt, build_schema
 
@@ -186,7 +186,7 @@ Please grade the following example according to the above instructions:
         messages=[("system", system), ("human", human)],
         schema_=build_schema(Correctness, "correctness"),
     )
-    return load_prompt("email-agent-next-action-eval", prompt)
+    return load_prompt("email-agent-next-action-eval", prompt, model=eval_model)
 
 
 class Completeness(BaseModel):
@@ -223,7 +223,7 @@ Please grade the following example according to the above instructions:
         messages=[("system", system), ("human", human)],
         schema_=build_schema(Completeness, "completeness"),
     )
-    return load_prompt("email-agent-final-response-eval", prompt)
+    return load_prompt("email-agent-final-response-eval", prompt, model=eval_model)
 
 
 class Professionalism(BaseModel):
@@ -256,7 +256,7 @@ Please grade the following example according to the above instructions:
         messages=[("system", system), ("human", human)],
         schema_=build_schema(Professionalism, "professionalism"),
     )
-    return load_prompt("email-agent-professionalism-eval", prompt)
+    return load_prompt("email-agent-professionalism-eval", prompt, model=eval_model)
 
 
 # ---------------------------------------------------------------------------

@@ -22,8 +22,16 @@ from pydantic import BaseModel
 from utils.config import auth_headers, LANGSMITH_API_URL, client
 
 
-def load_prompt(name: str, obj: Any) -> Optional[str]:
-    """Push a prompt commit to LangSmith Hub. Returns the URL or None if unchanged."""
+def load_prompt(name: str, obj: Any, model=None) -> Optional[str]:
+    """Push a prompt commit to LangSmith Hub. Returns the URL or None if unchanged.
+
+    If ``model`` is provided, the prompt is pushed as ``obj | model`` so that
+    LangSmith uses that model when running the evaluator (useful for internal or
+    custom OpenAI-compatible endpoints). When ``model`` is None (default) the
+    prompt template is pushed alone and LangSmith uses its built-in gpt-5-mini.
+    """
+    if model is not None:
+        obj = obj | model
     try:
         return client.push_prompt(name, object=obj)
     except LangSmithConflictError:
