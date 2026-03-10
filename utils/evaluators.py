@@ -145,9 +145,9 @@ def _push_eval_prompt(prompt_name: str, messages: List, eval_name: str, score_ty
         "type": "object",
         "properties": {
             eval_name: {"type": score_type, "description": f"Evaluator score for {eval_name}"},
-            "comment": {"type": "string", "description": "Reasoning for the score"},
+            "explanation": {"type": "string", "description": "Reasoning for the score"},
         },
-        "required": [eval_name, "comment"],
+        "required": [eval_name, "explanation"],
     }
     prompt = StructuredPrompt(messages=[tuple(m) for m in messages], schema_=schema)
     load_prompt(prompt_name, prompt, model=eval_model)
@@ -205,9 +205,9 @@ def _build_judge_body(
             "type": "object",
             "properties": {
                 name: {"type": score_type, "description": f"Evaluator score for {name}"},
-                "comment": {"type": "string", "description": "Reasoning for the score"},
+                "explanation": {"type": "string", "description": "Reasoning for the score"},
             },
-            "required": [name, "comment"],
+            "required": [name, "explanation"],
         },
         "variable_mapping": {"input": "input", "output": "output", "reference": "referenceOutput"},
     }
