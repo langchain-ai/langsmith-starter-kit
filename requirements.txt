@@ -6,3 +6,5 @@ langsmith
 pydantic
 python-dotenv
 requests
+scikit-learn
+numpy

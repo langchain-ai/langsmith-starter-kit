@@ -24,7 +24,7 @@ def parse_email(email_input: dict) -> dict:
 
 def format_email_markdown(subject, author, to, email_thread, email_id=None):
     """Format email details into a nicely formatted markdown string for display
-    
+
     Args:
         subject: Email subject
         author: Email sender
@@ -33,7 +33,7 @@ def format_email_markdown(subject, author, to, email_thread, email_id=None):
         email_id: Optional email ID (for Gmail API)
     """
     id_section = f"\n**ID**: {email_id}" if email_id else ""
-    
+
     return f"""
 
 **Subject**: {subject}

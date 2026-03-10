@@ -1,8 +1,10 @@
+import os
 import requests
 from dataclasses import dataclass
 from typing import Optional, List, Dict
 
-from setup.config import auth_headers, LANGSMITH_API_URL, LANGSMITH_PROJECT, client    
+from setup.config import auth_headers, LANGSMITH_API_URL, client
+
 
 @dataclass
 class AutomationPayload:
@@ -42,10 +44,10 @@ def automation_exists(name: str, project_id = None) -> bool:
     existing = requests.get(url, headers=auth_headers(), params=payload, timeout=30)
     if existing.status_code >= 300:
         raise RuntimeError(f"Failed to search for evaluator '{name}': {existing.status_code} {existing.text}")
-    
+
     existing = existing.json()
     for automation in existing:
-        if automation.get("display_name") == name:  
+        if automation.get("display_name") == name:
             return True
     return False
 
@@ -94,7 +96,7 @@ def create_queue(queue: QueuePayload) -> str:
     return data.get("id")
 
 def load_automations_and_queues() -> None:
-    project_name = LANGSMITH_PROJECT
+    project_name = os.getenv("LANGSMITH_PROJECT")
     project_id = _get_project_id(project_name)
 
     queue_payload = QueuePayload(
@@ -107,7 +109,7 @@ def load_automations_and_queues() -> None:
     )
     queues = [queue_payload]
 
-    
+
     print(f"Creating queues and automations...")
     for queue in queues:
 
@@ -121,7 +123,7 @@ def load_automations_and_queues() -> None:
         if not project_id:
             print(f"Project '{project_name}' not found, skipping automation for this queue...")
             continue
-        
+
         queue_rule_payload = AutomationPayload(
             display_name="Professional Review",
             session_id=str(project_id),
@@ -132,7 +134,7 @@ def load_automations_and_queues() -> None:
         if automation_exists(queue_rule_payload.display_name, project_id):
             print(f"Automation '{queue_rule_payload.display_name}' already exists, skipping...")
             continue
-        
+
         create_automation(queue_rule_payload)
         print(f"     - Automation '{queue_rule_payload.display_name}' created for queue '{queue.name}'.")
 

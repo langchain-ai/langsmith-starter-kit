@@ -5,8 +5,8 @@ import requests
 
 from setup.config import client, auth_headers, LANGSMITH_API_URL
 from langsmith.run_helpers import get_run_tree_context
-from setup.datasets import api_get_dataset_id, api_list_examples
-from agent.agent import email_assistant
+from use_cases.email_agent.setup.datasets import api_get_dataset_id, api_list_examples
+from use_cases.email_agent.agent.agent import email_assistant
 
 # Helper to extract tool trajectory
 def extract_tool_calls(messages: List[Any]) -> List[str]:
@@ -19,13 +19,13 @@ def extract_tool_calls(messages: List[Any]) -> List[str]:
         # Check if message is an object with tool_calls attribute
         elif hasattr(message, "tool_calls") and message.tool_calls:
             tool_call_names.extend([call["name"].lower() for call in message.tool_calls])
-    
+
     return tool_call_names
 
 # Define Run Function for your Application
 def run_email_assistant(inputs: dict) -> dict:
     """Run the email assistant on the given email input."""
-    # Creating configuration 
+    # Creating configuration
     thread_id = uuid.uuid4()
     configuration = {"thread_id": thread_id}
 
@@ -125,7 +125,7 @@ def api_end_run(run_id: str, outputs: Dict[str, Any]) -> None:
 
 
 # Run Experiment
-def run_trajectory_experiment(use_api: bool = False) -> dict:   
+def run_trajectory_experiment(use_api: bool = False) -> dict:
     trajectory_dataset = "Email Agent: Trajectory"
     if not use_api:
         results = client.evaluate(
@@ -145,7 +145,7 @@ def run_trajectory_experiment(use_api: bool = False) -> dict:
             raise RuntimeError(f"Dataset '{trajectory_dataset}' not found.")
         examples = api_list_examples(dataset_id)
         session_id = api_create_session(experiment_name, dataset_id)
-        
+
         run_summaries: List[Dict[str, Any]] = []
         for ex in examples:
             inputs = ex.get("inputs", {})

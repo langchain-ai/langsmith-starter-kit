@@ -5,8 +5,7 @@ from dataclasses import dataclass
 from typing import Dict, Optional, List, Callable, Any, Literal, Union
 
 from setup.config import auth_headers, LANGSMITH_API_URL, client
-from setup.prompts import prompt_exists
-
+from use_cases.email_agent.setup.prompts import prompt_exists
 
 
 ## Formatting Helpers
@@ -38,7 +37,7 @@ class EvaluatorPayload:
 def _format_judge_evaluator(name: str, description: str, score_type: str, hub_ref: str = None, prompt: Optional[List[List[str]]] = None) -> Dict:
     payload = {
         "structured": {
-            "model":{ 
+            "model":{
                 "lc":1,
                 "type":"constructor",
                 "id":["langchain","chat_models","openai","ChatOpenAI"],
@@ -47,7 +46,7 @@ def _format_judge_evaluator(name: str, description: str, score_type: str, hub_re
                     "top_p": 1,
                     "presence_penalty": None,
                     "frequency_penalty": None,
-                    "model":"gpt-5-mini",
+                    "model":"gpt-4o-mini",
                     "extra_headers":{},
                     "openai_api_key":{
                         "id":["OPENAI_API_KEY"],
@@ -106,7 +105,7 @@ def evaluator_exists(name: str, target_type: Literal["dataset", "project"] = "da
     existing = requests.get(url, headers=auth_headers(), params=payload, timeout=30)
     if existing.status_code >= 300:
         raise RuntimeError(f"Failed to search for evaluator '{name}': {existing.status_code} {existing.text}")
-    
+
     existing = existing.json()
     for evaluator in existing:
         if evaluator.get("display_name") == name and (evaluator.get("evaluators") or evaluator.get("code_evaluators")):
@@ -136,16 +135,16 @@ def _resolve_target_id(target_name: str, target_type: Literal["dataset", "projec
     return str(target)
 
 
-## Evaluator Creation 
+## Evaluator Creation
 def create_judge_payload(name: str, prompt_or_ref: Union[str, List[List[str]]], sample_rate: float, score_type: Literal["boolean", "number", "string"], target_name: str, target_type: Literal["dataset", "project"] = "dataset", use_api: bool = False, owner: Optional[str] = None) -> None:
     target = _resolve_target_id(target_name, target_type)
     if not target:
         return None
-    
+
     if evaluator_exists(name, target_type, target):
         print(f"    - Evaluator '{name}' already exists on the {target_type}. Skipping...")
         return None
-    
+
     if isinstance(prompt_or_ref, list):
         pass
     else:
@@ -159,7 +158,7 @@ def create_judge_payload(name: str, prompt_or_ref: Union[str, List[List[str]]], 
             except Exception:
                 print(f'    - Could not find {prompt_or_ref}. Skipping evaluator...')
                 return None
-          
+
     judge = _format_judge_evaluator(
         name=name,
         description=f"Evaluator for {name}",
@@ -167,7 +166,7 @@ def create_judge_payload(name: str, prompt_or_ref: Union[str, List[List[str]]], 
         hub_ref=prompt_or_ref if isinstance(prompt_or_ref, str) else None,
         prompt=prompt_or_ref if isinstance(prompt_or_ref, list) else None,
     )
-    
+
     payload = EvaluatorPayload(
         display_name=name,
         session_id=target if target_type == "project" else None,
@@ -184,7 +183,7 @@ def create_code_payload(name: str, func: Callable[..., Any], language: Literal["
     target = _resolve_target_id(target_name, target_type)
     if not target:
         return None
-    
+
     if evaluator_exists(name, target_type, target):
         print(f"    - Evaluator '{name}' already exists on the {target_type}. Skipping...")
         return None
@@ -205,7 +204,7 @@ def create_code_payload(name: str, func: Callable[..., Any], language: Literal["
 
 def create_evaluator(payload: EvaluatorPayload) -> Optional[Dict]:
     url = f"{LANGSMITH_API_URL}/runs/rules"
-    
+
     body = {
         "display_name": payload.display_name,
         "session_id": payload.session_id,
@@ -225,17 +224,9 @@ def create_evaluator(payload: EvaluatorPayload) -> Optional[Dict]:
 
 
 def load_evaluators(use_api: bool = False, owner: Optional[str] = None) -> None:
-    """Create some example rules and attach them to our example datasets.
-
-    Targets datasets created in setup/datasets.py via load_*_datasets functions.
-    Uses prompts created in setup/prompts.py via load_*_prompt functions.
-    """
-    # Example rules. Adjust/extend as needed.
-    # 1) Next action correctness rule (binary) via expression that expects a tool name in outputs
-    #    This is illustrative; adapt the expression to your run schema.
-
+    """Create example rules and attach them to the email agent datasets."""
     print(f"Creating evaluators...")
-    # Dataset names from setup/datasets.py
+
     next_action_dataset = "Email Agent: Next Action"
     next_action_eval_ref = "email-agent-next-action-eval:latest"
     next_action_payload = create_judge_payload(
@@ -249,7 +240,6 @@ def load_evaluators(use_api: bool = False, owner: Optional[str] = None) -> None:
         owner=owner,
     )
 
-
     final_response_dataset = "Email Agent: Final Response"
     final_response_eval_ref = "email-agent-final-response-eval:latest"
     final_response_payload = create_judge_payload(
@@ -262,7 +252,7 @@ def load_evaluators(use_api: bool = False, owner: Optional[str] = None) -> None:
         use_api=use_api,
         owner=owner,
     )
-    
+
     professionalism_project = os.getenv("LANGSMITH_PROJECT")
     professionalism_eval_ref = "email-agent-professionalism-eval:latest"
     professionalism_payload = create_judge_payload(
@@ -289,7 +279,7 @@ def load_evaluators(use_api: bool = False, owner: Optional[str] = None) -> None:
         target_name=triage_dataset,
         target_type="dataset",
     )
-    
+
     trajectory_dataset = "Email Agent: Trajectory"
     # Must be named perform_eval for code evaluators
     def perform_eval(run, example):
@@ -297,7 +287,7 @@ def load_evaluators(use_api: bool = False, owner: Optional[str] = None) -> None:
         return {
             "exact_match": run["outputs"]["trajectory"] == example["outputs"]["trajectory"]
         }
-       
+
     trajectory_match_payload = create_code_payload(
         name="trajectory_match",
         func=perform_eval,
@@ -308,8 +298,8 @@ def load_evaluators(use_api: bool = False, owner: Optional[str] = None) -> None:
     )
 
     evaluators = [
-        next_action_payload, 
-        final_response_payload, 
+        next_action_payload,
+        final_response_payload,
         professionalism_payload,
         triage_code_payload,
         trajectory_match_payload,
@@ -327,4 +317,3 @@ def load_evaluators(use_api: bool = False, owner: Optional[str] = None) -> None:
 
 if __name__ == "__main__":
     load_evaluators()
-

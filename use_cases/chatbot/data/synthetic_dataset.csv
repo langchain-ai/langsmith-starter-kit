@@ -1,0 +1,556 @@
+question,retrieved_chunks,answer,cited_chunks
+payment processing,"Payment Processing: Overview
+Payments can be made through multiple channels including online banking, mobile app, phone, mail, or in-person at branch locations
+Payments must be received by 5:00 PM ET on the due date to be considered on-time
+Minimum payment amount is calculated as either $35 or 1% of balance plus interest and fees, whichever is greater
+Remember: Payments take 1-3 business days to process depending on payment method
+Tell customer:
+If paying online: Payment will post within 1 business day if made before 8:00 PM ET
+If paying by phone: Payment will post within 1 business day
+If paying by mail: Allow 5-7 business days for processing
+If paying at branch: Payment posts same business day","Payments can be made through online banking, mobile app, phone, mail, or branch locations and must be received by 5:00 PM ET on the due date to be considered on-time. Customers can set up automatic payments for full balance, minimum payment, or fixed amount. Payment processing times vary: online and phone payments post within 1 business day, mail payments take 5-7 days, and branch payments post same business day. Automatic payments require maintaining sufficient funds in the linked account to avoid returned payment fees.","[""Payment Processing: Overview\nPayments can be made through multiple channels including online banking, mobile app, phone, mail, or in-person at branch locations\nPayments must be received by 5:00 PM ET on the due date to be considered on-time\nMinimum payment amount is calculated as either $35 or 1% of balance plus interest and fees, whichever is greater\nRemember: Payments take 1-3 business days to process depending on payment method\nTell customer:\nIf paying online: Payment will post within 1 business day if made before 8:00 PM ET\nIf paying by phone: Payment will post within 1 business day\nIf paying by mail: Allow 5-7 business days for processing\nIf paying at branch: Payment posts same business day""]"
+payment processing,"Automatic Payment Setup
+Customers can set up automatic payments in three ways: Full Balance, Minimum Payment, or Fixed Amount
+Access Online Banking and navigate to Account Services > Automatic Payments
+Select payment frequency: Monthly on due date or bi-weekly
+Verify bank account information is correct before enabling
+Automatic payments will begin on the next billing cycle after setup
+Important: Customer must maintain sufficient funds in linked account
+If automatic payment fails due to insufficient funds, customer will be charged returned payment fee
+Customer should still monitor statements even with automatic payments enabled
+Changes to automatic payment settings take effect on next billing cycle","Payments can be made through online banking, mobile app, phone, mail, or branch locations and must be received by 5:00 PM ET on the due date to be considered on-time. Customers can set up automatic payments for full balance, minimum payment, or fixed amount. Payment processing times vary: online and phone payments post within 1 business day, mail payments take 5-7 days, and branch payments post same business day. Automatic payments require maintaining sufficient funds in the linked account to avoid returned payment fees.","[""Automatic Payment Setup\nCustomers can set up automatic payments in three ways: Full Balance, Minimum Payment, or Fixed Amount\nAccess Online Banking and navigate to Account Services > Automatic Payments\nSelect payment frequency: Monthly on due date or bi-weekly\nVerify bank account information is correct before enabling\nAutomatic payments will begin on the next billing cycle after setup\nImportant: Customer must maintain sufficient funds in linked account\nIf automatic payment fails due to insufficient funds, customer will be charged returned payment fee\nCustomer should still monitor statements even with automatic payments enabled\nChanges to automatic payment settings take effect on next billing cycle""]"
+payment processing,"Payment Methods Available
+Online: Through chase.com or mobile app - processes within 1 business day
+Phone: Call automated system or speak with representative - processes within 1 business day
+Mail: Send check or money order to payment address on statement - allow 5-7 days
+Branch: Visit any Chase branch location - posts same business day
+Wire Transfer: For large payments or expedited processing - contact customer service
+Important Notes:
+Do not send cash through mail
+Include account number on check memo line
+Keep confirmation number for all electronic payments
+Payments made after due date may incur late fees even if in transit","Payments can be made through online banking, mobile app, phone, mail, or branch locations and must be received by 5:00 PM ET on the due date to be considered on-time. Customers can set up automatic payments for full balance, minimum payment, or fixed amount. Payment processing times vary: online and phone payments post within 1 business day, mail payments take 5-7 days, and branch payments post same business day. Automatic payments require maintaining sufficient funds in the linked account to avoid returned payment fees.","[""Payment Methods Available\nOnline: Through chase.com or mobile app - processes within 1 business day\nPhone: Call automated system or speak with representative - processes within 1 business day\nMail: Send check or money order to payment address on statement - allow 5-7 days\nBranch: Visit any Chase branch location - posts same business day\nWire Transfer: For large payments or expedited processing - contact customer service\nImportant Notes:\nDo not send cash through mail\nInclude account number on check memo line\nKeep confirmation number for all electronic payments\nPayments made after due date may incur late fees even if in transit""]"
+disputes chargebacks,"Dispute Process: Filing a Dispute
+Customer has 60 days from statement date to dispute a charge
+Disputes can be filed online, by phone, or in writing
+Provisional credit may be issued within 10 business days depending on dispute type
+Required information for dispute:
+- Transaction date and amount
+- Merchant name
+- Reason for dispute
+- Any supporting documentation
+Types of disputes:
+- Unauthorized transactions: Charges customer didn't make or authorize
+- Billing errors: Charged wrong amount or duplicate charges
+- Service disputes: Goods/services not received or not as described
+Tell customer: Disputed amount will be temporarily credited while investigation is in progress
+Investigation typically takes 30-90 days depending on complexity","Customers have 60 days from the statement date to dispute a charge and can file disputes online, by phone, or in writing. Provisional credit may be issued within 10 business days depending on the dispute type. Disputes can be for unauthorized transactions, billing errors, or service issues. The investigation typically takes 30-90 days, and during this time the disputed amount cannot be reported as delinquent to credit bureaus. Under the Fair Credit Billing Act, customers have specific protections for billing errors and the bank must resolve disputes within 90 days or two billing cycles.","[""Dispute Process: Filing a Dispute\nCustomer has 60 days from statement date to dispute a charge\nDisputes can be filed online, by phone, or in writing\nProvisional credit may be issued within 10 business days depending on dispute type\nRequired information for dispute:\n- Transaction date and amount\n- Merchant name\n- Reason for dispute\n- Any supporting documentation\nTypes of disputes:\n- Unauthorized transactions: Charges customer didn't make or authorize\n- Billing errors: Charged wrong amount or duplicate charges\n- Service disputes: Goods/services not received or not as described\nTell customer: Disputed amount will be temporarily credited while investigation is in progress\nInvestigation typically takes 30-90 days depending on complexity""]"
+disputes chargebacks,"Unauthorized Transaction Disputes
+If customer reports unauthorized transactions, immediately place fraud hold on account
+Ask customer:
+- Do they still have physical card in possession?
+- When did they last use the card?
+- Do they recognize the merchant or transaction?
+- Has anyone else had access to card information?
+For confirmed fraud:
+- Issue provisional credit within 10 business days
+- Cancel current card and issue replacement
+- File fraud report with appropriate authorities
+- Customer is not liable for unauthorized charges
+For authorized user disputes:
+- Customer is responsible for authorized user charges
+- Can only remove authorized user going forward
+- Previous charges cannot be disputed as unauthorized
+Important: Customer must sign affidavit of fraud for unauthorized transaction claims","Customers have 60 days from the statement date to dispute a charge and can file disputes online, by phone, or in writing. Provisional credit may be issued within 10 business days depending on the dispute type. Disputes can be for unauthorized transactions, billing errors, or service issues. The investigation typically takes 30-90 days, and during this time the disputed amount cannot be reported as delinquent to credit bureaus. Under the Fair Credit Billing Act, customers have specific protections for billing errors and the bank must resolve disputes within 90 days or two billing cycles.","[""Unauthorized Transaction Disputes\nIf customer reports unauthorized transactions, immediately place fraud hold on account\nAsk customer:\n- Do they still have physical card in possession?\n- When did they last use the card?\n- Do they recognize the merchant or transaction?\n- Has anyone else had access to card information?\nFor confirmed fraud:\n- Issue provisional credit within 10 business days\n- Cancel current card and issue replacement\n- File fraud report with appropriate authorities\n- Customer is not liable for unauthorized charges\nFor authorized user disputes:\n- Customer is responsible for authorized user charges\n- Can only remove authorized user going forward\n- Previous charges cannot be disputed as unauthorized\nImportant: Customer must sign affidavit of fraud for unauthorized transaction claims""]"
+disputes chargebacks,"Chargeback Rights and Timeline
+Under Fair Credit Billing Act, customers have protections for billing errors
+Customer must notify bank in writing within 60 days of statement showing error
+Bank has 30 days to acknowledge receipt of dispute
+Bank must resolve dispute within 90 days (or two billing cycles)
+During investigation:
+- Cannot report account as delinquent to credit bureaus for disputed amount
+- Cannot charge interest on disputed amount
+- Must provide written notification of investigation results
+If dispute is found in customer's favor:
+- Permanent credit will be issued
+- No interest charged on disputed amount
+If dispute is found in merchant's favor:
+- Provisional credit will be reversed
+- Customer will owe original amount plus any accrued interest
+Customer has right to appeal decision within 10 days of notification","Customers have 60 days from the statement date to dispute a charge and can file disputes online, by phone, or in writing. Provisional credit may be issued within 10 business days depending on the dispute type. Disputes can be for unauthorized transactions, billing errors, or service issues. The investigation typically takes 30-90 days, and during this time the disputed amount cannot be reported as delinquent to credit bureaus. Under the Fair Credit Billing Act, customers have specific protections for billing errors and the bank must resolve disputes within 90 days or two billing cycles.","[""Chargeback Rights and Timeline\nUnder Fair Credit Billing Act, customers have protections for billing errors\nCustomer must notify bank in writing within 60 days of statement showing error\nBank has 30 days to acknowledge receipt of dispute\nBank must resolve dispute within 90 days (or two billing cycles)\nDuring investigation:\n- Cannot report account as delinquent to credit bureaus for disputed amount\n- Cannot charge interest on disputed amount\n- Must provide written notification of investigation results\nIf dispute is found in customer's favor:\n- Permanent credit will be issued\n- No interest charged on disputed amount\nIf dispute is found in merchant's favor:\n- Provisional credit will be reversed\n- Customer will owe original amount plus any accrued interest\nCustomer has right to appeal decision within 10 days of notification""]"
+rewards programs,"Rewards Program Overview
+Customers earn points on eligible purchases based on their card type
+Standard earning rates:
+- 1 point per $1 on all purchases (base cards)
+- 2 points per $1 on dining and travel (preferred cards)
+- 3 points per $1 on select categories (premium cards)
+- 5 points per $1 on bonus category purchases
+Points post to account within 1-2 billing cycles after purchase
+Bonus points from sign-up offers typically post after meeting spending requirement
+Points never expire as long as account remains open and in good standing
+Tell customer: Points can be redeemed for cash back, travel, gift cards, or merchandise
+Minimum redemption amount is 2,500 points ($25 value)
+Check account summary or rewards portal for current points balance","Rewards points are earned on eligible purchases based on card type, with rates ranging from 1 to 5 points per dollar spent. Points can be redeemed for cash back (as statement credit, direct deposit, or check), travel bookings, gift cards, or merchandise. Points never expire as long as the account remains open and in good standing, with a minimum redemption amount of 2,500 points. Points can be combined between eligible cards on the same account and transferred instantly once confirmed, though points cannot be transferred between different customers or after account closure.","[""Rewards Program Overview\nCustomers earn points on eligible purchases based on their card type\nStandard earning rates:\n- 1 point per $1 on all purchases (base cards)\n- 2 points per $1 on dining and travel (preferred cards)\n- 3 points per $1 on select categories (premium cards)\n- 5 points per $1 on bonus category purchases\nPoints post to account within 1-2 billing cycles after purchase\nBonus points from sign-up offers typically post after meeting spending requirement\nPoints never expire as long as account remains open and in good standing\nTell customer: Points can be redeemed for cash back, travel, gift cards, or merchandise\nMinimum redemption amount is 2,500 points ($25 value)\nCheck account summary or rewards portal for current points balance""]"
+rewards programs,"Rewards Redemption Options
+Cash Back: Redeem as statement credit, direct deposit, or check
+- Statement credit posts within 1-2 billing cycles
+- Direct deposit within 5-7 business days
+- Check mailed within 10-14 business days
+Travel: Book through rewards portal or reimburse travel purchases
+- Portal bookings at standard redemption rate
+- Pay Yourself Back feature for eligible purchases
+- Points may have enhanced value for travel redemption
+Gift Cards: Choose from over 150 retailers
+- Electronic gift cards delivered instantly
+- Physical gift cards mailed within 7-10 days
+- Some gift cards offer bonus redemption value
+Merchandise: Shop rewards catalog
+- Items shipped within 2-3 weeks
+- Free shipping on all redemptions
+- Extended warranty on select items
+Important: Redemptions cannot be reversed once processed
+Partial redemptions allowed - don't need to redeem all points at once","Rewards points are earned on eligible purchases based on card type, with rates ranging from 1 to 5 points per dollar spent. Points can be redeemed for cash back (as statement credit, direct deposit, or check), travel bookings, gift cards, or merchandise. Points never expire as long as the account remains open and in good standing, with a minimum redemption amount of 2,500 points. Points can be combined between eligible cards on the same account and transferred instantly once confirmed, though points cannot be transferred between different customers or after account closure.","[""Rewards Redemption Options\nCash Back: Redeem as statement credit, direct deposit, or check\n- Statement credit posts within 1-2 billing cycles\n- Direct deposit within 5-7 business days\n- Check mailed within 10-14 business days\nTravel: Book through rewards portal or reimburse travel purchases\n- Portal bookings at standard redemption rate\n- Pay Yourself Back feature for eligible purchases\n- Points may have enhanced value for travel redemption\nGift Cards: Choose from over 150 retailers\n- Electronic gift cards delivered instantly\n- Physical gift cards mailed within 7-10 days\n- Some gift cards offer bonus redemption value\nMerchandise: Shop rewards catalog\n- Items shipped within 2-3 weeks\n- Free shipping on all redemptions\n- Extended warranty on select items\nImportant: Redemptions cannot be reversed once processed\nPartial redemptions allowed - don't need to redeem all points at once""]"
+rewards programs,"Combining and Transferring Points
+Points can be combined between eligible cards on same account
+Both cards must be enrolled in same rewards program
+To combine points:
+- Log in to online banking
+- Navigate to Rewards section
+- Select Combine Points option
+- Choose source and destination cards
+Points transfer instantly once confirmed
+Primary cardholder can transfer points to authorized users' accounts if eligible
+Points cannot be transferred:
+- To different customers or accounts
+- Between different rewards programs
+- After account closure (must redeem within 30 days)
+Family members can combine points if they are on same household account
+Business and personal card points cannot be combined even if same customer
+Check program terms for specific transfer and combination rules","Rewards points are earned on eligible purchases based on card type, with rates ranging from 1 to 5 points per dollar spent. Points can be redeemed for cash back (as statement credit, direct deposit, or check), travel bookings, gift cards, or merchandise. Points never expire as long as the account remains open and in good standing, with a minimum redemption amount of 2,500 points. Points can be combined between eligible cards on the same account and transferred instantly once confirmed, though points cannot be transferred between different customers or after account closure.","[""Combining and Transferring Points\nPoints can be combined between eligible cards on same account\nBoth cards must be enrolled in same rewards program\nTo combine points:\n- Log in to online banking\n- Navigate to Rewards section\n- Select Combine Points option\n- Choose source and destination cards\nPoints transfer instantly once confirmed\nPrimary cardholder can transfer points to authorized users' accounts if eligible\nPoints cannot be transferred:\n- To different customers or accounts\n- Between different rewards programs\n- After account closure (must redeem within 30 days)\nFamily members can combine points if they are on same household account\nBusiness and personal card points cannot be combined even if same customer\nCheck program terms for specific transfer and combination rules""]"
+card activation,"Card Activation: Getting Started
+New cards must be activated before use
+Activation can be completed through:
+- Mobile app: Instant activation through secure login
+- Online banking: Navigate to Account Services > Activate Card
+- Phone: Call number on activation sticker (automated or representative)
+- ATM: Insert card and enter PIN
+Required information for activation:
+- Last 4 digits of card number
+- Card expiration date
+- CVV security code
+- Customer identification (SSN or account info)
+Tell customer: Card activates immediately after successful verification
+Old card will be automatically deactivated when new card is activated
+If replacing lost/stolen card, old card cannot be reactivated for security","New cards must be activated before use and can be activated through the mobile app, online banking, phone, or ATM. Cards should be activated within 30 days of receipt and will be automatically deactivated after 45 days if not activated. Activation is instant after successful verification and the old card will be automatically deactivated when a new card is activated. Common activation issues include incorrect card information entry, browser cache problems, or security holds that may require contacting customer service.","[""Card Activation: Getting Started\nNew cards must be activated before use\nActivation can be completed through:\n- Mobile app: Instant activation through secure login\n- Online banking: Navigate to Account Services > Activate Card\n- Phone: Call number on activation sticker (automated or representative)\n- ATM: Insert card and enter PIN\nRequired information for activation:\n- Last 4 digits of card number\n- Card expiration date\n- CVV security code\n- Customer identification (SSN or account info)\nTell customer: Card activates immediately after successful verification\nOld card will be automatically deactivated when new card is activated\nIf replacing lost/stolen card, old card cannot be reactivated for security""]"
+card activation,"Activation Time Frames and Deadlines
+Cards should be activated within 30 days of receipt
+If not activated within 45 days, card will be automatically deactivated for security
+Replacement cards for expired cards activate automatically on expiration date
+Temporary cards issued at branch can be activated immediately
+Virtual card numbers can be generated instantly through mobile app
+Activation verification:
+- Confirmation number provided after activation
+- Small test charge may appear and reverse within 1-2 days
+- Account status will show as Active in online banking
+If activation fails:
+- Verify card information is entered correctly
+- Check that card hasn't been reported lost or stolen
+- Contact customer service if repeated failures occur","New cards must be activated before use and can be activated through the mobile app, online banking, phone, or ATM. Cards should be activated within 30 days of receipt and will be automatically deactivated after 45 days if not activated. Activation is instant after successful verification and the old card will be automatically deactivated when a new card is activated. Common activation issues include incorrect card information entry, browser cache problems, or security holds that may require contacting customer service.","[""Activation Time Frames and Deadlines\nCards should be activated within 30 days of receipt\nIf not activated within 45 days, card will be automatically deactivated for security\nReplacement cards for expired cards activate automatically on expiration date\nTemporary cards issued at branch can be activated immediately\nVirtual card numbers can be generated instantly through mobile app\nActivation verification:\n- Confirmation number provided after activation\n- Small test charge may appear and reverse within 1-2 days\n- Account status will show as Active in online banking\nIf activation fails:\n- Verify card information is entered correctly\n- Check that card hasn't been reported lost or stolen\n- Contact customer service if repeated failures occur""]"
+card activation,"Troubleshooting Activation Issues
+Common activation problems and solutions:
+Card won't activate online or via app:
+- Clear browser cache and cookies
+- Try different browser or device
+- Verify using correct login credentials
+- Check for system maintenance notifications
+Automated phone activation fails:
+- Ensure speaking clearly for voice recognition
+- Try entering information using keypad instead
+- Call during business hours to speak with representative
+Error message about card already being activated:
+- May have been activated by mistake
+- Try making small purchase to verify status
+- Check online banking for account activity
+Security hold preventing activation:
+- Recent fraud alert on account
+- Address verification needed
+- Must contact customer service to resolve
+Important: Never activate card if received unexpectedly - contact fraud department immediately","New cards must be activated before use and can be activated through the mobile app, online banking, phone, or ATM. Cards should be activated within 30 days of receipt and will be automatically deactivated after 45 days if not activated. Activation is instant after successful verification and the old card will be automatically deactivated when a new card is activated. Common activation issues include incorrect card information entry, browser cache problems, or security holds that may require contacting customer service.","[""Troubleshooting Activation Issues\nCommon activation problems and solutions:\nCard won't activate online or via app:\n- Clear browser cache and cookies\n- Try different browser or device\n- Verify using correct login credentials\n- Check for system maintenance notifications\nAutomated phone activation fails:\n- Ensure speaking clearly for voice recognition\n- Try entering information using keypad instead\n- Call during business hours to speak with representative\nError message about card already being activated:\n- May have been activated by mistake\n- Try making small purchase to verify status\n- Check online banking for account activity\nSecurity hold preventing activation:\n- Recent fraud alert on account\n- Address verification needed\n- Must contact customer service to resolve\nImportant: Never activate card if received unexpectedly - contact fraud department immediately""]"
+fraud protection,"Fraud Monitoring and Detection
+Account monitored 24/7 for suspicious activity
+Automated systems analyze:
+- Purchase patterns and locations
+- Transaction amounts and frequency
+- High-risk merchant categories
+- International transactions
+- Online purchases
+Customer will receive alerts via:
+- Text message (if enrolled)
+- Email notification
+- Mobile app push notification
+- Phone call for high-risk transactions
+Tell customer to respond to alerts promptly:
+- Text YES if transaction is legitimate
+- Text NO if transaction is fraudulent
+- Call number provided in alert for questions
+Unrecognized alerts should be reported immediately
+Remember: Bank will never ask for full card number or PIN in alert messages","Accounts are monitored 24/7 for suspicious activity with automated systems analyzing purchase patterns, locations, amounts, and high-risk merchants. Customers receive alerts via text, email, mobile app, or phone call for high-risk transactions. Under zero liability protection, customers are not responsible for unauthorized transactions if they report unauthorized charges promptly and have taken reasonable care of their card. Lost or stolen cards should be reported immediately through the mobile app, online banking, phone, or branch to prevent fraud, and provisional credit is issued within 10 business days.","[""Fraud Monitoring and Detection\nAccount monitored 24/7 for suspicious activity\nAutomated systems analyze:\n- Purchase patterns and locations\n- Transaction amounts and frequency\n- High-risk merchant categories\n- International transactions\n- Online purchases\nCustomer will receive alerts via:\n- Text message (if enrolled)\n- Email notification\n- Mobile app push notification\n- Phone call for high-risk transactions\nTell customer to respond to alerts promptly:\n- Text YES if transaction is legitimate\n- Text NO if transaction is fraudulent\n- Call number provided in alert for questions\nUnrecognized alerts should be reported immediately\nRemember: Bank will never ask for full card number or PIN in alert messages""]"
+fraud protection,"Zero Liability Protection
+Customers are not responsible for unauthorized transactions
+Protection applies to:
+- Card-present transactions with chip or signature
+- Card-not-present transactions (online, phone, mail-order)
+- Contactless tap-to-pay transactions
+Coverage requirements:
+- Customer must report unauthorized charges promptly
+- Must have taken reasonable care of card
+- Must not have shared PIN or account access
+Important exceptions to zero liability:
+- Authorized user transactions
+- Transactions after failing to report lost/stolen card
+- Business accounts (different coverage terms apply)
+- PIN-based transactions if PIN was compromised
+To maintain protection:
+- Review statements regularly
+- Report discrepancies within 60 days
+- Keep card secure and never share details
+- Report lost/stolen cards immediately
+Provisional credit issued within 10 business days while investigating fraud claim","Accounts are monitored 24/7 for suspicious activity with automated systems analyzing purchase patterns, locations, amounts, and high-risk merchants. Customers receive alerts via text, email, mobile app, or phone call for high-risk transactions. Under zero liability protection, customers are not responsible for unauthorized transactions if they report unauthorized charges promptly and have taken reasonable care of their card. Lost or stolen cards should be reported immediately through the mobile app, online banking, phone, or branch to prevent fraud, and provisional credit is issued within 10 business days.","[""Zero Liability Protection\nCustomers are not responsible for unauthorized transactions\nProtection applies to:\n- Card-present transactions with chip or signature\n- Card-not-present transactions (online, phone, mail-order)\n- Contactless tap-to-pay transactions\nCoverage requirements:\n- Customer must report unauthorized charges promptly\n- Must have taken reasonable care of card\n- Must not have shared PIN or account access\nImportant exceptions to zero liability:\n- Authorized user transactions\n- Transactions after failing to report lost/stolen card\n- Business accounts (different coverage terms apply)\n- PIN-based transactions if PIN was compromised\nTo maintain protection:\n- Review statements regularly\n- Report discrepancies within 60 days\n- Keep card secure and never share details\n- Report lost/stolen cards immediately\nProvisional credit issued within 10 business days while investigating fraud claim""]"
+fraud protection,"Reporting Lost or Stolen Cards
+Report lost or stolen cards immediately to prevent fraud
+Reporting methods:
+- Mobile app: Select card and choose Report Lost/Stolen
+- Online banking: Navigate to Account Services
+- Phone: Call number on back of card (available 24/7)
+- Branch: Visit any location during business hours
+Information needed to report:
+- Last 4 digits of account number
+- Verification information (SSN, DOB, etc.)
+- Details of when/where card was lost
+- Any suspicious transactions already noticed
+After reporting:
+- Card is immediately deactivated
+- Replacement card ordered automatically
+- Expedited shipping available (2-3 business days)
+- Emergency cash advance available if needed
+- Temporary virtual card number can be issued instantly
+Automatic payments and subscriptions:
+- Customer should update payment information
+- Some merchants may auto-update card information
+- Monitor for any declined recurring payments
+Remember: Customer is not liable for fraudulent charges after reporting","Accounts are monitored 24/7 for suspicious activity with automated systems analyzing purchase patterns, locations, amounts, and high-risk merchants. Customers receive alerts via text, email, mobile app, or phone call for high-risk transactions. Under zero liability protection, customers are not responsible for unauthorized transactions if they report unauthorized charges promptly and have taken reasonable care of their card. Lost or stolen cards should be reported immediately through the mobile app, online banking, phone, or branch to prevent fraud, and provisional credit is issued within 10 business days.","[""Reporting Lost or Stolen Cards\nReport lost or stolen cards immediately to prevent fraud\nReporting methods:\n- Mobile app: Select card and choose Report Lost/Stolen\n- Online banking: Navigate to Account Services\n- Phone: Call number on back of card (available 24/7)\n- Branch: Visit any location during business hours\nInformation needed to report:\n- Last 4 digits of account number\n- Verification information (SSN, DOB, etc.)\n- Details of when/where card was lost\n- Any suspicious transactions already noticed\nAfter reporting:\n- Card is immediately deactivated\n- Replacement card ordered automatically\n- Expedited shipping available (2-3 business days)\n- Emergency cash advance available if needed\n- Temporary virtual card number can be issued instantly\nAutomatic payments and subscriptions:\n- Customer should update payment information\n- Some merchants may auto-update card information\n- Monitor for any declined recurring payments\nRemember: Customer is not liable for fraudulent charges after reporting""]"
+balance transfers,"Balance Transfer: Overview
+Balance transfers allow moving debt from other credit cards to Chase account
+Benefits of balance transfers:
+- Consolidate multiple card balances
+- Take advantage of promotional APR offers
+- Simplify monthly payments
+- Potentially save on interest charges
+Balance transfer fee: Typically 3% or 5% of transfer amount (minimum $5)
+Promotional APR: Check current offers (usually 0% for 12-18 months)
+Standard APR applies after promotional period ends
+Available credit limit: Transfer amount plus fee cannot exceed available credit
+Processing time: 7-14 business days for transfer to complete
+Remember: Cannot transfer balances between Chase accounts
+Only transfer balances from other financial institutions","Balance transfers allow moving debt from other credit cards to take advantage of promotional APR offers and consolidate multiple card balances. There is typically a 3% or 5% balance transfer fee (minimum $5) and the transfer amount plus fee cannot exceed available credit. Balance transfers take 7-14 business days to complete and can be requested online, by phone, or through the mobile app. Promotional APR applies from the date of transfer posting and making minimum payments on time is required to keep the promotional rate.","[""Balance Transfer: Overview\nBalance transfers allow moving debt from other credit cards to Chase account\nBenefits of balance transfers:\n- Consolidate multiple card balances\n- Take advantage of promotional APR offers\n- Simplify monthly payments\n- Potentially save on interest charges\nBalance transfer fee: Typically 3% or 5% of transfer amount (minimum $5)\nPromotional APR: Check current offers (usually 0% for 12-18 months)\nStandard APR applies after promotional period ends\nAvailable credit limit: Transfer amount plus fee cannot exceed available credit\nProcessing time: 7-14 business days for transfer to complete\nRemember: Cannot transfer balances between Chase accounts\nOnly transfer balances from other financial institutions""]"
+balance transfers,"How to Request Balance Transfer
+Balance transfers can be requested:
+- Online: Through online banking transfer request form
+- Phone: Call customer service with account information
+- Mail: Complete and send balance transfer checks provided with card
+- Mobile app: Use balance transfer feature in app
+Required information for transfer:
+- Account number of card to be paid off
+- Name on account to be paid off
+- Amount to transfer (full balance or partial)
+- Account holder address for verification
+Tell customer:
+Promotional APR applies from date of transfer posting
+Transfer request submitted is not a guarantee of approval
+Subject to available credit limit and account standing
+Transfers may be declined if:
+- Insufficient available credit
+- Account is past due or overlimit
+- Exceeds maximum transfer limits
+Check offer terms for any restrictions on transfer amounts or accounts","Balance transfers allow moving debt from other credit cards to take advantage of promotional APR offers and consolidate multiple card balances. There is typically a 3% or 5% balance transfer fee (minimum $5) and the transfer amount plus fee cannot exceed available credit. Balance transfers take 7-14 business days to complete and can be requested online, by phone, or through the mobile app. Promotional APR applies from the date of transfer posting and making minimum payments on time is required to keep the promotional rate.","[""How to Request Balance Transfer\nBalance transfers can be requested:\n- Online: Through online banking transfer request form\n- Phone: Call customer service with account information\n- Mail: Complete and send balance transfer checks provided with card\n- Mobile app: Use balance transfer feature in app\nRequired information for transfer:\n- Account number of card to be paid off\n- Name on account to be paid off\n- Amount to transfer (full balance or partial)\n- Account holder address for verification\nTell customer:\nPromotional APR applies from date of transfer posting\nTransfer request submitted is not a guarantee of approval\nSubject to available credit limit and account standing\nTransfers may be declined if:\n- Insufficient available credit\n- Account is past due or overlimit\n- Exceeds maximum transfer limits\nCheck offer terms for any restrictions on transfer amounts or accounts""]"
+balance transfers,"Balance Transfer Terms and Conditions
+Important terms to understand:
+Promotional APR period: Starts when transfer posts to account
+- Make minimum payments on time to keep promotional rate
+- Missing payment may void promotional APR
+- Standard APR applies after promotional period
+Balance transfer fee: Charged when transfer posts
+- Included in total balance owed
+- Cannot be waived or refunded
+- Different offers may have different fee structures
+Payments allocation: Payments generally applied to:
+- Balances with highest APR first (after minimum payment)
+- Check specific card terms for payment allocation rules
+- Promotional balance typically paid last
+Credit limit impact: Transfer amount + fee reduces available credit
+- Cannot make purchases if at or over credit limit
+- Returning available credit requires paying down balance
+- Regular purchases may accrue interest at standard APR
+Interest charges: New purchases may accrue interest during promotional period
+- No grace period on new purchases if carrying balance
+- Recommended to pay off transferred balance before making new purchases","Balance transfers allow moving debt from other credit cards to take advantage of promotional APR offers and consolidate multiple card balances. There is typically a 3% or 5% balance transfer fee (minimum $5) and the transfer amount plus fee cannot exceed available credit. Balance transfers take 7-14 business days to complete and can be requested online, by phone, or through the mobile app. Promotional APR applies from the date of transfer posting and making minimum payments on time is required to keep the promotional rate.","[""Balance Transfer Terms and Conditions\nImportant terms to understand:\nPromotional APR period: Starts when transfer posts to account\n- Make minimum payments on time to keep promotional rate\n- Missing payment may void promotional APR\n- Standard APR applies after promotional period\nBalance transfer fee: Charged when transfer posts\n- Included in total balance owed\n- Cannot be waived or refunded\n- Different offers may have different fee structures\nPayments allocation: Payments generally applied to:\n- Balances with highest APR first (after minimum payment)\n- Check specific card terms for payment allocation rules\n- Promotional balance typically paid last\nCredit limit impact: Transfer amount + fee reduces available credit\n- Cannot make purchases if at or over credit limit\n- Returning available credit requires paying down balance\n- Regular purchases may accrue interest at standard APR\nInterest charges: New purchases may accrue interest during promotional period\n- No grace period on new purchases if carrying balance\n- Recommended to pay off transferred balance before making new purchases""]"
+credit limit increase,"Credit Limit Increase: Requesting an Increase
+Customers can request credit limit increase through:
+- Online banking: Navigate to Account Services > Credit Limit Increase
+- Mobile app: Select account and choose Request Credit Increase
+- Phone: Call customer service for immediate review
+- Automatic: May receive pre-approved increase offers
+Eligibility requirements:
+- Account open for at least 6 months
+- Account in good standing (no late payments)
+- No recent credit limit increase (within 6 months)
+- Current income information required
+Factors considered for approval:
+- Payment history on this and other accounts
+- Current credit utilization ratio
+- Debt-to-income ratio
+- Recent credit inquiries
+- Overall creditworthiness
+Tell customer: Hard credit inquiry may be required for request
+Decision typically provided immediately for online requests
+Some requests may require additional review (2-7 business days)","Credit limit increases can be requested through online banking, mobile app, or phone after the account has been open for at least 6 months with no late payments. Factors considered include payment history, credit utilization ratio, debt-to-income ratio, and overall creditworthiness. The bank may also automatically increase limits periodically for accounts in good standing without requiring a hard credit inquiry. Credit limits can also be decreased based on payment delinquency, decreased credit score, or account inactivity, with customers receiving notification before the decrease takes effect.","[""Credit Limit Increase: Requesting an Increase\nCustomers can request credit limit increase through:\n- Online banking: Navigate to Account Services > Credit Limit Increase\n- Mobile app: Select account and choose Request Credit Increase\n- Phone: Call customer service for immediate review\n- Automatic: May receive pre-approved increase offers\nEligibility requirements:\n- Account open for at least 6 months\n- Account in good standing (no late payments)\n- No recent credit limit increase (within 6 months)\n- Current income information required\nFactors considered for approval:\n- Payment history on this and other accounts\n- Current credit utilization ratio\n- Debt-to-income ratio\n- Recent credit inquiries\n- Overall creditworthiness\nTell customer: Hard credit inquiry may be required for request\nDecision typically provided immediately for online requests\nSome requests may require additional review (2-7 business days)""]"
+credit limit increase,"Understanding Credit Limit Decisions
+Credit limit increase approved:
+- New limit effective immediately
+- No fee for requesting or receiving increase
+- Updated limit shows in online banking and next statement
+- May help improve credit utilization ratio
+Credit limit increase denied:
+- Written explanation sent within 7-10 business days
+- Common reasons for denial:
+  * Insufficient income
+  * Recent late payments
+  * High debt-to-income ratio
+  * Too many recent credit inquiries
+  * Limited credit history
+- Can reapply after 6 months
+- Work on improving credit profile before reapplying
+Partial increase offered:
+- May receive lower increase than requested
+- Can accept partial increase or decline
+- No penalty for declining offer
+Important: Multiple credit limit requests in short period may negatively impact credit score","Credit limit increases can be requested through online banking, mobile app, or phone after the account has been open for at least 6 months with no late payments. Factors considered include payment history, credit utilization ratio, debt-to-income ratio, and overall creditworthiness. The bank may also automatically increase limits periodically for accounts in good standing without requiring a hard credit inquiry. Credit limits can also be decreased based on payment delinquency, decreased credit score, or account inactivity, with customers receiving notification before the decrease takes effect.","[""Understanding Credit Limit Decisions\nCredit limit increase approved:\n- New limit effective immediately\n- No fee for requesting or receiving increase\n- Updated limit shows in online banking and next statement\n- May help improve credit utilization ratio\nCredit limit increase denied:\n- Written explanation sent within 7-10 business days\n- Common reasons for denial:\n  * Insufficient income\n  * Recent late payments\n  * High debt-to-income ratio\n  * Too many recent credit inquiries\n  * Limited credit history\n- Can reapply after 6 months\n- Work on improving credit profile before reapplying\nPartial increase offered:\n- May receive lower increase than requested\n- Can accept partial increase or decline\n- No penalty for declining offer\nImportant: Multiple credit limit requests in short period may negatively impact credit score""]"
+credit limit increase,"Automatic Credit Limit Increases and Decreases
+Automatic increases:
+- Bank periodically reviews accounts for increase eligibility
+- May receive increase without requesting if:
+  * Account in good standing for extended period
+  * Consistent on-time payment history
+  * Income information on file supports increase
+- No hard credit inquiry for automatic increases
+- Customer can decline automatic increase if desired
+Credit limit decreases:
+- Bank may reduce limit based on:
+  * Payment delinquency
+  * Decreased credit score
+  * Inactivity on account
+  * Economic factors
+- Customer notified of decrease before effective date
+- Decrease cannot put account over limit
+- Can request reconsideration if decrease seems error
+Managing credit limit:
+- Keep credit utilization under 30% for best credit score impact
+- Make on-time payments consistently
+- Update income information when it increases
+- Use account regularly (but responsibly)
+Remember: Higher credit limit doesn't mean you should increase spending","Credit limit increases can be requested through online banking, mobile app, or phone after the account has been open for at least 6 months with no late payments. Factors considered include payment history, credit utilization ratio, debt-to-income ratio, and overall creditworthiness. The bank may also automatically increase limits periodically for accounts in good standing without requiring a hard credit inquiry. Credit limits can also be decreased based on payment delinquency, decreased credit score, or account inactivity, with customers receiving notification before the decrease takes effect.","[""Automatic Credit Limit Increases and Decreases\nAutomatic increases:\n- Bank periodically reviews accounts for increase eligibility\n- May receive increase without requesting if:\n  * Account in good standing for extended period\n  * Consistent on-time payment history\n  * Income information on file supports increase\n- No hard credit inquiry for automatic increases\n- Customer can decline automatic increase if desired\nCredit limit decreases:\n- Bank may reduce limit based on:\n  * Payment delinquency\n  * Decreased credit score\n  * Inactivity on account\n  * Economic factors\n- Customer notified of decrease before effective date\n- Decrease cannot put account over limit\n- Can request reconsideration if decrease seems error\nManaging credit limit:\n- Keep credit utilization under 30% for best credit score impact\n- Make on-time payments consistently\n- Update income information when it increases\n- Use account regularly (but responsibly)\nRemember: Higher credit limit doesn't mean you should increase spending""]"
+statement inquiries,"Accessing Account Statements
+Statements available through multiple channels:
+Online Banking:
+- Log in to chase.com
+- Navigate to Account > Statements
+- View up to 7 years of statements
+- Download PDF format for records
+Mobile App:
+- Open app and select account
+- Tap Statements & Activity
+- View or download current and past statements
+Paper Statements:
+- Delivered by mail within 3-5 business days after cycle closes
+- Can request paper statements in Account Preferences
+- May incur monthly fee depending on account type
+Tell customer:
+Electronic statements available 24 hours after cycle closes
+Paper statements mailed 2-3 days after cycle closes
+Keep statements for at least 3 years for tax purposes
+Download and save statements before account closure","Statements are available through online banking (up to 7 years), mobile app, or delivered by mail within 3-5 business days after the cycle closes. Electronic statements are available 24 hours after the cycle closes and can be downloaded in PDF format. The statement cycle typically covers 28-31 days and the payment due date is 21-25 days after the statement date. Customers can switch between paper and electronic statements in account preferences and can request a due date change once per year.","[""Accessing Account Statements\nStatements available through multiple channels:\nOnline Banking:\n- Log in to chase.com\n- Navigate to Account > Statements\n- View up to 7 years of statements\n- Download PDF format for records\nMobile App:\n- Open app and select account\n- Tap Statements & Activity\n- View or download current and past statements\nPaper Statements:\n- Delivered by mail within 3-5 business days after cycle closes\n- Can request paper statements in Account Preferences\n- May incur monthly fee depending on account type\nTell customer:\nElectronic statements available 24 hours after cycle closes\nPaper statements mailed 2-3 days after cycle closes\nKeep statements for at least 3 years for tax purposes\nDownload and save statements before account closure""]"
+statement inquiries,"Understanding Statement Cycle and Due Date
+Statement cycle: Period of time covered by statement (typically 28-31 days)
+- Cycle start date: Day after previous cycle ended
+- Cycle end date: Last day included in statement
+- Statement date: Date statement is generated
+Payment due date: Typically 21-25 days after statement date
+- Must be received by 5:00 PM ET to be considered on-time
+- Due date is same day each month (may vary if due date falls on weekend/holiday)
+Important dates on statement:
+- Statement closing date: Last day of billing cycle
+- Payment due date: Date payment must be received
+- New balance: Total amount owed as of closing date
+- Minimum payment due: Minimum amount to avoid late fee
+Grace period: Time between cycle end and due date
+- No interest on new purchases if paid in full by due date
+- Only applies if previous balance was paid in full
+- Carrying balance eliminates grace period","Statements are available through online banking (up to 7 years), mobile app, or delivered by mail within 3-5 business days after the cycle closes. Electronic statements are available 24 hours after the cycle closes and can be downloaded in PDF format. The statement cycle typically covers 28-31 days and the payment due date is 21-25 days after the statement date. Customers can switch between paper and electronic statements in account preferences and can request a due date change once per year.","[""Understanding Statement Cycle and Due Date\nStatement cycle: Period of time covered by statement (typically 28-31 days)\n- Cycle start date: Day after previous cycle ended\n- Cycle end date: Last day included in statement\n- Statement date: Date statement is generated\nPayment due date: Typically 21-25 days after statement date\n- Must be received by 5:00 PM ET to be considered on-time\n- Due date is same day each month (may vary if due date falls on weekend/holiday)\nImportant dates on statement:\n- Statement closing date: Last day of billing cycle\n- Payment due date: Date payment must be received\n- New balance: Total amount owed as of closing date\n- Minimum payment due: Minimum amount to avoid late fee\nGrace period: Time between cycle end and due date\n- No interest on new purchases if paid in full by due date\n- Only applies if previous balance was paid in full\n- Carrying balance eliminates grace period""]"
+statement inquiries,"Statement Questions and Issues
+Common statement inquiries:
+Didn't receive statement:
+- Check spam/junk folder for electronic statements
+- Verify current email and mailing address in profile
+- Request duplicate statement through online banking
+- Contact customer service if statements consistently missing
+Statement shows incorrect information:
+- Review all transactions carefully
+- Report discrepancies within 60 days
+- Dispute errors immediately to protect rights
+- Keep documentation supporting your claim
+Want to change statement delivery:
+- Switch between paper and electronic in Account Preferences
+- Changes take effect next billing cycle
+- May take 1-2 cycles to fully transition
+- Paperless enrollment may include fee waiver or rewards
+Changing due date:
+- Can request due date change once per year
+- New due date takes effect in 1-2 billing cycles
+- Choose date that aligns with income/payment schedule
+- Cannot change due date if account is past due
+Remember: Always review statements promptly for unauthorized transactions","Statements are available through online banking (up to 7 years), mobile app, or delivered by mail within 3-5 business days after the cycle closes. Electronic statements are available 24 hours after the cycle closes and can be downloaded in PDF format. The statement cycle typically covers 28-31 days and the payment due date is 21-25 days after the statement date. Customers can switch between paper and electronic statements in account preferences and can request a due date change once per year.","[""Statement Questions and Issues\nCommon statement inquiries:\nDidn't receive statement:\n- Check spam/junk folder for electronic statements\n- Verify current email and mailing address in profile\n- Request duplicate statement through online banking\n- Contact customer service if statements consistently missing\nStatement shows incorrect information:\n- Review all transactions carefully\n- Report discrepancies within 60 days\n- Dispute errors immediately to protect rights\n- Keep documentation supporting your claim\nWant to change statement delivery:\n- Switch between paper and electronic in Account Preferences\n- Changes take effect next billing cycle\n- May take 1-2 cycles to fully transition\n- Paperless enrollment may include fee waiver or rewards\nChanging due date:\n- Can request due date change once per year\n- New due date takes effect in 1-2 billing cycles\n- Choose date that aligns with income/payment schedule\n- Cannot change due date if account is past due\nRemember: Always review statements promptly for unauthorized transactions""]"
+interest fees,"Understanding Interest Rates and APR
+APR (Annual Percentage Rate): Yearly cost of borrowing including interest and fees
+Types of APRs on credit cards:
+- Purchase APR: Rate on regular purchases
+- Balance transfer APR: Rate on transferred balances
+- Cash advance APR: Rate on cash advances (typically higher)
+- Penalty APR: Higher rate applied for late payments
+Variable vs Fixed APR:
+- Variable APR: Changes based on Prime Rate
+- Fixed APR: Rate stays same but can be changed with notice
+- Most credit cards have variable APR
+Current APR shown on:
+- Monthly statement (top section)
+- Online banking account summary
+- Card agreement terms and conditions
+Tell customer: Interest charges can be avoided by paying full balance by due date
+Interest only charged on carried balances, not paid-in-full amounts
+Making only minimum payment results in significant interest charges over time","APR (Annual Percentage Rate) represents the yearly cost of borrowing and includes purchase APR, balance transfer APR, cash advance APR, and penalty APR. Interest is calculated using the average daily balance method, where daily balances are added throughout the billing cycle, divided by the number of days, and multiplied by the daily periodic rate. Common fees include late payment fees ($29-$40), returned payment fees ($29), and foreign transaction fees (3%). Customers can request one-time courtesy fee waivers for late or returned payment fees, especially if it's a first occurrence and the account has a history of on-time payments.","[""Understanding Interest Rates and APR\nAPR (Annual Percentage Rate): Yearly cost of borrowing including interest and fees\nTypes of APRs on credit cards:\n- Purchase APR: Rate on regular purchases\n- Balance transfer APR: Rate on transferred balances\n- Cash advance APR: Rate on cash advances (typically higher)\n- Penalty APR: Higher rate applied for late payments\nVariable vs Fixed APR:\n- Variable APR: Changes based on Prime Rate\n- Fixed APR: Rate stays same but can be changed with notice\n- Most credit cards have variable APR\nCurrent APR shown on:\n- Monthly statement (top section)\n- Online banking account summary\n- Card agreement terms and conditions\nTell customer: Interest charges can be avoided by paying full balance by due date\nInterest only charged on carried balances, not paid-in-full amounts\nMaking only minimum payment results in significant interest charges over time""]"
+interest fees,"How Credit Card Interest is Calculated
+Interest calculation method: Average Daily Balance
+Daily balance calculation:
+- Add all daily balances in billing cycle
+- Divide by number of days in cycle
+- Multiply by daily periodic rate (APR ÷ 365)
+- Result is interest charge for that cycle
+Example calculation:
+- Balance: $1,000
+- APR: 18.99%
+- Daily rate: 18.99% ÷ 365 = 0.052%
+- Days in cycle: 30
+- Interest charge: $1,000 × 0.052% × 30 = $15.60
+Important factors affecting interest:
+- When payments are made (earlier is better)
+- New purchases add to daily balance
+- Cash advances accrue interest immediately (no grace period)
+- Different balances may have different APRs
+Avoiding interest charges:
+- Pay full statement balance by due date
+- Pay more than minimum payment
+- Avoid cash advances when possible
+- Take advantage of 0% promotional offers","APR (Annual Percentage Rate) represents the yearly cost of borrowing and includes purchase APR, balance transfer APR, cash advance APR, and penalty APR. Interest is calculated using the average daily balance method, where daily balances are added throughout the billing cycle, divided by the number of days, and multiplied by the daily periodic rate. Common fees include late payment fees ($29-$40), returned payment fees ($29), and foreign transaction fees (3%). Customers can request one-time courtesy fee waivers for late or returned payment fees, especially if it's a first occurrence and the account has a history of on-time payments.","[""How Credit Card Interest is Calculated\nInterest calculation method: Average Daily Balance\nDaily balance calculation:\n- Add all daily balances in billing cycle\n- Divide by number of days in cycle\n- Multiply by daily periodic rate (APR \u00f7 365)\n- Result is interest charge for that cycle\nExample calculation:\n- Balance: $1,000\n- APR: 18.99%\n- Daily rate: 18.99% \u00f7 365 = 0.052%\n- Days in cycle: 30\n- Interest charge: $1,000 \u00d7 0.052% \u00d7 30 = $15.60\nImportant factors affecting interest:\n- When payments are made (earlier is better)\n- New purchases add to daily balance\n- Cash advances accrue interest immediately (no grace period)\n- Different balances may have different APRs\nAvoiding interest charges:\n- Pay full statement balance by due date\n- Pay more than minimum payment\n- Avoid cash advances when possible\n- Take advantage of 0% promotional offers""]"
+interest fees,"Common Fees and Fee Waivers
+Standard credit card fees:
+Late payment fee:
+- $29 for first late payment
+- $40 for subsequent late payments within 6 months
+- Charged when minimum payment not received by due date
+- Can negatively impact credit score
+Returned payment fee:
+- $29 if payment returned due to insufficient funds
+- May also incur late payment fee
+- Check with bank before making payment if concerned about funds
+Over-limit fee:
+- Most cards no longer charge over-limit fees
+- Transactions may be declined if over limit
+- Must opt-in to allow over-limit transactions
+Foreign transaction fee:
+- 3% of transaction amount for purchases made outside US
+- Applies to online purchases from foreign merchants
+- Some cards have no foreign transaction fee
+Requesting fee waiver:
+- Can request one-time courtesy waiver for late/returned payment fee
+- More likely granted if:
+  * First time occurrence
+  * Long history of on-time payments
+  * Account in good standing
+- Call customer service to request
+- Not guaranteed but often approved for good customers
+Balance transfer and cash advance fees typically cannot be waived","APR (Annual Percentage Rate) represents the yearly cost of borrowing and includes purchase APR, balance transfer APR, cash advance APR, and penalty APR. Interest is calculated using the average daily balance method, where daily balances are added throughout the billing cycle, divided by the number of days, and multiplied by the daily periodic rate. Common fees include late payment fees ($29-$40), returned payment fees ($29), and foreign transaction fees (3%). Customers can request one-time courtesy fee waivers for late or returned payment fees, especially if it's a first occurrence and the account has a history of on-time payments.","[""Common Fees and Fee Waivers\nStandard credit card fees:\nLate payment fee:\n- $29 for first late payment\n- $40 for subsequent late payments within 6 months\n- Charged when minimum payment not received by due date\n- Can negatively impact credit score\nReturned payment fee:\n- $29 if payment returned due to insufficient funds\n- May also incur late payment fee\n- Check with bank before making payment if concerned about funds\nOver-limit fee:\n- Most cards no longer charge over-limit fees\n- Transactions may be declined if over limit\n- Must opt-in to allow over-limit transactions\nForeign transaction fee:\n- 3% of transaction amount for purchases made outside US\n- Applies to online purchases from foreign merchants\n- Some cards have no foreign transaction fee\nRequesting fee waiver:\n- Can request one-time courtesy waiver for late/returned payment fee\n- More likely granted if:\n  * First time occurrence\n  * Long history of on-time payments\n  * Account in good standing\n- Call customer service to request\n- Not guaranteed but often approved for good customers\nBalance transfer and cash advance fees typically cannot be waived""]"
+lost stolen cards,"Reporting Lost or Stolen Cards Immediately
+Time is critical when card is lost or stolen
+Report immediately to prevent unauthorized charges:
+Online: Log in to online banking and report card lost/stolen
+Mobile app: Select card and choose Lock/Report Lost
+Phone: Call number on back of card (available 24/7)
+- If no card access, call main customer service line
+- Have account information ready for verification
+What happens when you report:
+- Card is immediately deactivated
+- Cannot be used for any transactions
+- Automatic fraud monitoring activated
+- New card ordered and shipped
+- Account reviewed for suspicious activity
+Tell customer: You are not liable for fraudulent charges after reporting
+Report as soon as you notice card is missing
+Don't wait to see if fraudulent charges occur
+Quick reporting minimizes potential fraud and hassle","Lost or stolen cards should be reported immediately through online banking, mobile app, or phone (available 24/7) to prevent unauthorized charges. A temporary card lock can be used when a card is misplaced but might be found, while permanent deactivation is used when the card is truly lost or stolen. When a card is permanently deactivated, a new card is issued automatically with expedited shipping available (2-3 business days), and virtual card numbers can be generated instantly through the mobile app. Customers are not liable for fraudulent charges after reporting and emergency cash advances are available at any branch location.","[""Reporting Lost or Stolen Cards Immediately\nTime is critical when card is lost or stolen\nReport immediately to prevent unauthorized charges:\nOnline: Log in to online banking and report card lost/stolen\nMobile app: Select card and choose Lock/Report Lost\nPhone: Call number on back of card (available 24/7)\n- If no card access, call main customer service line\n- Have account information ready for verification\nWhat happens when you report:\n- Card is immediately deactivated\n- Cannot be used for any transactions\n- Automatic fraud monitoring activated\n- New card ordered and shipped\n- Account reviewed for suspicious activity\nTell customer: You are not liable for fraudulent charges after reporting\nReport as soon as you notice card is missing\nDon't wait to see if fraudulent charges occur\nQuick reporting minimizes potential fraud and hassle""]"
+lost stolen cards,"Temporary Card Lock vs Permanent Deactivation
+Temporary card lock: Use when card is misplaced but might be found
+- Available through mobile app or online banking
+- Locks card instantly, preventing all transactions
+- Can unlock immediately when card is located
+- No new card issued while locked
+- Lock duration: Until manually unlocked
+- Automatic payments and subscriptions still process
+- Perfect for: Misplaced card at home, temporary travel safety
+Permanent deactivation: Use when card is truly lost or stolen
+- Card permanently cancelled, cannot be reactivated
+- New card with new number issued automatically
+- Automatic payments will need updating
+- Replacement card arrives in 5-7 business days
+- Expedited shipping available (2-3 business days)
+- Virtual card number can be issued immediately via app
+Important differences:
+- Locked card can be unlocked and used again
+- Deactivated card requires new physical card
+- Choose lock if unsure of card location
+- Choose deactivation if card security compromised","Lost or stolen cards should be reported immediately through online banking, mobile app, or phone (available 24/7) to prevent unauthorized charges. A temporary card lock can be used when a card is misplaced but might be found, while permanent deactivation is used when the card is truly lost or stolen. When a card is permanently deactivated, a new card is issued automatically with expedited shipping available (2-3 business days), and virtual card numbers can be generated instantly through the mobile app. Customers are not liable for fraudulent charges after reporting and emergency cash advances are available at any branch location.","[""Temporary Card Lock vs Permanent Deactivation\nTemporary card lock: Use when card is misplaced but might be found\n- Available through mobile app or online banking\n- Locks card instantly, preventing all transactions\n- Can unlock immediately when card is located\n- No new card issued while locked\n- Lock duration: Until manually unlocked\n- Automatic payments and subscriptions still process\n- Perfect for: Misplaced card at home, temporary travel safety\nPermanent deactivation: Use when card is truly lost or stolen\n- Card permanently cancelled, cannot be reactivated\n- New card with new number issued automatically\n- Automatic payments will need updating\n- Replacement card arrives in 5-7 business days\n- Expedited shipping available (2-3 business days)\n- Virtual card number can be issued immediately via app\nImportant differences:\n- Locked card can be unlocked and used again\n- Deactivated card requires new physical card\n- Choose lock if unsure of card location\n- Choose deactivation if card security compromised""]"
+lost stolen cards,"Emergency Card Replacement and Temporary Solutions
+When you need immediate access to funds after reporting lost/stolen card:
+Emergency card replacement:
+- Expedited shipping: 2-3 business days ($15 fee)
+- Standard shipping: 5-7 business days (free)
+- Request during initial report or call back later
+- Shipped to address on file
+Virtual card number:
+- Generated instantly through mobile app
+- Use for online purchases immediately
+- Same credit limit as physical card
+- Valid until physical card arrives
+Emergency cash advance:
+- Available at any Chase branch
+- Up to available cash advance limit
+- Subject to cash advance fees and APR
+- Requires valid ID and account verification
+Temporary card at branch:
+- Available at select branch locations
+- Can be used immediately at most merchants
+- May have limited daily transaction amounts
+- Full card will still be mailed
+International emergency: Contact Chase international collect line
+- Available 24/7 from anywhere in world
+- Emergency card delivered to international address
+- May take 3-5 business days internationally
+Remember: Update all automatic payments and subscriptions with new card number","Lost or stolen cards should be reported immediately through online banking, mobile app, or phone (available 24/7) to prevent unauthorized charges. A temporary card lock can be used when a card is misplaced but might be found, while permanent deactivation is used when the card is truly lost or stolen. When a card is permanently deactivated, a new card is issued automatically with expedited shipping available (2-3 business days), and virtual card numbers can be generated instantly through the mobile app. Customers are not liable for fraudulent charges after reporting and emergency cash advances are available at any branch location.","[""Emergency Card Replacement and Temporary Solutions\nWhen you need immediate access to funds after reporting lost/stolen card:\nEmergency card replacement:\n- Expedited shipping: 2-3 business days ($15 fee)\n- Standard shipping: 5-7 business days (free)\n- Request during initial report or call back later\n- Shipped to address on file\nVirtual card number:\n- Generated instantly through mobile app\n- Use for online purchases immediately\n- Same credit limit as physical card\n- Valid until physical card arrives\nEmergency cash advance:\n- Available at any Chase branch\n- Up to available cash advance limit\n- Subject to cash advance fees and APR\n- Requires valid ID and account verification\nTemporary card at branch:\n- Available at select branch locations\n- Can be used immediately at most merchants\n- May have limited daily transaction amounts\n- Full card will still be mailed\nInternational emergency: Contact Chase international collect line\n- Available 24/7 from anywhere in world\n- Emergency card delivered to international address\n- May take 3-5 business days internationally\nRemember: Update all automatic payments and subscriptions with new card number""]"
