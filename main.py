@@ -33,13 +33,22 @@ def main():
         action="store_true",
         help="Delete all LangSmith resources for the use case and exit.",
     )
+    parser.add_argument(
+        "--traces-only",
+        action="store_true",
+        help="Only generate traces — skip datasets, evaluators, and experiments.",
+    )
     args = parser.parse_args()
 
     use_case = USE_CASES[args.use_case]()
     if args.teardown:
         use_case.teardown()
     else:
-        use_case.run(admin=args.admin, num_traces=args.num_traces)
+        use_case.run(
+            admin=args.admin,
+            num_traces=args.num_traces,
+            traces_only=args.traces_only,
+        )
 
 
 if __name__ == "__main__":

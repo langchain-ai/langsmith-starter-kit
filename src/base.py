@@ -45,9 +45,13 @@ class UseCase(ABC):
             tags=self.tags,
         )
 
-    def run(self, admin: bool = False, num_traces: Optional[int] = None) -> None:
+    def run(self, admin: bool = False, num_traces: Optional[int] = None, traces_only: bool = False) -> None:
         setup_project(self.project_name, self.tags)
         print()
+        if traces_only:
+            self.create_traces(num_traces=num_traces)
+            print()
+            return
         if admin:
             setup_secrets()
         else:

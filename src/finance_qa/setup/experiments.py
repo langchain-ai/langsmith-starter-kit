@@ -1,4 +1,6 @@
 """Finance QA experiments — runs the chatbot on evaluation datasets and scores results."""
+import uuid
+
 from langchain_core.messages import HumanMessage
 from utils.config import client
 from src.finance_qa.agent.agent import chatbot
@@ -11,7 +13,8 @@ def _run_chatbot_final_response(inputs: dict) -> dict:
     Returning plain text avoids tool_call content blocks that OpenAI rejects.
     """
     question = inputs.get("question", "")
-    result = chatbot.invoke({"messages": [HumanMessage(content=question)]})
+    config = {"configurable": {"thread_id": str(uuid.uuid4())}}
+    result = chatbot.invoke({"messages": [HumanMessage(content=question)]}, config=config)
     for msg in reversed(result.get("messages", [])):
         if msg.type == "ai" and msg.content and not msg.tool_calls:
             return {"output": msg.content}
@@ -25,7 +28,8 @@ def _run_chatbot(inputs: dict) -> dict:
     instead of tool_call content blocks, which OpenAI Chat Completions rejects.
     """
     question = inputs.get("question", "")
-    result = chatbot.invoke({"messages": [HumanMessage(content=question)]})
+    config = {"configurable": {"thread_id": str(uuid.uuid4())}}
+    result = chatbot.invoke({"messages": [HumanMessage(content=question)]}, config=config)
     messages = result.get("messages", [])
     final_text = ""
     for msg in reversed(messages):
