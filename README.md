@@ -2,7 +2,7 @@
 
 A multi-use-case starter kit that provisions LangSmith projects with datasets, evaluators, experiments, annotation queues, and traces in one command.
 
-**Built-in use cases:** `email-agent` · `chatbot`
+**Built-in use cases:** `email-agent` · `finance-qa`
 
 ---
 
@@ -25,10 +25,10 @@ cp .env.example .env
 python main.py
 
 # Run a specific use case
-python main.py --use-case chatbot
+python main.py --use-case finance-qa
 
 # Control how many traces to generate
-python main.py --use-case chatbot --num-traces 5
+python main.py --use-case finance-qa --num-traces 5
 
 # Upload workspace secrets to LangSmith (requires admin access)
 python main.py --admin
@@ -194,7 +194,7 @@ from src.my_use_case.use_case import MyUseCase
 
 USE_CASES = {
     "email-agent": EmailAgentUseCase,
-    "chatbot": ChatbotUseCase,
+    "finance-qa": FinanceQAUseCase,
     "my-use-case": MyUseCase,          # ← add this line
 }
 ```
@@ -236,8 +236,8 @@ starter-kit/
 │   │   ├── data/                  # emails.csv, next_action.jsonl
 │   │   ├── setup/                 # datasets, evaluators, experiments, traces, annotations
 │   │   └── use_case.py
-│   └── chatbot/
-│       ├── agent/                 # LangGraph ReAct chatbot with KB retrieval
+│   └finance_qa/
+│       ├── agent/                 # LangGraph ReAct finance-qa with KB retrieval
 │       ├── data/                  # eval CSVs, question bank, synthetic KB
 │       ├── setup/                 # datasets, evaluators, experiments, traces
 │       └── use_case.py
